@@ -25,22 +25,39 @@ was still king.
 '''
 
 # host = 'apache.org'
-host = 'www.cnn.com'
+# host = 'www.cnn.com'
 # host = 'www.wikipedia.org'
 # host = 'localhost'
+
+if len(sys.argv) != 2:
+    print("usage: {} hostname".format(sys.argv[0]))
+    sys.exit()
+
+host = sys.argv[1]
 
 h = {
     'Host':host,
     'User-Agent':'happy happy, joy joy 1.0',
+    'Accept': '*',
+    'Accept-Charset': '*',
+    'Accept-Encoding': '*',
     'Accept-Language': 'cy; q=1.0, es; q=1.0, de; q=1.0, it ; q=1.0, en ; q=0.01',
     'Negotiate': 'trans',
 }
 response = requests.get('http://{}'.format(host), allow_redirects=True, headers=h)
 print("Response code {}: {}".format(response.status_code, response.reason))
-print("Server: {}".format(response.headers['Server']))
+print(response.headers.get('Server', 'No server tag?'))
 print(response.headers.get('Alternates', 'No alternates'))
 print(response.headers)
 soup = bs(response.text, 'html.parser')
 response.close()
 print(soup.html.attrs)
+print("History: ",response.history)
+if 'lang' in soup.html.attrs:
+    print("Document language: {}".format(soup.html['lang']))
+else:
+    print("No specified document language")
+for atag in soup.find_all('a'):
+    if 'hreflang' in atag.attrs:
+        print("hreflang on link: {} -> {}".format(atag['hreflang'], atag['href']))
 
