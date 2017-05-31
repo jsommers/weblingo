@@ -36,7 +36,6 @@ if len(sys.argv) != 2:
 host = sys.argv[1]
 
 h = {
-    'Host':host,
     'User-Agent':'happy happy, joy joy 1.0',
     'Accept': '*',
     'Accept-Charset': '*',
@@ -44,7 +43,7 @@ h = {
     'Accept-Language': 'cy; q=1.0, es; q=1.0, de; q=1.0, it ; q=1.0, en ; q=0.01',
     'Negotiate': 'trans',
 }
-response = requests.get('http://{}'.format(host), allow_redirects=True, headers=h)
+response = requests.get('http://{}'.format(host), headers=h)
 print("Response code {}: {}".format(response.status_code, response.reason))
 print(response.headers.get('Server', 'No server tag?'))
 print(response.headers.get('Alternates', 'No alternates'))
