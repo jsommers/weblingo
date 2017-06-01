@@ -1,3 +1,8 @@
+#
+# references:
+# https://www.distilled.net/blog/uncategorized/google-cctlds-and-associated-languages-codes-reference-sheet/
+#
+
 68 
 abb
 abbott
@@ -10,21 +15,21 @@ ads
 adult
 ae
 aero
-af
+af fa ps  # afghanistan cctld
 afl
-ag
+ag en  # antigua and barbuda cctld 
 agency
-ai
+ai en  # anguilla cctld
 al
 alsace
 am hy ru  # armenia cctld
 amsterdam
 anz
-ao
+ao pt kg  # angola cctld
 apartments
 app
 aq
-ar
+ar es-419  # argentina cctld
 archi
 army
 art
@@ -32,7 +37,7 @@ as en  # american samoa cctld
 asia
 associates
 at de  # austria cctld
-au
+au en  # australia cctld
 auction
 audi
 audio
@@ -54,47 +59,47 @@ bargains
 bayern
 bb
 bcn
-bd
-be
+bd bn  # bangladesh cctld
+be nl fr de  # belgium cctld
 beer
 berlin
 best
 bet
-bf
-bg
-bh
-bi
+bf fr  # burkina faso cctld
+bg bg  # bulgaria cctld 
+bh ar  # bahrain cctld
+bi fr sw rn  # burundi cctld 
 bible
 bid
 bike
 bingo
 bio
 biz
-bj
+bj fr yo  # benin cctld
 black
 blog
 blue
 bm
 bms
-bn
+bn ms zh  # brunei darussalam cctld
 bnpparibas
-bo
+bo es-419 qu  # bolivia cctld
 boutique
 box
-br
+br pt-BR  # brazil cctld
 bradesco
 brussels
-bs
+bs en  # bahamas cctld
 bt
 build
 builders
 business
 buzz
-bw
-by
-bz
+bw tn  # botswana cctld
+by be ru  # belarus cctld
+bz es-419 en  # belize cctld
 bzh
-ca
+ca en fr  # canada cctld
 cab
 cafe
 cam
@@ -109,33 +114,33 @@ careers
 cars
 cash
 casino
-cat
+cat ca  # catalonia
 cba
 cc
-cd
+cd fr in ach lua kg  # democratic republic of the congo cctld
 center
 ceo
 cern
 cf
 cfa
 cg
-ch
+ch de fr it rm  # switzerland cctld
 chat
 cheap
 church
-ci
+ci fr # cote d'ivoire cctld
 city
-ck
-cl
+ck en  # cook islands cctld
+cl es-419  # chile cctld
 claims
 click
 clinic
 clothing
 cloud
 club
-cm
-cn
-co
+cm fr  # cameroon cctld
+cn zh  # china cctld
+co es-419  # colombia cctld
 coach
 codes
 coffee
@@ -151,21 +156,21 @@ cool
 coop
 corsica
 courses
-cr
+cr es-419  # costa rica cctld
 credit
 creditcard
 cricket
-cu
-cv
+cu es-419  # cuba cctld
+cv pt-PT  # cape verde cctld
 cw
 cx
-cy
-cymru
-cz
+cy en el tr  # cyprus cctld
+cymru cy  # welsh 
+cz cs  # czech republic
 dance
 date
 dating
-de
+de de  # germany cctld
 deals
 delivery
 dental
@@ -179,29 +184,29 @@ digital
 direct
 directory
 discount
-dj
-dk
-dm
-do
+dj fr ar so  #  djibouti cctld
+dk da fo  # denmark cctld
+dm en  # dominica cctld
+do es-419  # dominican republic cctld
 dog
 domains
 download
-dz
+dz fr ar  # algeria cctld
 earth
-ec
+ec es-419  # ecuador cctld
 eco
 edu
 education
-ee
-eg
+ee et ru # estonia cctld
+eg ar  # egypt cctld
 email
 energy
 engineering
 enterprises
 equipment
-es
+es es ca eu # spain cctld
 estate
-et
+et am ti so om  # ethiopia cctld
 eu
 eus
 events
@@ -216,7 +221,7 @@ family
 fans
 farm
 fashion
-fi
+fi fi sv  # finland cctld
 film
 finance
 financial
@@ -224,23 +229,23 @@ fish
 fishing
 fit
 fitness
-fj
+fj en  # fiji cctld
 fk
 flights
 flowers
-fm
+fm en  # micronesia cctld
 fo
 football
 forsale
 foundation
-fr
+fr fr  # france cctld
 frl
 fun
 fund
 furniture
 futbol
 fyi
-ga
+ga fr # gabon cctld
 gal
 gallery
 game
@@ -248,20 +253,20 @@ games
 garden
 gd
 gdn
-ge
+ge ka  # georgia cctld
 gent
 gf
-gg
-gh
-gi
+gg en fr  # guernsey cctld
+gh en ha ak ee gaa  # ghana cctld
+gi en es it pt-PT  # gibraltar
 gift
 gifts
 gives
-gl
+gl da  # greenland cctld
 glass
 global
 globo
-gm
+gm en wo  # gamia cctld
 gmail
 gmbh
 gn
@@ -270,29 +275,29 @@ golf
 google
 gop
 gov
-gp
+gp fr  # guadeloupe cctld
 gq
-gr
+gr el  # greece cctld
 graphics
 gratis
 green
 gripe
 group
 gs
-gt
+gt es-419  # guatemala cctld
 guide
 guitars
 guru
 gw
-gy
+gy en # guyana cctld
 hamburg
 haus
 help
 hiphop
 hitachi
-hk
+hk zh   # hong kong cctld
 hm
-hn
+hn es-419  # honduras cctld
 hockey
 holdings
 holiday
@@ -302,17 +307,17 @@ hosting
 hot
 house
 how
-hr
-ht
-hu
+hr hr  # croatia cctld
+ht fr ht # haiti cctld
+hu hu  # hungary cctld
 ice
-id
-ie
+id id jw  # indonesia cctld
+ie en ga  # ireland cctld
 ifm
-il
-im
+il ar iw   # israel cctld
+im en # isle of man cctld
 immo
-in
+in en hi bn te mr ta gu kn ml pa  # india cctld
 industries
 info
 ink
@@ -322,27 +327,27 @@ int
 international
 investments
 io
-iq
+iq ckb ar  # iraq cctld
 ir
 irish
-is
+is is  # iceland cctld
 ist
 istanbul
-it
+it it  # italy cctld
 java
 jcb
-je
+je fr en # jersey cctld
 jetzt
 jewelry
-jm
-jo
+jm en  # jamaica cctld
+jo ar  # jordan cctld
 jobs
-jp
+jp jp  # japan cctld
 juegos
-ke
-kg
-kh
-ki
+ke sw  # kenya cctld
+kg ky ru  # kyrgyzstan cctld
+kh kh  # cambodia cctld
+ki en # kiribati cctld
 kim
 kinder
 kitchen
@@ -351,46 +356,46 @@ kn
 koeln
 komatsu
 kp
-kr
+kr ko  # south korea cctld
 krd
 kred
-kw
+kw ar  # kuwait cctld
 ky
 kyoto
-kz
-la
+kz kk ru  # kazakhstan cctld
+la lo  # lao people's democratic republic
 land
 lat
 law
 lawyer
-lb
+lb ar fr hy  # lebanon cctld
 lc
 lease
 leclerc
 legal
 lgbt
-li
+li de  # liechtenstein cctld
 lidl
 life
 lighting
 limited
 link
 live
-lk
+lk en si ta  # sri lanka cctld
 loan
 loans
 lol
 london
 love
 lr
-ls
-lt
+ls st en  # lesotho cctld 
+lt lt  # lithuania cctld
 ltd
-lu
+lu de fr # luxembourg cctld
 luxury
-lv
-ly
-ma
+lv lv lt ru  # latvia cctld
+ly ar it  # libya cctld
+ma fr ar  # morocco cctld 
 maison
 management
 market
@@ -398,19 +403,19 @@ marketing
 markets
 mba
 mc
-md
-me
+md mo ru  # moldova cctld
+me sr-ME sr  # montenegro cctld
 media
 melbourne
 men
 menu
-mg
+mg mg fr # madagascar cctld
 mil
-mk
-ml
+mk mk  # macedonia cctld
+ml fr  # mali cctld
 mm
 mma
-mn
+mn mn # mongolia cctld
 mo
 mobi
 moe
@@ -423,43 +428,43 @@ movie
 mp
 mq
 mr
-ms
-mt
-mu
+ms en # monserrat cctld
+mt mt  # malta cctld
+mu en fr mfe # mauritius cctld
 museum
-mv
-mw
-mx
-my
-mz
-na
+mv en # maldives cctld
+mw ny tum # malawi cctld
+mx es-419 # mexico cctld
+my ms  # malaysia cctld
+mz pt sw ny sn   # mozambique cctld
+na en af de  # namibia cctld
 nagoya
 name
 navy
 nc
-ne
+ne fr ha # niger cctld
 net
 network
 neustar
 news
-nf
-ng
+nf en  # norfolk island cctld
+ng en ha ig yo pcm  # nigeria cctld
 ngo
-ni
+ni es-419  # nicaragua cctld
 nico
 ninja
-nl
-no
+nl nl # netherlands cctld
+no no nn # norway cctld
 now
-np
-nr
+np ne  # nepal cctld
+nr en  # nauru cctld
 nrw
-nu
+nu en # niue cctld
 nyc
-nz
+nz en mi  # new zealand cctld
 office
 okinawa
-om
+om ar  # oman cctld
 one
 ong
 onl
@@ -469,16 +474,16 @@ orange
 org
 osaka
 ovh
-pa
-paris
+pa es-419  # panama cctld
+paris fr
 partners
 parts
 party
-pe
+pe es-419 qu # peru cctld
 pet
 pf
 pg
-ph
+ph tl  # philippines cctld
 pharmacy
 photo
 photography
@@ -490,17 +495,17 @@ pictures
 pink
 pioneer
 pizza
-pk
-pl
+pk en ur  # pakistan cctld
+pl pl # poland cctld
 place
 plumbing
 plus
 pm
-pn
+pn en # pitcairn cctld
 poker
 porn
 post
-pr
+pr es-419   # puerto rico cctld
 praxi
 press
 pro
@@ -509,12 +514,12 @@ productions
 promo
 properties
 property
-ps
-pt
+ps ar # palestine cctld
+pt pt-PT # portugal cctld
 pub
 pw
-py
-qa
+py es-419  # paraguay cctld
+qa ar  # qatar cctld
 quebec
 racing
 re
@@ -535,52 +540,52 @@ reviews
 ricoh
 rio
 rip
-ro
+ro ro hu de # romania cctld
 rocks
-rs
-ru
+rs sr  # serbia cctld
+ru ru  # russia cctld
 ruhr
 run
-rw
+rw en fr sw rw  # rwanda cctld
 ryukyu
-sa
+sa ar  # saudi arabia cctld
 saarland
 sale
 salon
 sandvik
 sap
 saxo
-sb
+sb en  # solomon islands cctld
 sbi
-sc
+sc crs fr en  # seychelles cctld
 schmidt
 school
 schule
 science
 scot
 sd
-se
+se sv  # sweden cctld
 services
 sex
 sexy
-sg
-sh
+sg en zh ms ta  # singapore cctld
+sh en # st helena cctld
 shell
 shiksha
 shoes
 shop
 shopping
 show
-si
+si sl # slovenia cctld
 singles
 site
-sk
+sk sk # slovakia cctld
 ski
 sky
-sl
-sm
-sn
-so
+sl en kri  # sierra leone cctld 
+sm it  # san marino cctld
+sn fr wo # senegal cctld
+so so ar  # somalia cctld
 social
 software
 solar
@@ -589,7 +594,7 @@ soy
 space
 sr
 srl
-st
+st pt-PT # sao tome cctld
 store
 stream
 studio
@@ -600,7 +605,7 @@ supplies
 supply
 support
 surf
-sv
+sv es-419  # el salvador cctld
 swatch
 swiss
 sx
@@ -613,26 +618,26 @@ tattoo
 tax
 taxi
 tc
-td
+td fr ar  # chad cctld
 team
 tech
 technology
 telefonica
 tennis
 tf
-tg
-th
+tg fr ee # togo cctld
+th th  # thailand cctld
 theater
 tickets
 tienda
 tips
 tirol
-tj
-tk
-tl
-tm
-tn
-to
+tj tg ru  # tajikistan cctld
+tk en # tokelau cctld
+tl pt-PT  # timor-leste cctld
+tm tk ru uz  # turkmenistan cctld
+tn ar fr # tunisia cctld
+to en to  # tonga cctld
 today
 tokyo
 tools
@@ -640,43 +645,43 @@ top
 tours
 town
 toys
-tr
+tr tr  # turkey cctld
 trade
 training
 travel
 trust
 trv
-tt
+tt en hi fr es-419 zh  # trinidad and tobago cctld
 tube
 tv
-tw
-tz
-ua
-ug
-uk
+tw zh  # taiwan cctld
+tz sw  # tanzania cctld
+ua uk ru  # ukraine cctld
+ug lg sw rw ach nym  # uganda cctld
+uk en cy  # united kingdom cctld
 university
 uno
 uol
 us
 uy
-uz
+uz uz ru  # uzbekistan cctld
 va
-vc
-ve
+vc en  # st vincent and grenadines cctld
+ve es-419  # venezuela cctld
 vegas
 ventures
 vet
-vg
-vi
+vg en # british virgin islands cctld
+vi en  # us virgin islands cctld
 video
 vin
 vip
 vision
 vlaanderen
-vn
+vn vi fr zh  # vietnam cctld
 vote
 voyage
-vu
+vu en fr # vanuatu cctld
 wales
 wang
 watch
@@ -692,7 +697,7 @@ wine
 work
 works
 world
-ws
+ws en # samoa cctld
 wtf
 xin
 xn--3e0b707e
@@ -728,7 +733,7 @@ yokohama
 you
 youtube
 yt
-za
-zm
+za en af st zu xh tn  # south africa cctld
+zm en ny bem tum loz  # zambia cctld
 zone
-zw
+zw en sn zu ny tn  # zimbabwe cctld
