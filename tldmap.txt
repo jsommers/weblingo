@@ -7,6 +7,7 @@
 68 
 abb
 abbott
+abogado es  # spanish
 ac
 academy
 accountant
@@ -22,9 +23,9 @@ ag en  # antigua and barbuda cctld
 agency
 ai en  # anguilla cctld
 al
-alsace
+alsace fr # alsace region france
 am hy ru  # armenia cctld
-amsterdam
+amsterdam nl # amsterdam nl
 anz
 ao pt kg  # angola cctld
 apartments
@@ -57,13 +58,13 @@ barcelona
 barclaycard
 barclays
 bargains
-bayern
+bayern de # bavaria germany
 bb
-bcn
+bcn ca es # barcelona spain
 bd bn  # bangladesh cctld
 be nl fr de  # belgium cctld
 beer
-berlin
+berlin de # berlin germany
 best
 bet
 bf fr  # burkina faso cctld
@@ -85,13 +86,15 @@ bms
 bn ms zh  # brunei darussalam cctld
 bnpparibas
 bo es-419 qu  # bolivia cctld
+bom pt # portuguese
 boutique
 box
 br pt-BR  # brazil cctld
 bradesco
-brussels
+brussels fr nl de # brussels belgium
 bs en  # bahamas cctld
 bt
+budapest hu # budapest hungary
 build
 builders
 business
@@ -99,7 +102,7 @@ buzz
 bw tn  # botswana cctld
 by be ru  # belarus cctld
 bz es-419 en  # belize cctld
-bzh
+bzh br # brittany france
 ca en fr  # canada cctld
 cab
 cafe
@@ -113,6 +116,7 @@ cards
 care
 careers
 cars
+casa es it 
 cash
 casino
 cat ca  # catalonia
@@ -146,6 +150,7 @@ coach
 codes
 coffee
 college
+cologne de # cologne germany
 com
 community
 company
@@ -155,7 +160,7 @@ contractors
 cooking
 cool
 coop
-corsica
+corsica co  # corsica 
 courses
 cr es-419  # costa rica cctld
 credit
@@ -175,7 +180,7 @@ de de  # germany cctld
 deals
 delivery
 dental
-desi
+desi hi # hindi
 design
 dev
 dhl
@@ -204,12 +209,13 @@ email
 energy
 engineering
 enterprises
+epost de 
 equipment
 es es ca eu # spain cctld
 estate
 et am ti so om  # ethiopia cctld
 eu
-eus
+eus eu # basque
 events
 exchange
 expert
@@ -240,14 +246,14 @@ football
 forsale
 foundation
 fr fr  # france cctld
-frl
+frl fy # frisian
 fun
 fund
 furniture
-futbol
+futbol es # spanish
 fyi
 ga fr # gabon cctld
-gal
+gal gl # galician
 gallery
 game
 games
@@ -255,7 +261,7 @@ garden
 gd
 gdn
 ge ka  # georgia cctld
-gent
+gent nl fr de # ghent belgium
 gf
 gg en fr  # guernsey cctld
 gh en ha ak ee gaa  # ghana cctld
@@ -269,7 +275,7 @@ global
 globo
 gm en wo  # gamia cctld
 gmail
-gmbh
+gmbh de
 gn
 gold
 golf
@@ -280,7 +286,7 @@ gp fr  # guadeloupe cctld
 gq
 gr el  # greece cctld
 graphics
-gratis
+gratis es # spanish
 green
 gripe
 group
@@ -291,9 +297,10 @@ guitars
 guru
 gw
 gy en # guyana cctld
-hamburg
-haus
+hamburg de # hamburg germany
+haus de # german
 help
+helsinki fi # helsinki finland
 hiphop
 hitachi
 hk zh   # hong kong cctld
@@ -306,6 +313,7 @@ horse
 host
 hosting
 hot
+hoteles es # spanish
 house
 how
 hr hr  # croatia cctld
@@ -317,7 +325,8 @@ ie en ga  # ireland cctld
 ifm
 il ar iw   # israel cctld
 im en # isle of man cctld
-immo
+immo fr de it # abbr for real estate
+immobilien de
 in en hi bn te mr ta gu kn ml pa  # india cctld
 industries
 info
@@ -330,43 +339,44 @@ investments
 io
 iq ckb ar  # iraq cctld
 ir
-irish
+irish ga en # ireland
 is is  # iceland cctld
-ist
-istanbul
+ist tr # turkish
+istanbul tr # turkish
 it it  # italy cctld
 java
 jcb
 je fr en # jersey cctld
-jetzt
+jetzt de 
 jewelry
 jm en  # jamaica cctld
 jo ar  # jordan cctld
 jobs
 jp jp  # japan cctld
-juegos
+juegos es # spanish
+kaufen de
 ke sw  # kenya cctld
 kg ky ru  # kyrgyzstan cctld
 kh kh  # cambodia cctld
 ki en # kiribati cctld
 kim
-kinder
+kinder de 
 kitchen
-kiwi
+kiwi en mi # new zealand
 kn
-koeln
+koeln de # cologne germany
 komatsu
 kp
 kr ko  # south korea cctld
-krd
+krd ku # kurdistan cctld
 kred
 kw ar  # kuwait cctld
 ky
-kyoto
+kyoto jp # kyoto japan
 kz kk ru  # kazakhstan cctld
 la lo  # lao people's democratic republic
 land
-lat
+lat es-419 es # latin america
 law
 lawyer
 lb ar fr hy  # lebanon cctld
@@ -386,18 +396,20 @@ lk en si ta  # sri lanka cctld
 loan
 loans
 lol
-london
+london en # london uk
 love
 lr
 ls st en  # lesotho cctld 
 lt lt  # lithuania cctld
 ltd
+ltda es # spanish
 lu de fr # luxembourg cctld
 luxury
 lv lv lt ru  # latvia cctld
 ly ar it  # libya cctld
 ma fr ar  # morocco cctld 
-maison
+madrid es # madrid spain
+maison fr
 management
 market
 marketing
@@ -407,7 +419,7 @@ mc
 md mo ru  # moldova cctld
 me sr-ME sr  # montenegro cctld
 media
-melbourne
+melbourne en # melbourne australia
 men
 menu
 mg mg fr # madagascar cctld
@@ -419,12 +431,13 @@ mma
 mn mn # mongolia cctld
 mo
 mobi
+moda it 
 moe
 mom
 monash
 money
 mortgage
-moscow
+moscow ru # moscow russia
 movie
 mp
 mq
@@ -439,7 +452,7 @@ mx es-419 # mexico cctld
 my ms  # malaysia cctld
 mz pt sw ny sn   # mozambique cctld
 na en af de  # namibia cctld
-nagoya
+nagoya jp # nagoya japan
 name
 navy
 nc
@@ -459,12 +472,12 @@ no no nn # norway cctld
 now
 np ne  # nepal cctld
 nr en  # nauru cctld
-nrw
+nrw de # north rhein westphalia
 nu en # niue cctld
 nyc
 nz en mi  # new zealand cctld
 office
-okinawa
+okinawa jp # okinawa japan
 om ar  # oman cctld
 one
 ong
@@ -473,13 +486,14 @@ online
 ooo
 orange
 org
-osaka
+osaka jp # osaka japan
 ovh
 pa es-419  # panama cctld
-paris fr
+paris fr # paris france
 partners
 parts
 party
+passagens pt  # portuguese
 pe es-419 qu # peru cctld
 pet
 pf
@@ -521,13 +535,14 @@ pub
 pw
 py es-419  # paraguay cctld
 qa ar  # qatar cctld
-quebec
+quebec fr # quebec canada
 racing
 re
 realtor
 recipes
 red
-reisen
+reise de
+reisen de
 ren
 rent
 rentals
@@ -539,31 +554,32 @@ restaurant
 review
 reviews
 ricoh
-rio
+rio pt pt-BR # brazilian portuguese
 rip
 ro ro hu de # romania cctld
 rocks
 rs sr  # serbia cctld
 ru ru  # russia cctld
-ruhr
+ruhr de # ruhr germany
 run
 rw en fr sw rw  # rwanda cctld
-ryukyu
+ryukyu jp  # ryukyu japan
 sa ar  # saudi arabia cctld
-saarland
+saarland de # saarland germany
 sale
 salon
 sandvik
 sap
+sarl fr
 saxo
 sb en  # solomon islands cctld
 sbi
 sc crs fr en  # seychelles cctld
 schmidt
 school
-schule
+schule de
 science
-scot
+scot gd en # scotland
 sd
 se sv  # sweden cctld
 services
@@ -572,10 +588,11 @@ sexy
 sg en zh ms ta  # singapore cctld
 sh en # st helena cctld
 shell
-shiksha
+shiksha hi # hindi
 shoes
 shop
 shopping
+shouji zh
 show
 si sl # slovenia cctld
 singles
@@ -591,11 +608,12 @@ social
 software
 solar
 solutions
-soy
+soy es # spanish
 space
 sr
 srl
 st pt-PT # sao tome cctld
+stockholm sv # stockholm sweden
 store
 stream
 studio
@@ -608,13 +626,13 @@ support
 surf
 sv es-419  # el salvador cctld
 swatch
-swiss
+swiss de fr it rm # switzerland
 sx
 sy
 systems
 sz
-taipei
-tatar
+taipei zh # taipei taiwan
+tatar tt # tatar region
 tattoo
 tax
 taxi
@@ -630,9 +648,9 @@ tg fr ee # togo cctld
 th th  # thailand cctld
 theater
 tickets
-tienda
+tienda es # spanish
 tips
-tirol
+tirol de it # tirol
 tj tg ru  # tajikistan cctld
 tk en # tokelau cctld
 tl pt-PT  # timor-leste cctld
@@ -640,7 +658,7 @@ tm tk ru uz  # turkmenistan cctld
 tn ar fr # tunisia cctld
 to en to  # tonga cctld
 today
-tokyo
+tokyo jp # tokyo japan
 tools
 top
 tours
@@ -654,14 +672,15 @@ trust
 trv
 tt en hi fr es-419 zh  # trinidad and tobago cctld
 tube
+tushu zh 
 tv
 tw zh  # taiwan cctld
 tz sw  # tanzania cctld
 ua uk ru  # ukraine cctld
 ug lg sw rw ach nym  # uganda cctld
-uk en cy  # united kingdom cctld
+uk en cy gd kw # united kingdom cctld (welsh, scottish gaelic, cornish)
 university
-uno
+uno es # spanish
 uol
 us
 uy
@@ -671,27 +690,33 @@ vc en  # st vincent and grenadines cctld
 ve es-419  # venezuela cctld
 vegas
 ventures
+versicherung de
 vet
 vg en # british virgin islands cctld
 vi en  # us virgin islands cctld
+viajes es # spanish
 video
 vin
 vip
 vision
-vlaanderen
+vlaanderen nl # flanders netherlands
 vn vi fr zh  # vietnam cctld
 vote
+voto it # italian
 voyage
 vu en fr # vanuatu cctld
-wales
+vuelos es # spanish
+wales en cy # wales, uk
 wang
+wanggou zh 
 watch
 webcam
 website
 wedding
+weibo zh 
 weir
 wf
-wien
+wien de # vienna austria
 wiki
 win
 wine
@@ -700,27 +725,28 @@ works
 world
 ws en # samoa cctld
 wtf
+xihuan zh 
 xin
 xn--3e0b707e
 xn--54b7fta0cc
-xn--6frz82g
-xn--6qq986b3xl
-xn--80adxhks
-xn--80asehdb
+xn--6frz82g zh # chinese "mobile"
+xn--6qq986b3xl zh # chinese "i love you"
+xn--80adxhks ru # russian "moscow"
+xn--80asehdb ru # russian "online"
 xn--80aswg
 xn--90ais
-xn--c1avg
-xn--d1acj3b
-xn--fiqs8s
+xn--c1avg ru # russian "org"
+xn--d1acj3b ru # russian "kids"
+xn--fiqs8s 
 xn--h2brj9c
 xn--j1amh
 xn--kpry57d
-xn--mgbab2bd
+xn--mgbab2bd fa # persian "market"
 xn--mk1bu44c
-xn--ngbc5azd
+xn--ngbc5azd ar # arabic "network"
 xn--p1acf
 xn--p1ai
-xn--q9jyb4c
+xn--q9jyb4c ja # japanese "everyone"
 xn--t60b56a
 xn--tckwe
 xn--vuq861b
@@ -730,11 +756,12 @@ xyz
 yahoo
 yandex
 ye
-yokohama
+yokohama  jp # yokohama japan
 you
 youtube
 yt
 za en af st zu xh tn  # south africa cctld
 zm en ny bem tum loz  # zambia cctld
 zone
+zuerich de # zurich switzerland
 zw en sn zu ny tn  # zimbabwe cctld
