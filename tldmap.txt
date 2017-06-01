@@ -5,7 +5,7 @@
 #
 
 68 
-abb
+abb de fr it # abb group, hq in zurich switzerland
 abbott
 abogado es  # spanish
 ac
