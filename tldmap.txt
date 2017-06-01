@@ -1,4 +1,4 @@
-68
+68 
 abb
 abbott
 ac
@@ -17,7 +17,7 @@ agency
 ai
 al
 alsace
-am
+am hy ru  # armenia cctld
 amsterdam
 anz
 ao
@@ -28,10 +28,10 @@ ar
 archi
 army
 art
-as
+as en  # american samoa cctld
 asia
 associates
-at
+at de  # austria cctld
 au
 auction
 audi
@@ -41,8 +41,8 @@ aw
 aws
 ax
 axa
-az
-ba
+az az ru  # azerbaijan cctld
+ba bs sr hr  # bosnia herzegovina
 baidu
 band
 bank
