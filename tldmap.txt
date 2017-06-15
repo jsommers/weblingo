@@ -1,185 +1,353 @@
 #
 # references:
-# https://www.distilled.net/blog/uncategorized/google-cctlds-and-associated-languages-codes-reference-sheet/
+# https://www.iana.org/domains/root/db
 # https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains
+# https://www.distilled.net/blog/uncategorized/google-cctlds-and-associated-languages-codes-reference-sheet/
 #
-
-68 
+aaa  # generic .aaa American Automobile Association, Inc.
+aarp  # generic .aarp AARP
+abarth  # generic .abarth Fiat Chrysler Automobiles N.V.
 abb de fr it # abb group, hq in zurich switzerland
 abbott
+abbvie  # generic .abbvie AbbVie Inc.
+abc  # generic .abc Disney Enterprises, Inc.
+able  # generic .able Able Inc.
 abogado es  # spanish
-ac
+abudhabi ar  # generic .abudhabi Abu Dhabi Systems and Information Centre
+ac en # st helena ascension and tristan da cunha cctld
 academy
+accenture  # generic .accenture Accenture plc
 accountant
 accountants
-ad
+aco  # generic .aco ACO Severin Ahlmann GmbH & Co. KG
+active  # generic .active Active Network, LLC
+actor  # generic .actor United TLD Holdco Ltd.
+ad ca es fr pt # andorra cctld
+adac  # generic .adac Allgemeiner Deutscher Automobil-Club e.V. (ADAC)
 ads
 adult
-ae
+ae ar en fa ur hi # UAE cctld
+aeg  # generic .aeg Aktiebolaget Electrolux
 aero
+aetna  # generic .aetna Aetna Life Insurance Company
 af fa ps  # afghanistan cctld
-afl
-ag en  # antigua and barbuda cctld 
+afamilycompany  # generic .afamilycompany Johnson Shareholdings, Inc.
+afl #  Australian football league
+africa  # generic .africa ZA Central Registry NPC trading as Registry.Africa
+ag en  # antigua and barbuda cctld
+agakhan  # generic .agakhan Fondation Aga Khan (Aga Khan Foundation)
 agency
 ai en  # anguilla cctld
-al
+aig  # generic .aig American International Group, Inc.
+aigo  # generic .aigo aigo Digital Technology Co,Ltd.
+airbus  # generic .airbus Airbus S.A.S.
+airforce  # generic .airforce United TLD Holdco Ltd.
+airtel  # generic .airtel Bharti Airtel Limited
+akdn  # generic .akdn Fondation Aga Khan (Aga Khan Foundation)
+al sq  # albania cctld
+alfaromeo  # generic .alfaromeo Fiat Chrysler Automobiles N.V.
+alibaba  # generic .alibaba Alibaba Group Holding Limited
+alipay  # generic .alipay Alibaba Group Holding Limited
+allfinanz  # generic .allfinanz Allfinanz Deutsche Vermögensberatung Aktiengesellschaft
+allstate  # generic .allstate Allstate Fire and Casualty Insurance Company
+ally  # generic .ally Ally Financial Inc.
 alsace fr # alsace region france
+alstom  # generic .alstom ALSTOM
 am hy ru  # armenia cctld
+americanexpress  # generic .americanexpress American Express Travel Related Services Company, Inc.
+americanfamily  # generic .americanfamily AmFam, Inc.
+amex  # generic .amex American Express Travel Related Services Company, Inc.
+amfam  # generic .amfam AmFam, Inc.
+amica  # generic .amica Amica Mutual Insurance Company
 amsterdam nl # amsterdam nl
-anz
+an  # country-code .an Retired
+analytics  # generic .analytics Campus IP LLC
+android  # generic .android Charleston Road Registry Inc.
+anquan  # generic .anquan QIHOO 360 TECHNOLOGY CO. LTD.
+anz  # australia nz banking
 ao pt kg  # angola cctld
+aol  # generic .aol AOL Inc.
 apartments
-app
-aq
-ar es-419  # argentina cctld
+app  # owned by google
+apple  # generic .apple Apple Inc.
+aq   # antarctica
+aquarelle  # generic .aquarelle Aquarelle.com
+ar es es-419  # argentina cctld
+arab ar  # generic .arab League of Arab States
+aramco  # generic .aramco Aramco Services Company
 archi
 army
+arpa  # infrastructure .arpa Internet Architecture Board (IAB)
 art
+arte  # generic .arte Association Relative à la Télévision Européenne G.E.I.E.
 as en  # american samoa cctld
+asda  # generic .asda Wal-Mart Stores, Inc.
 asia
 associates
 at de  # austria cctld
+athleta  # generic .athleta The Gap, Inc.
+attorney  # generic .attorney United TLD Holdco, Ltd
 au en  # australia cctld
 auction
 audi
+audible  # generic .audible Amazon Registry Services, Inc.
 audio
+auspost  # generic .auspost Australian Postal Corporation
+author  # generic .author Amazon Registry Services, Inc.
 auto
-aw
+autos  # generic .autos DERAutos, LLC
+avianca  # generic .avianca Aerovias del Continente Americano S.A. Avianca
+aw nl pap # aruba cctld
 aws
-ax
+ax  #  Åland Islands cctld
 axa
 az az ru  # azerbaijan cctld
+azure  # generic .azure Microsoft Corporation
 ba bs sr hr  # bosnia herzegovina
-baidu
+baby  # generic .baby Johnson & Johnson Services, Inc.
+baidu zh
+banamex  # generic .banamex Citigroup Inc.
+bananarepublic  # generic .bananarepublic The Gap, Inc.
 band
 bank
 bar
-barcelona
+barcelona  ca es # barcelona spain
 barclaycard
 barclays
+barefoot  # generic .barefoot Gallo Vineyards, Inc.
 bargains
+baseball  # generic .baseball MLB Advanced Media DH, LLC
+basketball  # generic .basketball Fédération Internationale de Basketball (FIBA)
+bauhaus  # generic .bauhaus Werkhaus GmbH
 bayern de # bavaria germany
-bb
+bb bjs en # barbados cctld
+bbc  # generic .bbc British Broadcasting Corporation
+bbt  # generic .bbt BB&T Corporation
+bbva  # generic .bbva BANCO BILBAO VIZCAYA ARGENTARIA, S.A.
+bcg  # generic .bcg The Boston Consulting Group, Inc.
 bcn ca es # barcelona spain
 bd bn  # bangladesh cctld
 be nl fr de  # belgium cctld
+beats  # generic .beats Beats Electronics, LLC
+beauty  # generic .beauty L'Oréal
 beer
+bentley  # generic .bentley Bentley Motors Limited
 berlin de # berlin germany
 best
+bestbuy  # generic .bestbuy BBY Solutions, Inc.
 bet
 bf fr  # burkina faso cctld
-bg bg  # bulgaria cctld 
+bg bg  # bulgaria cctld
 bh ar  # bahrain cctld
-bi fr sw rn  # burundi cctld 
+bharti  # generic .bharti Bharti Enterprises (Holding) Private Limited
+bi fr sw rn  # burundi cctld
 bible
 bid
 bike
+bing  # generic .bing Microsoft Corporation
 bingo
 bio
 biz
 bj fr yo  # benin cctld
+bl  # country-code .bl Not assigned
 black
+blackfriday  # generic .blackfriday Uniregistry, Corp.
+blanco  # generic .blanco BLANCO GmbH + Co KG
+blockbuster  # generic .blockbuster Dish DBS Corporation
 blog
+bloomberg  # generic .bloomberg Bloomberg IP Holdings LLC
 blue
-bm
+bm en # bermuda cctld
 bms
+bmw  # generic .bmw Bayerische Motoren Werke Aktiengesellschaft
 bn ms zh  # brunei darussalam cctld
-bnpparibas
-bo es-419 qu  # bolivia cctld
+bnl  # generic .bnl Banca Nazionale del Lavoro
+bnpparibas fr
+bo es es-419 qu  # bolivia cctld
+boats  # generic .boats DERBoats, LLC
+boehringer  # generic .boehringer Boehringer Ingelheim International GmbH
+bofa  # generic .bofa NMS Services, Inc.
 bom pt # portuguese
+bond  # generic .bond Bond University Limited
+boo  # generic .boo Charleston Road Registry Inc.
+book  # generic .book Amazon Registry Services, Inc.
+booking  # generic .booking Booking.com B.V.
+boots  # generic .boots THE BOOTS COMPANY PLC
+bosch  # generic .bosch Robert Bosch GMBH
+bostik  # generic .bostik Bostik SA
+boston  # generic .boston Boston TLD Management, LLC
+bot  # generic .bot Amazon Registry Services, Inc.
 boutique
 box
-br pt-BR  # brazil cctld
-bradesco
+bq  # country-code .bq Not assigned
+br pt   # brazil cctld
+bradesco pt
+bridgestone  # generic .bridgestone Bridgestone Corporation
+broadway  # generic .broadway Celebrate Broadway, Inc.
+broker  # generic .broker DOTBROKER REGISTRY LTD
+brother  # generic .brother Brother Industries, Ltd.
 brussels fr nl de # brussels belgium
 bs en  # bahamas cctld
-bt
+bt dz # bhutan cctld
 budapest hu # budapest hungary
+bugatti  # generic .bugatti Bugatti International SA
 build
 builders
 business
+buy  # generic .buy Amazon Registry Services, INC
 buzz
+bv no nn nb  # country-code .bv UNINETT Norid A/S
 bw tn  # botswana cctld
 by be ru  # belarus cctld
-bz es-419 en  # belize cctld
-bzh br # brittany france
+bz es es-419 en  # belize cctld
+bzh br fr # brittany france
 ca en fr  # canada cctld
 cab
 cafe
+cal  # generic .cal Charleston Road Registry Inc.
+call  # generic .call Amazon Registry Services, Inc.
+calvinklein  # generic .calvinklein PVH gTLD Holdings LLC
 cam
 camera
 camp
+cancerresearch  # generic .cancerresearch Australian Cancer Research Foundation
 canon
+capetown  # generic .capetown ZA Central Registry NPC trading as ZA Central Registry
 capital
+capitalone  # generic .capitalone Capital One Financial Corporation
 car
+caravan  # generic .caravan Caravan International, Inc.
 cards
 care
+career  # generic .career dotCareer LLC
 careers
 cars
-casa es it 
+cartier  # generic .cartier Richemont DNS Inc.
+casa es it  # house in spanish, italian
+case  # generic .case CNH Industrial N.V.
+caseih  # generic .caseih CNH Industrial N.V.
 cash
 casino
 cat ca  # catalonia
-cba
-cc
-cd fr in ach lua kg  # democratic republic of the congo cctld
+catering  # generic .catering New Falls. LLC
+catholic  # generic .catholic Pontificium Consilium de Comunicationibus Socialibus (PCCS) (Pontifical Council for Social Communication)
+cba  # commonwealth bank of australia
+cbn  # generic .cbn The Christian Broadcasting Network, Inc.
+cbre  # generic .cbre CBRE, Inc.
+cbs  # generic .cbs CBS Domains Inc.
+cc ms en # cocos (keeling) islands cctld
+cd fr ktu ln in ach lua kg  # democratic republic of the congo cctld
+ceb  # generic .ceb The Corporate Executive Board Company
 center
 ceo
-cern
-cf
+cern fr en
+cf sg fr  # central african republic cctld
 cfa
-cg
+cfd  # generic .cfd DOTCFD REGISTRY LTD
+cg fr ktu ln # republic of the congo cctld
 ch de fr it rm  # switzerland cctld
+chanel  # generic .chanel Chanel International B.V.
+channel  # generic .channel Charleston Road Registry Inc.
+chase  # generic .chase JPMorgan Chase Bank, National Association
 chat
 cheap
+chintai  # generic .chintai CHINTAI Corporation
+chloe  # generic .chloe Richemont DNS Inc.
+christmas  # generic .christmas Uniregistry, Corp.
+chrome  # generic .chrome Charleston Road Registry Inc.
+chrysler  # generic .chrysler FCA US LLC.
 church
 ci fr # cote d'ivoire cctld
+cipriani  # generic .cipriani Hotel Cipriani Srl
+circle  # generic .circle Amazon Registry Services, Inc.
+cisco  # generic .cisco Cisco Technology, Inc.
+citadel  # generic .citadel Citadel Domain LLC
+citi  # generic .citi Citigroup Inc.
+citic  # generic .citic CITIC Group Corporation
 city
+cityeats  # generic .cityeats Lifestyle Domain Holdings, Inc.
 ck en  # cook islands cctld
-cl es-419  # chile cctld
+cl es es-419  # chile cctld
 claims
+cleaning  # generic .cleaning Fox Shadow, LLC
 click
 clinic
+clinique  # generic .clinique The Estée Lauder Companies Inc.
 clothing
 cloud
 club
-cm fr  # cameroon cctld
+clubmed  # generic .clubmed Club Méditerranée S.A.
+cm fr en # cameroon cctld
 cn zh  # china cctld
-co es-419  # colombia cctld
+co es es-419  # colombia cctld
 coach
 codes
 coffee
 college
 cologne de # cologne germany
 com
+comcast  # generic .comcast Comcast IP Holdings I, LLC
+commbank  # generic .commbank COMMONWEALTH BANK OF AUSTRALIA
 community
 company
+compare  # generic .compare iSelect Ltd
 computer
+comsec  # generic .comsec VeriSign, Inc.
+condos  # generic .condos Pine House, LLC
+construction  # generic .construction Fox Dynamite, LLC
 consulting
+contact  # generic .contact Top Level Spectrum, Inc.
 contractors
 cooking
+cookingchannel  # generic .cookingchannel Lifestyle Domain Holdings, Inc.
 cool
 coop
-corsica co  # corsica 
+corsica co  # corsica
+country  # generic .country Top Level Domain Holdings Limited
+coupon  # generic .coupon Amazon Registry Services, Inc.
+coupons  # generic .coupons Black Island, LLC
 courses
-cr es-419  # costa rica cctld
+cr es es-419  # costa rica cctld
 credit
 creditcard
+creditunion  # generic .creditunion CUNA Performance Resources, LLC
 cricket
-cu es-419  # cuba cctld
+crown  # generic .crown Crown Equipment Corporation
+crs  # generic .crs Federated Co-operatives Limited
+cruise  # generic .cruise Viking River Cruises (Bermuda) Ltd.
+cruises  # generic .cruises Spring Way, LLC
+csc  # generic .csc Alliance-One Services, Inc.
+cu es es-419  # cuba cctld
+cuisinella  # generic .cuisinella SALM S.A.S.
 cv pt-PT  # cape verde cctld
-cw
-cx
+cw nl pap en  # curacao cctld
+cx zh ms en  # christmas island cctld
 cy en el tr  # cyprus cctld
-cymru cy  # welsh 
+cymru cy  # welsh
+cyou zh # generic .cyou Beijing Gamease Age Digital Technology Co., Ltd.
 cz cs  # czech republic
+dabur  # generic .dabur Dabur India Limited
+dad  # generic .dad Charleston Road Registry Inc.
 dance
+data  # generic .data Dish DBS Corporation
 date
 dating
+datsun  # generic .datsun NISSAN MOTOR CO., LTD.
+day  # generic .day Charleston Road Registry Inc.
+dclk  # generic .dclk Charleston Road Registry Inc.
+dds  # generic .dds Minds + Machines Group Limited
 de de  # germany cctld
+deal  # generic .deal Amazon Registry Services, Inc.
+dealer  # generic .dealer Dealer Dot Com, Inc.
 deals
+degree  # generic .degree United TLD Holdco, Ltd
 delivery
+dell  # generic .dell Dell Inc.
+deloitte  # generic .deloitte Deloitte Touche Tohmatsu
+delta  # generic .delta Delta Air Lines, Inc.
+democrat  # generic .democrat United TLD Holdco Ltd.
 dental
+dentist  # generic .dentist United TLD Holdco, Ltd
 desi hi # hindi
 design
 dev
@@ -190,359 +358,692 @@ digital
 direct
 directory
 discount
+discover  # generic .discover Discover Financial Services
+dish  # generic .dish Dish DBS Corporation
+diy  # generic .diy Lifestyle Domain Holdings, Inc.
 dj fr ar so  #  djibouti cctld
 dk da fo  # denmark cctld
 dm en  # dominica cctld
-do es-419  # dominican republic cctld
+dnp  # generic .dnp Dai Nippon Printing Co., Ltd.
+do es es-419  # dominican republic cctld
+docs  # generic .docs Charleston Road Registry Inc.
+doctor  # generic .doctor Brice Trail, LLC
+dodge  # generic .dodge FCA US LLC.
 dog
+doha ar  # generic .doha Communications Regulatory Authority (CRA)
 domains
+doosan  # generic .doosan Retired
+dot  # generic .dot Dish DBS Corporation
 download
+drive  # generic .drive Charleston Road Registry Inc.
+dtv  # generic .dtv Dish DBS Corporation
+dubai ar  # generic .dubai Dubai Smart Government Department
+duck  # generic .duck Johnson Shareholdings, Inc.
+dunlop  # generic .dunlop The Goodyear Tire & Rubber Company
+duns  # generic .duns The Dun & Bradstreet Corporation
+dupont  # generic .dupont E. I. du Pont de Nemours and Company
+durban  # generic .durban ZA Central Registry NPC trading as ZA Central Registry
+dvag  # generic .dvag Deutsche Vermögensberatung Aktiengesellschaft DVAG
+dvr  # generic .dvr Hughes Satellite Systems Corporation
 dz fr ar  # algeria cctld
 earth
-ec es-419  # ecuador cctld
+eat  # generic .eat Charleston Road Registry Inc.
+ec es es-419  # ecuador cctld
 eco
+edeka  # generic .edeka EDEKA Verband kaufmännischer Genossenschaften e.V.
 edu
 education
 ee et ru # estonia cctld
 eg ar  # egypt cctld
+eh  # country-code .eh Not assigned
 email
+emerck  # generic .emerck Merck KGaA
 energy
+engineer  # generic .engineer United TLD Holdco Ltd.
 engineering
 enterprises
-epost de 
+epost de
+epson  # generic .epson Seiko Epson Corporation
 equipment
+er ti ar # country-code .er Eritrea Telecommunication Services Corporation (EriTel)
+ericsson  # generic .ericsson Telefonaktiebolaget L M Ericsson
+erni  # generic .erni ERNI Group Holding AG
 es es ca eu # spain cctld
+esq  # generic .esq Charleston Road Registry Inc.
 estate
+esurance  # generic .esurance Esurance Insurance Company
 et am ti so om  # ethiopia cctld
-eu
+etisalat ar  # generic .etisalat Emirates Telecommunications Corporation (trading as Etisalat)
+eu bg hr cs da en et fi fr de el hu ga it lv lt mt pl pt ro sk sl es sv  # european union cctld
+eurovision  # generic .eurovision European Broadcasting Union (EBU)
 eus eu # basque
 events
+everbank  # generic .everbank EverBank
 exchange
 expert
 exposed
 express
+extraspace  # generic .extraspace Extra Space Storage LLC
 fage
 fail
+fairwinds  # generic .fairwinds FairWinds Partners, LLC
 faith
 family
+fan  # generic .fan Asiamix Digital Ltd
 fans
 farm
+farmers  # generic .farmers Farmers Insurance Exchange
 fashion
+fast  # generic .fast Amazon Registry Services, Inc.
+fedex  # generic .fedex Federal Express Corporation
+feedback  # generic .feedback Top Level Spectrum, Inc.
+ferrari  # generic .ferrari Fiat Chrysler Automobiles N.V.
+ferrero  # generic .ferrero Ferrero Trading Lux S.A.
 fi fi sv  # finland cctld
+fiat  # generic .fiat Fiat Chrysler Automobiles N.V.
+fidelity  # generic .fidelity Fidelity Brokerage Services LLC
+fido  # generic .fido Rogers Communications Canada Inc.
 film
+final  # generic .final Núcleo de Informação e Coordenação do Ponto BR - NIC.br
 finance
 financial
+fire  # generic .fire Amazon Registry Services, Inc.
+firestone  # generic .firestone Bridgestone Licensing Services, Inc.
+firmdale  # generic .firmdale Firmdale Holdings Limited
 fish
 fishing
 fit
 fitness
 fj en  # fiji cctld
-fk
+fk en  # falkland islands cctld
+flickr  # generic .flickr Yahoo! Domain Services Inc.
 flights
+flir  # generic .flir FLIR Systems, Inc.
+florist  # generic .florist Half Cypress, LLC
 flowers
+flsmidth  # generic .flsmidth Retired
+fly  # generic .fly Charleston Road Registry Inc.
 fm en  # micronesia cctld
-fo
+fo fo da  # faroe islands cctld
+foo  # generic .foo Charleston Road Registry Inc.
+food  # generic .food Lifestyle Domain Holdings, Inc.
+foodnetwork  # generic .foodnetwork Lifestyle Domain Holdings, Inc.
 football
+ford  # generic .ford Ford Motor Company
+forex  # generic .forex DOTFOREX REGISTRY LTD
 forsale
+forum  # generic .forum Fegistry, LLC
 foundation
+fox  # generic .fox FOX Registry, LLC
 fr fr  # france cctld
+free  # generic .free Amazon Registry Services, Inc.
+fresenius  # generic .fresenius Fresenius Immobilien-Verwaltungs-GmbH
 frl fy # frisian
+frogans  # generic .frogans OP3FT
+frontdoor  # generic .frontdoor Lifestyle Domain Holdings, Inc.
+frontier  # generic .frontier Frontier Communications Corporation
+ftr  # generic .ftr Frontier Communications Corporation
+fujitsu  # generic .fujitsu Fujitsu Limited
+fujixerox  # generic .fujixerox Xerox DNHC LLC
 fun
 fund
 furniture
-futbol es # spanish
+futbol es es-419 # spanish
 fyi
 ga fr # gabon cctld
 gal gl # galician
 gallery
+gallo  # generic .gallo Gallo Vineyards, Inc.
+gallup  # generic .gallup Gallup, Inc.
 game
 games
+gap  # generic .gap The Gap, Inc.
 garden
-gd
+gb en cy gd kw # country-code .gb Reserved Domain - IANA
+gbiz  # generic .gbiz Charleston Road Registry Inc.
+gd en gcl # grenada cctld
 gdn
 ge ka  # georgia cctld
+gea  # generic .gea GEA Group Aktiengesellschaft
 gent nl fr de # ghent belgium
-gf
+genting  # generic .genting Resorts World Inc. Pte. Ltd.
+george  # generic .george Wal-Mart Stores, Inc.
+gf fr gcr # french guiana cctld
 gg en fr  # guernsey cctld
+ggee  # generic .ggee GMO Internet, Inc.
 gh en ha ak ee gaa  # ghana cctld
 gi en es it pt-PT  # gibraltar
 gift
 gifts
 gives
+giving  # generic .giving Giving Limited
 gl da  # greenland cctld
+glade  # generic .glade Johnson Shareholdings, Inc.
 glass
+gle  # generic .gle Charleston Road Registry Inc.
 global
-globo
+globo pt
 gm en wo  # gamia cctld
 gmail
 gmbh de
-gn
+gmo  # generic .gmo GMO Internet, Inc.
+gmx  # generic .gmx 1&1 Mail & Media GmbH
+gn fr # guinea cctld
+godaddy  # generic .godaddy Go Daddy East, LLC
 gold
+goldpoint  # generic .goldpoint YODOBASHI CAMERA CO.,LTD.
 golf
+goo  # generic .goo NTT Resonant Inc.
+goodhands  # generic .goodhands Allstate Fire and Casualty Insurance Company
+goodyear  # generic .goodyear The Goodyear Tire & Rubber Company
+goog  # generic .goog Charleston Road Registry Inc.
 google
 gop
+got  # generic .got Amazon Registry Services, Inc.
 gov
 gp fr  # guadeloupe cctld
-gq
+gq es fr pt # equatorial guinea cctld
 gr el  # greece cctld
+grainger  # generic .grainger Grainger Registry Services, LLC
 graphics
-gratis es # spanish
+gratis es it # spanish, italian
 green
 gripe
 group
-gs
-gt es-419  # guatemala cctld
+gs en  # south georgia and south sandwich islands
+gt es es-419  # guatemala cctld
+gu en ch  # country-code .gu University of GuamComputer Center
+guardian  # generic .guardian The Guardian Life Insurance Company of America
+gucci  # generic .gucci Guccio Gucci S.p.a.
+guge  # generic .guge Charleston Road Registry Inc.
 guide
 guitars
 guru
-gw
+gw pt # guinea-bissau cctld
 gy en # guyana cctld
+hair  # generic .hair L'Oreal
 hamburg de # hamburg germany
+hangout  # generic .hangout Charleston Road Registry Inc.
 haus de # german
+hbo  # generic .hbo HBO Registry Services, Inc.
+hdfc  # generic .hdfc HOUSING DEVELOPMENT FINANCE CORPORATION LIMITED
+hdfcbank  # generic .hdfcbank HDFC Bank Limited
+health  # generic .health DotHealth, LLC
+healthcare  # generic .healthcare Silver Glen, LLC
 help
 helsinki fi # helsinki finland
+here  # generic .here Charleston Road Registry Inc.
+hermes  # generic .hermes Hermes International
+hgtv  # generic .hgtv Lifestyle Domain Holdings, Inc.
 hiphop
+hisamitsu  # generic .hisamitsu Hisamitsu Pharmaceutical Co.,Inc.
 hitachi
+hiv  # generic .hiv Uniregistry, Corp.
 hk zh   # hong kong cctld
-hm
-hn es-419  # honduras cctld
+hkt  # generic .hkt PCCW-HKT DataCom Services Limited
+hm en # heard island and mcdonald islands, aus
+hn es es-419  # honduras cctld
 hockey
 holdings
 holiday
+homedepot  # generic .homedepot Home Depot Product Authority, LLC
+homegoods  # generic .homegoods The TJX Companies, Inc.
+homes  # generic .homes DERHomes, LLC
+homesense  # generic .homesense The TJX Companies, Inc.
+honda  # generic .honda Honda Motor Co., Ltd.
+honeywell  # generic .honeywell Honeywell GTLD LLC
 horse
+hospital  # generic .hospital Ruby Pike, LLC
 host
 hosting
 hot
 hoteles es # spanish
+hotels  # generic .hotels Booking.com B.V.
+hotmail  # generic .hotmail Microsoft Corporation
 house
 how
 hr hr  # croatia cctld
+hsbc  # generic .hsbc HSBC Global Services (UK) Limited
 ht fr ht # haiti cctld
+htc  # generic .htc HTC corporation
 hu hu  # hungary cctld
+hughes  # generic .hughes Hughes Satellite Systems Corporation
+hyatt  # generic .hyatt Hyatt GTLD, L.L.C.
+hyundai  # generic .hyundai Hyundai Motor Company
+ibm  # generic .ibm International Business Machines Corporation
+icbc  # generic .icbc Industrial and Commercial Bank of China Limited
 ice
+icu  # generic .icu One.com A/S
 id id jw  # indonesia cctld
 ie en ga  # ireland cctld
+ieee  # generic .ieee IEEE Global LLC
 ifm
-il ar iw   # israel cctld
+iinet  # generic .iinet Retired
+ikano  # generic .ikano Ikano S.A.
+il ar iw he  # israel cctld
 im en # isle of man cctld
+imamat  # generic .imamat Fondation Aga Khan (Aga Khan Foundation)
+imdb  # generic .imdb Amazon Registry Services, Inc.
 immo fr de it # abbr for real estate
 immobilien de
 in en hi bn te mr ta gu kn ml pa  # india cctld
 industries
+infiniti  # generic .infiniti NISSAN MOTOR CO., LTD.
 info
+ing  # generic .ing Charleston Road Registry Inc.
 ink
 institute
+insurance  # generic .insurance fTLD Registry Services LLC
 insure
 int
+intel  # generic .intel Intel Corporation
 international
+intuit  # generic .intuit Intuit Administrative Services, Inc.
 investments
-io
+io en # british indian ocean territory; used widely for non-cctld purposes
+ipiranga  # generic .ipiranga Ipiranga Produtos de Petroleo S.A.
 iq ckb ar  # iraq cctld
-ir
+ir fa  # iran cctld
 irish ga en # ireland
 is is  # iceland cctld
+iselect  # generic .iselect iSelect Ltd
+ismaili  # generic .ismaili Fondation Aga Khan (Aga Khan Foundation)
 ist tr # turkish
 istanbul tr # turkish
 it it  # italy cctld
+itau  # generic .itau Itau Unibanco Holding S.A.
+itv  # generic .itv ITV Services Limited
+iveco  # generic .iveco CNH Industrial N.V.
+iwc  # generic .iwc Richemont DNS Inc.
+jaguar  # generic .jaguar Jaguar Land Rover Ltd
 java
 jcb
+jcp  # generic .jcp JCP Media, Inc.
 je fr en # jersey cctld
-jetzt de 
+jeep  # generic .jeep FCA US LLC.
+jetzt de
 jewelry
+jio  # generic .jio Affinity Names, Inc.
+jlc  # generic .jlc Richemont DNS Inc.
+jll  # generic .jll Jones Lang LaSalle Incorporated
 jm en  # jamaica cctld
+jmp  # generic .jmp Matrix IP LLC
+jnj  # generic .jnj Johnson & Johnson Services, Inc.
 jo ar  # jordan cctld
 jobs
-jp jp  # japan cctld
+joburg  # generic .joburg ZA Central Registry NPC trading as ZA Central Registry
+jot  # generic .jot Amazon Registry Services, Inc.
+joy  # generic .joy Amazon Registry Services, Inc.
+jp ja  # japan cctld
+jpmorgan  # generic .jpmorgan JPMorgan Chase Bank, National Association
+jprs  # generic .jprs Japan Registry Services Co., Ltd.
 juegos es # spanish
-kaufen de
+juniper  # generic .juniper JUNIPER NETWORKS, INC.
+kaufen de # german "to buy"
+kddi  # generic .kddi KDDI CORPORATION
 ke sw  # kenya cctld
+kerryhotels  # generic .kerryhotels Kerry Trading Co. Limited
+kerrylogistics  # generic .kerrylogistics Kerry Trading Co. Limited
+kerryproperties  # generic .kerryproperties Kerry Trading Co. Limited
+kfh  # generic .kfh Kuwait Finance House
 kg ky ru  # kyrgyzstan cctld
 kh kh  # cambodia cctld
 ki en # kiribati cctld
+kia  # generic .kia KIA MOTORS CORPORATION
 kim
-kinder de 
+kinder de
+kindle  # generic .kindle Amazon Registry Services, Inc.
 kitchen
 kiwi en mi # new zealand
-kn
+km swb wlc wni zdj ar fr # country-code .km Comores Telecom 
+kn en # st kitts and nevis
 koeln de # cologne germany
 komatsu
-kp
+kosher  # generic .kosher Kosher Marketing Assets LLC
+kp ko  # north korea cctld
+kpmg  # generic .kpmg KPMG International Cooperative (KPMG International Genossenschaft)
+kpn  # generic .kpn Koninklijke KPN N.V.
 kr ko  # south korea cctld
 krd ku # kurdistan cctld
 kred
+kuokgroup  # generic .kuokgroup Kerry Trading Co. Limited
 kw ar  # kuwait cctld
-ky
-kyoto jp # kyoto japan
+ky en  # cayman islands cctld
+kyoto ja # kyoto japan
 kz kk ru  # kazakhstan cctld
 la lo  # lao people's democratic republic
+lacaixa ca # generic .lacaixa CAIXA D'ESTALVIS I PENSIONS DE BARCELONA
+ladbrokes  # generic .ladbrokes LADBROKES INTERNATIONAL PLC
+lamborghini  # generic .lamborghini Automobili Lamborghini S.p.A.
+lamer  # generic .lamer The Estée Lauder Companies Inc.
+lancaster  # generic .lancaster LANCASTER
+lancia  # generic .lancia Fiat Chrysler Automobiles N.V.
+lancome  # generic .lancome L'Oréal
 land
-lat es-419 es # latin america
+landrover  # generic .landrover Jaguar Land Rover Ltd
+lanxess  # generic .lanxess LANXESS Corporation
+lasalle  # generic .lasalle Jones Lang LaSalle Incorporated
+lat es es-419 es # latin america
+latino  # generic .latino Dish DBS Corporation
+latrobe  # generic .latrobe La Trobe University
 law
 lawyer
 lb ar fr hy  # lebanon cctld
-lc
+lc en acf # st lucia cctld
+lds  # generic .lds IRI Domain Management, LLC
 lease
 leclerc
+lefrak  # generic .lefrak LeFrak Organization, Inc.
 legal
+lego  # generic .lego LEGO Juris A/S
+lexus  # generic .lexus TOYOTA MOTOR CORPORATION
 lgbt
 li de  # liechtenstein cctld
+liaison  # generic .liaison Liaison Technologies, Incorporated
 lidl
 life
+lifeinsurance  # generic .lifeinsurance American Council of Life Insurers
+lifestyle  # generic .lifestyle Lifestyle Domain Holdings, Inc.
 lighting
+like  # generic .like Amazon Registry Services, Inc.
+lilly  # generic .lilly Eli Lilly and Company
 limited
+limo  # generic .limo Hidden Frostbite, LLC
+lincoln  # generic .lincoln Ford Motor Company
+linde  # generic .linde Linde Aktiengesellschaft
 link
+lipsy  # generic .lipsy Lipsy Ltd
 live
+living  # generic .living Lifestyle Domain Holdings, Inc.
+lixil  # generic .lixil LIXIL Group Corporation
 lk en si ta  # sri lanka cctld
 loan
 loans
+locker  # generic .locker Dish DBS Corporation
+locus  # generic .locus Locus Analytics LLC
+loft  # generic .loft Annco, Inc.
 lol
 london en # london uk
+lotte  # generic .lotte Lotte Holdings Co., Ltd.
+lotto  # generic .lotto Afilias plc
 love
-lr
-ls st en  # lesotho cctld 
+lpl  # generic .lpl LPL Holdings, Inc.
+lplfinancial  # generic .lplfinancial LPL Holdings, Inc.
+lr en lir  # liberia cctld
+ls st en  # lesotho cctld
 lt lt  # lithuania cctld
 ltd
 ltda es # spanish
 lu de fr # luxembourg cctld
+lundbeck  # generic .lundbeck H. Lundbeck A/S
+lupin  # generic .lupin LUPIN LIMITED
+luxe  # generic .luxe Top Level Domain Holdings Limited
 luxury
 lv lv lt ru  # latvia cctld
 ly ar it  # libya cctld
-ma fr ar  # morocco cctld 
+ma fr ar  # morocco cctld
+macys  # generic .macys Macys, Inc.
 madrid es # madrid spain
+maif  # generic .maif Mutuelle Assurance Instituteur France (MAIF)
 maison fr
+makeup  # generic .makeup L'Oréal
+man  # generic .man MAN SE
 management
+mango  # generic .mango PUNTO FA S.L.
 market
 marketing
 markets
+marriott  # generic .marriott Marriott Worldwide Corporation
+marshalls  # generic .marshalls The TJX Companies, Inc.
+maserati  # generic .maserati Fiat Chrysler Automobiles N.V.
+mattel  # generic .mattel Mattel Sites, Inc.
 mba
-mc
+mc fr  # monaco cctld
+mcd  # generic .mcd McDonald’s Corporation
+mcdonalds  # generic .mcdonalds McDonald’s Corporation
+mckinsey  # generic .mckinsey McKinsey Holdings, Inc.
 md mo ru  # moldova cctld
 me sr-ME sr  # montenegro cctld
+med  # generic .med Medistry LLC
 media
+meet  # generic .meet Charleston Road Registry Inc.
 melbourne en # melbourne australia
+meme  # generic .meme Charleston Road Registry Inc.
+memorial  # generic .memorial Dog Beach, LLC
 men
 menu
+meo  # generic .meo MEO Serviços de Comunicações e Multimédia, S.A.
+metlife  # generic .metlife MetLife Services and Solutions, LLC
+mf  # country-code .mf Not assigned
 mg mg fr # madagascar cctld
-mil
+mh mh en  # country-code .mh Office of the Cabinet Marshall Islands
+miami  # generic .miami Top Level Domain Holdings Limited
+microsoft  # generic .microsoft Microsoft Corporation
+mil en  # us dod
+mini  # generic .mini Bayerische Motoren Werke Aktiengesellschaft
+mint  # generic .mint Intuit Administrative Services, Inc.
+mit  # generic .mit Massachusetts Institute of Technology
+mitsubishi  # generic .mitsubishi Mitsubishi Corporation
 mk mk  # macedonia cctld
 ml fr  # mali cctld
-mm
+mlb  # generic .mlb MLB Advanced Media DH, LLC
+mls  # generic .mls The Canadian Real Estate Association
+mm my # myanmar cctld
 mma
 mn mn # mongolia cctld
-mo
+mo zh pt # macau cctld
 mobi
-moda it 
-moe
+mobile  # generic .mobile Dish DBS Corporation
+mobily  # generic .mobily GreenTech Consultancy Company W.L.L.
+moda it
+moe ja # japanese slang word 'moe'
+moi  # generic .moi Amazon Registry Services, Inc.
 mom
 monash
 money
+monster  # generic .monster Monster Worldwide, Inc.
+montblanc  # generic .montblanc Richemont DNS Inc.
+mopar  # generic .mopar FCA US LLC.
+mormon  # generic .mormon IRI Domain Management, LLC ("Applicant")
 mortgage
 moscow ru # moscow russia
+moto  # generic .moto Motorola Trademark Holdings, LLC
+motorcycles  # generic .motorcycles DERMotorcycles, LLC
+mov  # generic .mov Charleston Road Registry Inc.
 movie
-mp
-mq
-mr
+movistar  # generic .movistar Telefónica S.A.
+mp en ch cal # northern mariana islands cctld
+mq fr # martinique cctld
+mr fr # Mauritania cctld
 ms en # monserrat cctld
+msd  # generic .msd MSD Registry Holdings, Inc.
 mt mt  # malta cctld
+mtn  # generic .mtn MTN Dubai Limited
+mtpc  # generic .mtpc Retired
+mtr  # generic .mtr MTR Corporation Limited
 mu en fr mfe # mauritius cctld
 museum
+mutual  # generic .mutual Northwestern Mutual MU TLD Registry, LLC
+mutuelle  # generic .mutuelle Retired
 mv en # maldives cctld
 mw ny tum # malawi cctld
-mx es-419 # mexico cctld
+mx es es-419 # mexico cctld
 my ms  # malaysia cctld
 mz pt sw ny sn   # mozambique cctld
 na en af de  # namibia cctld
-nagoya jp # nagoya japan
+nab  # generic .nab National Australia Bank Limited
+nadex  # generic .nadex Nadex Domains, Inc
+nagoya ja # nagoya japan
 name
+nationwide  # generic .nationwide Nationwide Mutual Insurance Company
+natura  # generic .natura NATURA COSMÉTICOS S.A.
 navy
-nc
+nba  # generic .nba NBA REGISTRY, LLC
+nc fr  # new caledonia cctld
 ne fr ha # niger cctld
+nec  # generic .nec NEC Corporation
 net
+netbank  # generic .netbank COMMONWEALTH BANK OF AUSTRALIA
+netflix  # generic .netflix Netflix, Inc.
 network
 neustar
+new  # generic .new Charleston Road Registry Inc.
+newholland  # generic .newholland CNH Industrial N.V.
 news
+next  # generic .next Next plc
+nextdirect  # generic .nextdirect Next plc
+nexus  # generic .nexus Charleston Road Registry Inc.
 nf en  # norfolk island cctld
+nfl  # generic .nfl NFL Reg Ops LLC
 ng en ha ig yo pcm  # nigeria cctld
 ngo
-ni es-419  # nicaragua cctld
+nhk  # generic .nhk Japan Broadcasting Corporation (NHK)
+ni es es-419  # nicaragua cctld
 nico
+nike  # generic .nike NIKE, Inc.
+nikon  # generic .nikon NIKON CORPORATION
 ninja
+nissan  # generic .nissan NISSAN MOTOR CO., LTD.
+nissay  # generic .nissay Nippon Life Insurance Company
 nl nl # netherlands cctld
-no no nn # norway cctld
+no no nn nb # norway cctld
+nokia  # generic .nokia Nokia Corporation
+northwesternmutual  # generic .northwesternmutual Northwestern Mutual Registry, LLC
+norton  # generic .norton Symantec Corporation
 now
+nowruz  # generic .nowruz Asia Green IT System Bilgisayar San. ve Tic. Ltd. Sti.
+nowtv  # generic .nowtv Starbucks (HK) Limited
 np ne  # nepal cctld
 nr en  # nauru cctld
+nra  # generic .nra NRA Holdings Company, INC.
 nrw de # north rhein westphalia
+ntt  # generic .ntt NIPPON TELEGRAPH AND TELEPHONE CORPORATION
 nu en # niue cctld
-nyc
+nyc en # new york city, usa
 nz en mi  # new zealand cctld
+obi  # generic .obi OBI Group Holding SE & Co. KGaA
+observer  # generic .observer Top Level Spectrum, Inc.
+off  # generic .off Johnson Shareholdings, Inc.
 office
-okinawa jp # okinawa japan
+okinawa ja # okinawa japan
+olayan  # generic .olayan Crescent Holding GmbH
+olayangroup  # generic .olayangroup Crescent Holding GmbH
+oldnavy  # generic .oldnavy The Gap, Inc.
+ollo  # generic .ollo Dish DBS Corporation
 om ar  # oman cctld
+omega  # generic .omega The Swatch Group Ltd
 one
 ong
 onl
 online
+onyourside  # generic .onyourside Nationwide Mutual Insurance Company
 ooo
+open  # generic .open American Express Travel Related Services Company, Inc.
+oracle  # generic .oracle Oracle Corporation
 orange
 org
-osaka jp # osaka japan
+organic  # generic .organic Afilias plc
+orientexpress  # generic .orientexpress Retired
+origins  # generic .origins The Estée Lauder Companies Inc.
+osaka ja # osaka japan
+otsuka  # generic .otsuka Otsuka Holdings Co., Ltd.
+ott  # generic .ott Dish DBS Corporation
 ovh
-pa es-419  # panama cctld
+pa es es-419  # panama cctld
+page  # generic .page Charleston Road Registry Inc.
+pamperedchef  # generic .pamperedchef The Pampered Chef, Ltd.
+panasonic  # generic .panasonic Panasonic Corporation
+panerai  # generic .panerai Richemont DNS Inc.
 paris fr # paris france
+pars  # generic .pars Asia Green IT System Bilgisayar San. ve Tic. Ltd. Sti.
 partners
 parts
 party
 passagens pt  # portuguese
-pe es-419 qu # peru cctld
+pay  # generic .pay Amazon Registry Services, Inc.
+pccw  # generic .pccw PCCW Enterprises Limited
+pe es es-419 qu # peru cctld
 pet
-pf
-pg
+pf fr # french polynesia cctld
+pfizer  # generic .pfizer Pfizer Inc.
+pg amm awb ayq bey bjl bmn bpw don kcl kmf kol kue kxr leu lle mdc mds mjn mtf mti nmx pby ped sbc sim spe uro wmo en # papua new guinea cctld
 ph tl  # philippines cctld
 pharmacy
+philips  # generic .philips Koninklijke Philips N.V.
+phone  # generic .phone Dish DBS Corporation
 photo
 photography
 photos
 physio
+piaget  # generic .piaget Richemont DNS Inc.
 pics
 pictet
 pictures
+pid  # generic .pid Top Level Spectrum, Inc.
+pin  # generic .pin Amazon Registry Services, Inc.
+ping  # generic .ping Ping Registry Provider, Inc.
 pink
 pioneer
 pizza
 pk en ur  # pakistan cctld
 pl pl # poland cctld
 place
+play  # generic .play Charleston Road Registry Inc.
+playstation  # generic .playstation Sony Computer Entertainment Inc.
 plumbing
 plus
-pm
+pm fr # st pierre and miquelon cctld
 pn en # pitcairn cctld
+pnc  # generic .pnc PNC Domain Co., LLC
+pohl  # generic .pohl Deutsche Vermögensberatung Aktiengesellschaft DVAG
 poker
+politie  # generic .politie Politie Nederland
 porn
 post
-pr es-419   # puerto rico cctld
+pr es es-419   # puerto rico cctld
+pramerica  # generic .pramerica Prudential Financial, Inc.
 praxi
 press
+prime  # generic .prime Amazon Registry Services, Inc.
 pro
 prod
 productions
+prof  # generic .prof Charleston Road Registry Inc.
+progressive  # generic .progressive Progressive Casualty Insurance Company
 promo
 properties
 property
+protection  # generic .protection XYZ.COM LLC
+pru  # generic .pru Prudential Financial, Inc.
+prudential  # generic .prudential Prudential Financial, Inc.
 ps ar # palestine cctld
-pt pt-PT # portugal cctld
+pt pt pt-PT # portugal cctld
 pub
-pw
-py es-419  # paraguay cctld
+pw pau ja sov tox en # palau cctld
+pwc  # generic .pwc PricewaterhouseCoopers LLP
+py es es-419  # paraguay cctld
 qa ar  # qatar cctld
+qpon  # generic .qpon dotCOOL, Inc.
 quebec fr # quebec canada
+quest  # generic .quest Quest ION Limited
+qvc  # generic .qvc QVC, Inc.
 racing
-re
+radio  # generic .radio European Broadcasting Union (EBU)
+raid  # generic .raid Johnson Shareholdings, Inc.
+re fr # reunion cctld
+read  # generic .read Amazon Registry Services, Inc.
+realestate  # generic .realestate dotRealEstate LLC
 realtor
+realty  # generic .realty Fegistry, LLC
 recipes
 red
+redstone  # generic .redstone Redstone Haute Couture Co., Ltd.
+redumbrella  # generic .redumbrella Travelers TLD, LLC
+rehab  # generic .rehab United TLD Holdco Ltd.
 reise de
 reisen de
+reit  # generic .reit National Association of Real Estate Investment Trusts, Inc.
+reliance  # generic .reliance Reliance Industries Limited
 ren
 rent
 rentals
@@ -553,214 +1054,519 @@ rest
 restaurant
 review
 reviews
+rexroth  # generic .rexroth Robert Bosch GMBH
+rich  # generic .rich I-REGISTRY Ltd., Niederlassung Deutschland
+richardli  # generic .richardli Pacific Century Asset Management (HK) Limited
 ricoh
+rightathome  # generic .rightathome Johnson Shareholdings, Inc.
+ril  # generic .ril Reliance Industries Limited
 rio pt pt-BR # brazilian portuguese
 rip
+rmit  # generic .rmit Royal Melbourne Institute of Technology
 ro ro hu de # romania cctld
+rocher  # generic .rocher Ferrero Trading Lux S.A.
 rocks
+rodeo  # generic .rodeo Top Level Domain Holdings Limited
+rogers  # generic .rogers Rogers Communications Canada Inc.
+room  # generic .room Amazon Registry Services, Inc.
 rs sr  # serbia cctld
+rsvp  # generic .rsvp Charleston Road Registry Inc.
 ru ru  # russia cctld
+rugby  # generic .rugby World Rugby Strategic Developments Limited
 ruhr de # ruhr germany
 run
 rw en fr sw rw  # rwanda cctld
-ryukyu jp  # ryukyu japan
+rwe  # generic .rwe RWE AG
+ryukyu ja  # ryukyu japan
 sa ar  # saudi arabia cctld
 saarland de # saarland germany
+safe  # generic .safe Amazon Registry Services, Inc.
+safety  # generic .safety Safety Registry Services, LLC.
+sakura  # generic .sakura SAKURA Internet Inc.
 sale
 salon
+samsclub  # generic .samsclub Wal-Mart Stores, Inc.
+samsung  # generic .samsung SAMSUNG SDS CO., LTD
 sandvik
+sandvikcoromant  # generic .sandvikcoromant Sandvik AB
+sanofi  # generic .sanofi Sanofi
 sap
+sapo  # generic .sapo MEO Serviços de Comunicações e Multimédia, S.A.
 sarl fr
+sas  # generic .sas Research IP LLC
+save  # generic .save Amazon Registry Services, Inc.
 saxo
 sb en  # solomon islands cctld
-sbi
+sbi # state bank of india
+sbs  # generic .sbs SPECIAL BROADCASTING SERVICE CORPORATION
 sc crs fr en  # seychelles cctld
+sca  # generic .sca SVENSKA CELLULOSA AKTIEBOLAGET SCA (publ)
+scb  # generic .scb The Siam Commercial Bank Public Company Limited ("SCB")
+schaeffler  # generic .schaeffler Schaeffler Technologies AG & Co. KG
 schmidt
+scholarships  # generic .scholarships Scholarships.com, LLC
 school
 schule de
+schwarz  # generic .schwarz Schwarz Domains und Services GmbH & Co. KG
 science
+scjohnson  # generic .scjohnson Johnson Shareholdings, Inc.
+scor  # generic .scor SCOR SE
 scot gd en # scotland
-sd
+sd ar en # sudan cctld
 se sv  # sweden cctld
+seat  # generic .seat SEAT, S.A. (Sociedad Unipersonal)
+secure  # generic .secure Amazon Registry Services, Inc.
+security  # generic .security XYZ.COM LLC
+seek  # generic .seek Seek Limited
+select  # generic .select iSelect Ltd
+sener  # generic .sener Sener Ingeniería y Sistemas, S.A.
 services
+ses  # generic .ses SES
+seven  # generic .seven Seven West Media Ltd
+sew  # generic .sew SEW-EURODRIVE GmbH & Co KG
 sex
 sexy
+sfr  # generic .sfr Societe Francaise du Radiotelephone - SFR
 sg en zh ms ta  # singapore cctld
 sh en # st helena cctld
+shangrila  # generic .shangrila Shangri‐La International Hotel Management Limited
+sharp  # generic .sharp Sharp Corporation
+shaw  # generic .shaw Shaw Cablesystems G.P.
 shell
+shia  # generic .shia Asia Green IT System Bilgisayar San. ve Tic. Ltd. Sti.
 shiksha hi # hindi
 shoes
 shop
 shopping
 shouji zh
 show
+showtime  # generic .showtime CBS Domains Inc.
+shriram  # generic .shriram Shriram Capital Ltd.
 si sl # slovenia cctld
+silk  # generic .silk Amazon Registry Services, Inc.
+sina  # generic .sina Sina Corporation
 singles
 site
+sj no # country-code .sj UNINETT Norid A/S
 sk sk # slovakia cctld
 ski
+skin  # generic .skin L'Oréal
 sky
-sl en kri  # sierra leone cctld 
+skype  # generic .skype Microsoft Corporation
+sl en kri  # sierra leone cctld
+sling  # generic .sling Hughes Satellite Systems Corporation
 sm it  # san marino cctld
+smart  # generic .smart Smart Communications, Inc. (SMART)
+smile  # generic .smile Amazon Registry Services, Inc.
 sn fr wo # senegal cctld
+sncf  # generic .sncf SNCF (Société Nationale des Chemins de fer Francais)
 so so ar  # somalia cctld
+soccer  # generic .soccer Foggy Shadow, LLC
 social
+softbank  # generic .softbank SoftBank Group Corp.
 software
+sohu  # generic .sohu Sohu.com Limited
 solar
 solutions
+song  # generic .song Amazon Registry Services, Inc.
+sony  # generic .sony Sony Corporation
 soy es # spanish
 space
-sr
+spiegel  # generic .spiegel SPIEGEL-Verlag Rudolf Augstein GmbH & Co. KG
+spot  # generic .spot Amazon Registry Services, Inc.
+spreadbetting  # generic .spreadbetting DOTSPREADBETTING REGISTRY LTD
+sr nl bho jv # suriname cctld
 srl
-st pt-PT # sao tome cctld
+srt  # generic .srt FCA US LLC.
+ss  # country-code .ss Not assigned
+st pt pt-PT # sao tome cctld
+stada  # generic .stada STADA Arzneimittel AG
+staples  # generic .staples Staples, Inc.
+star  # generic .star Star India Private Limited
+starhub  # generic .starhub StarHub Limited
+statebank  # generic .statebank STATE BANK OF INDIA
+statefarm  # generic .statefarm State Farm Mutual Automobile Insurance Company
+statoil  # generic .statoil Statoil ASA
+stc  # generic .stc Saudi Telecom Company
+stcgroup  # generic .stcgroup Saudi Telecom Company
 stockholm sv # stockholm sweden
+storage  # generic .storage XYZ.COM LLC
 store
 stream
 studio
 study
 style
-su
+su ru # soviet union cctld
+sucks  # generic .sucks Vox Populi Registry Ltd.
 supplies
 supply
 support
 surf
-sv es-419  # el salvador cctld
+surgery  # generic .surgery Tin Avenue, LLC
+suzuki  # generic .suzuki SUZUKI MOTOR CORPORATION
+sv es es-419  # el salvador cctld
 swatch
+swiftcover  # generic .swiftcover Swiftcover Insurance Services Limited
 swiss de fr it rm # switzerland
-sx
-sy
+sx nl en # sint maarten
+sy ar # syria cctld
+sydney  # generic .sydney State of New South Wales, Department of Premier and Cabinet
+symantec  # generic .symantec Symantec Corporation
 systems
-sz
+sz en  # swaziland cctld
+tab  # generic .tab Tabcorp Holdings Limited
 taipei zh # taipei taiwan
+talk  # generic .talk Amazon Registry Services, Inc.
+taobao  # generic .taobao Alibaba Group Holding Limited
+target  # generic .target Target Domain Holdings, LLC
+tatamotors  # generic .tatamotors Tata Motors Ltd
 tatar tt # tatar region
 tattoo
 tax
 taxi
-tc
+tc en # turks and caicos cctld
+tci  # generic .tci Asia Green IT System Bilgisayar San. ve Tic. Ltd. Sti.
 td fr ar  # chad cctld
+tdk  # generic .tdk TDK Corporation
 team
 tech
 technology
+tel  # sponsored .tel Telnames Ltd.
+telecity  # generic .telecity TelecityGroup International Limited
 telefonica
+temasek  # generic .temasek Temasek Holdings (Private) Limited
 tennis
-tf
+teva  # generic .teva Teva Pharmaceutical Industries Limited
+tf fr # french southern and antarctic lands
 tg fr ee # togo cctld
 th th  # thailand cctld
+thd  # generic .thd Home Depot Product Authority, LLC
 theater
+theatre  # generic .theatre XYZ.COM LLC
+tiaa  # generic .tiaa Teachers Insurance and Annuity Association of America
 tickets
 tienda es # spanish
+tiffany  # generic .tiffany Tiffany and Company
 tips
+tires  # generic .tires Dog Edge, LLC
 tirol de it # tirol
 tj tg ru  # tajikistan cctld
+tjmaxx  # generic .tjmaxx The TJX Companies, Inc.
+tjx  # generic .tjx The TJX Companies, Inc.
 tk en # tokelau cctld
+tkmaxx  # generic .tkmaxx The TJX Companies, Inc.
 tl pt-PT  # timor-leste cctld
 tm tk ru uz  # turkmenistan cctld
+tmall  # generic .tmall Alibaba Group Holding Limited
 tn ar fr # tunisia cctld
 to en to  # tonga cctld
 today
-tokyo jp # tokyo japan
+tokyo ja # tokyo japan
 tools
 top
+toray  # generic .toray Toray Industries, Inc.
+toshiba  # generic .toshiba TOSHIBA Corporation
+total  # generic .total Total SA
 tours
 town
+toyota  # generic .toyota TOYOTA MOTOR CORPORATION
 toys
+tp  # country-code .tp Retired
 tr tr  # turkey cctld
 trade
+trading  # generic .trading DOTTRADING REGISTRY LTD
 training
 travel
+travelchannel  # generic .travelchannel Lifestyle Domain Holdings, Inc.
+travelers  # generic .travelers Travelers TLD, LLC
+travelersinsurance  # generic .travelersinsurance Travelers TLD, LLC
 trust
 trv
-tt en hi fr es-419 zh  # trinidad and tobago cctld
+tt en hi fr es es-419 zh  # trinidad and tobago cctld
 tube
-tushu zh 
-tv
+tui  # generic .tui TUI AG
+tunes  # generic .tunes Amazon Registry Services, Inc.
+tushu zh
+tv  # tuvalu cctld, marketed and used widely
+tvs  # generic .tvs T V SUNDRAM IYENGAR  & SONS PRIVATE LIMITED
 tw zh  # taiwan cctld
 tz sw  # tanzania cctld
 ua uk ru  # ukraine cctld
+ubank  # generic .ubank National Australia Bank Limited
+ubs  # generic .ubs UBS AG
+uconnect  # generic .uconnect FCA US LLC.
 ug lg sw rw ach nym  # uganda cctld
 uk en cy gd kw # united kingdom cctld (welsh, scottish gaelic, cornish)
+um  # country-code .um Not assigned
+unicom  # generic .unicom China United Network Communications Corporation Limited
 university
 uno es # spanish
 uol
-us
-uy
+ups  # generic .ups UPS Market Driver, Inc.
+us en # united states cctld
+uy es es-419 pt # uruguay cctld
 uz uz ru  # uzbekistan cctld
-va
+va it # vatican cctld
+vacations  # generic .vacations Atomic Tigers, LLC
+vana  # generic .vana Lifestyle Domain Holdings, Inc.
+vanguard  # generic .vanguard The Vanguard Group, Inc.
 vc en  # st vincent and grenadines cctld
-ve es-419  # venezuela cctld
+ve es es-419  # venezuela cctld
 vegas
 ventures
+verisign  # generic .verisign VeriSign, Inc.
 versicherung de
 vet
 vg en # british virgin islands cctld
 vi en  # us virgin islands cctld
 viajes es # spanish
 video
+vig  # generic .vig VIENNA INSURANCE GROUP AG Wiener Versicherung Gruppe
+viking  # generic .viking Viking River Cruises (Bermuda) Ltd.
+villas  # generic .villas New Sky, LLC
 vin
 vip
+virgin  # generic .virgin Virgin Enterprises Limited
+visa  # generic .visa Visa Worldwide Pte. Limited
 vision
+vista  # generic .vista Vistaprint Limited
+vistaprint  # generic .vistaprint Vistaprint Limited
+viva  # generic .viva Saudi Telecom Company
+vivo  # generic .vivo Telefonica Brasil S.A.
 vlaanderen nl # flanders netherlands
 vn vi fr zh  # vietnam cctld
+vodka  # generic .vodka Top Level Domain Holdings Limited
+volkswagen  # generic .volkswagen Volkswagen Group of America Inc.
+volvo  # generic .volvo Volvo Holding Sverige Aktiebolag
 vote
+voting  # generic .voting Valuetainment Corp.
 voto it # italian
 voyage
 vu en fr # vanuatu cctld
 vuelos es # spanish
 wales en cy # wales, uk
+walmart  # generic .walmart Wal-Mart Stores, Inc.
+walter  # generic .walter Sandvik AB
 wang
-wanggou zh 
+wanggou zh
+warman  # generic .warman Weir Group IP Limited
 watch
+watches  # generic .watches Richemont DNS Inc.
+weather  # generic .weather International Business Machines Corporation
+weatherchannel  # generic .weatherchannel International Business Machines Corporation
 webcam
+weber  # generic .weber Saint-Gobain Weber SA
 website
+wed  # generic .wed Atgron, Inc.
 wedding
-weibo zh 
+weibo zh
 weir
-wf
+wf fr # wallis and futuna islands
+whoswho  # generic .whoswho Who's Who Registry
 wien de # vienna austria
 wiki
+williamhill  # generic .williamhill William Hill Organization Limited
 win
+windows  # generic .windows Microsoft Corporation
 wine
+winners  # generic .winners The TJX Companies, Inc.
+wme  # generic .wme William Morris Endeavor Entertainment, LLC
+wolterskluwer  # generic .wolterskluwer Wolters Kluwer N.V.
+woodside  # generic .woodside Woodside Petroleum Limited
 work
 works
 world
+wow  # generic .wow Amazon Registry Services, Inc.
 ws en # samoa cctld
+wtc  # generic .wtc World Trade Centers Association, Inc.
 wtf
-xihuan zh 
-xin
-xn--3e0b707e
-xn--54b7fta0cc
+xbox  # generic .xbox Microsoft Corporation
+xerox  # generic .xerox Xerox DNHC LLC
+xfinity  # generic .xfinity Comcast IP Holdings I, LLC
+xihuan zh
+xin zh
+xn--0zwm56d zh # test .测试 Internet Assigned Numbers Authority
+xn--11b4c3d hi  # generic .कॉम VeriSign Sarl
+xn--11b5bs3a9aj6g hi # test .परीक्षा Internet Assigned Numbers Authority
+xn--1ck2e1b ja # generic .セール Amazon Registry Services, Inc.
+xn--1qqw23a zh # generic .佛山 Guangzhou YU Wei Information Technology Co., Ltd.
+xn--2scrj9c kn # country-code .ಭಾರತ Not assigned
+xn--30rr7y zh # generic .慈善 Excellent First Limited
+xn--3bst00m zh # generic .集团 Eagle Horizon Limited
+xn--3ds443g zh # generic .在线 TLD REGISTRY LIMITED
+xn--3e0b707e ko  # kr south korea
+xn--3hcrj9c or # country-code .ଭାରତ Not assigned
+xn--3oq18vl8pn36a zh # generic .大众汽车 Volkswagen (China) Investment Co., Ltd.
+xn--3pxu8k zh # generic .点看 VeriSign Sarl
+xn--42c2d9a th # generic .คอม VeriSign Sarl
+xn--45br5cyl as # country-code .ভাৰত Not assigned
+xn--45brj9c bn # country-code .ভারত National Internet Exchange of India
+xn--45q11c zh # generic .八卦 Zodiac Gemini Ltd
+xn--4gbrim ar # generic ‏.موقع‎ Suhub Electronic Establishment
+xn--54b7fta0cc bn # bd bangladesh
+xn--55qw42g zh # generic .公益 China Organizational Name Administration Center
+xn--55qx5d  zh # generic .公司 Computer Network Information Center of Chinese Academy of Sciences （China Internet Network Information Center）
+xn--5su34j936bgsg zh # generic .香格里拉 Shangri‐La International Hotel Management Limited
+xn--5tzm5g zh # generic .网站 Global Website TLD Asia Limited
 xn--6frz82g zh # chinese "mobile"
 xn--6qq986b3xl zh # chinese "i love you"
 xn--80adxhks ru # russian "moscow"
+xn--80akhbyknj4f ru # test .испытание Internet Assigned Numbers Authority
+xn--80ao21a ru # country-code .қаз Association of IT Companies of Kazakhstan
+xn--80aqecdr1a ru # generic .католик Pontificium Consilium de Comunicationibus Socialibus (PCCS) (Pontifical Council for Social Communication)
 xn--80asehdb ru # russian "online"
-xn--80aswg
-xn--90ais
+xn--80aswg ru # russian 'site'
+xn--8y0a063a zh  # generic .联通 China United Network Communications Corporation Limited
+xn--90a3ac sr # country-code .срб Serbian National Internet Domain Registry (RNIDS)
+xn--90ae ru # country-code .бг Imena.BG AD
+xn--90ais be ru # by belarus
+xn--9dbq2a he # generic ‏.קום‎ VeriSign Sarl
+xn--9et52u zh # generic .时尚 RISE VICTORY LIMITED
+xn--9krt00a zh # generic .微博 Sina Corporation
+xn--9t4b11yi5a zh # test .테스트 Internet Assigned Numbers Authority
+xn--b4w605ferd zh # generic .淡马锡 Temasek Holdings (Private) Limited
+xn--bck1b9a5dre4c ja  # generic .ファッション Amazon Registry Services, Inc.
 xn--c1avg ru # russian "org"
+xn--c2br7g  hi # generic .नेट VeriSign Sarl
+xn--cck2b3b ja # generic .ストア Amazon Registry Services, Inc.
+xn--cg4bki ko # generic .삼성 SAMSUNG SDS CO., LTD
+xn--clchc0ea0b2g2a9gcd ta # country-code .சிங்கப்பூர் Singapore Network Information Centre (SGNIC) Pte Ltd
+xn--czr694b zh # generic .商标 HU YI GLOBAL INFORMATION RESOURCES(HOLDING) COMPANY.HONGKONG LIMITED
+xn--czrs0t zh # generic .商店 Wild Island, LLC
+xn--czru2d zh # generic .商城 Zodiac Aquarius Limited
 xn--d1acj3b ru # russian "kids"
-xn--fiqs8s 
-xn--h2brj9c
-xn--j1amh
-xn--kpry57d
+xn--d1alf mk # country-code .мкд Macedonian Academic Research Network Skopje
+xn--deba0ad he # test ‏.טעסט‎ Internet Assigned Numbers Authority
+xn--e1a4c ru # country-code .ею EURid vzw/asbl
+xn--eckvdtc9d ja # generic .ポイント Amazon Registry Services, Inc.
+xn--efvy88h zh # generic .新闻 Xinhua News Agency Guangdong Branch 新华通讯社广东分社
+xn--estv75g zh # generic .工行 Industrial and Commercial Bank of China Limited
+xn--fct429k zh # generic .家電 Amazon Registry Services, Inc.
+xn--fhbei ar # generic ‏.كوم‎ VeriSign Sarl
+xn--fiq228c5hs zh # generic .中文网 TLD REGISTRY LIMITED
+xn--fiq64b zh # generic .中信 CITIC Group Corporation
+xn--fiqs8s zh # cn cctld
+xn--fiqz9s zh # country-code .中國 China Internet Network Information Center (CNNIC)
+xn--fjq720a zh # generic .娱乐 Will Bloom, LLC
+xn--flw351e zh # generic .谷歌 Charleston Road Registry Inc.
+xn--fpcrj9c3d te # country-code .భారత్ National Internet Exchange of India
+xn--fzc2c9e2c si # country-code .ලංකා LK Domain Registry
+xn--fzys8d69uvgm zh # generic .電訊盈科 PCCW Enterprises Limited
+xn--g2xx48c zh # generic .购物 Minds + Machines Group Limited
+xn--g6w251d zh # test .測試 Internet Assigned Numbers Authority
+xn--gckr3f0f ja # generic .クラウド Amazon Registry Services, Inc.
+xn--gecrj9c gu # country-code .ભારત National Internet Exchange of India
+xn--gk3at1e zh  # generic .通販 Amazon Registry Services, Inc.
+xn--h2breg3eve sa  # country-code .भारतम् Not assigned
+xn--h2brj9c en hi bn te mr ta gu kn ml pa  # in cctld
+xn--h2brj9c8c hi # country-code .भारोत Not assigned
+xn--hgbk6aj7f53bba ar # test ‏.آزمایشی‎ Internet Assigned Numbers Authority
+xn--hlcj6aya9esc7a ta # test .பரிட்சை Internet Assigned Numbers Authority
+xn--hxt814e zh # generic .网店 Zodiac Taurus Ltd.
+xn--i1b6b1a6a2e hi # generic .संगठन Public Interest Registry
+xn--imr513n  zh # generic .餐厅 HU YI GLOBAL INFORMATION RESOURCES (HOLDING) COMPANY. HONGKONG LIMITED
+xn--io0a7i  zh # generic .网络 Computer Network Information Center of Chinese Academy of Sciences （China Internet Network Information Center）
+xn--j1aef ru # generic .ком VeriSign Sarl
+xn--j1amh ru # 'test'
+xn--j6w193g zh # country-code .香港 Hong Kong Internet Registration Corporation Ltd.
+xn--jlq61u9w7b zh # generic .诺基亚 Nokia Corporation
+xn--jvr189m  zh # generic .食品 Amazon Registry Services, Inc.
+xn--jxalpdlp el # test .δοκιμή Internet Assigned Numbers Authority
+xn--kcrx77d1x4a zh # generic .飞利浦 Koninklijke Philips N.V.
+xn--kgbechtv ar # test ‏.إختبار‎ Internet Assigned Numbers Authority
+xn--kprw13d zh # country-code .台湾 Taiwan Network Information Center (TWNIC)
+xn--kpry57d zh # tw
+xn--kpu716f zh # generic .手表 Richemont DNS Inc.
+xn--kput3i zh # generic .手机 Beijing RITT-Net Technology Development Co., Ltd
+xn--l1acc  # country-code .мон Datacom Co.,Ltd
+xn--lgbbat1ad8j ar # country-code ‏.الجزائر‎ CERIST
+xn--mgb9awbf ar # country-code ‏.عمان‎ Telecommunications Regulatory Authority (TRA)
+xn--mgba3a3ejt ar # generic ‏.ارامكو‎ Aramco Services Company
+xn--mgba3a4f16a ar # country-code ‏.ایران‎ Institute for Research in Fundamental Sciences (IPM)
+xn--mgba7c0bbn0a ar # generic ‏.العليان‎ Crescent Holding GmbH
+xn--mgbaakc7dvf ar # generic ‏.اتصالات‎ Emirates Telecommunications Corporation (trading as Etisalat)
+xn--mgbaam7a8h ar # country-code ‏.امارات‎ Telecommunications Regulatory Authority (TRA)
 xn--mgbab2bd fa # persian "market"
-xn--mk1bu44c
+xn--mgbai9azgqp6j ar # country-code ‏.پاکستان‎ National Telecommunication Corporation
+xn--mgbayh7gpa ar # country-code ‏.الاردن‎ National Information Technology Center (NITC)
+xn--mgbb9fbpob ar # generic ‏.موبايلي‎ GreenTech Consultancy Company W.L.L.
+xn--mgbbh1a ar # country-code ‏.بارت‎ Not assigned
+xn--mgbbh1a71e en hi bn te mr ta gu kn ml pa # country-code ‏.بھارت‎ National Internet Exchange of India
+xn--mgbc0a9azcg ar # country-code ‏.المغرب‎ Agence Nationale de Réglementation des Télécommunications (ANRT)
+xn--mgbca7dzdo ar # generic ‏.ابوظبي‎ Abu Dhabi Systems and Information Centre
+xn--mgberp4a5d4ar ar # country-code ‏.السعودية‎ Communications and Information Technology Commission
+xn--mgbgu82a ar # country-code ‏.ڀارت‎ Not assigned
+xn--mgbi4ecexp ar # generic ‏.كاثوليك‎ Pontificium Consilium de Comunicationibus Socialibus (PCCS) (Pontifical Council for Social Communication)
+xn--mgbpl2fh ar # country-code ‏.سودان‎ Sudan Internet Society
+xn--mgbt3dhd ar # generic ‏.همراه‎ Asia Green IT System Bilgisayar San. ve Tic. Ltd. Sti.
+xn--mgbtx2b ar # country-code ‏.عراق‎ Communications and Media Commission (CMC)
+xn--mgbx4cd0ab ar # country-code ‏.مليسيا‎ MYNIC Berhad
+xn--mix891f  zh # country-code .澳門 Macao Post and Telecommunications Bureau (CTT)
+xn--mk1bu44c ko # 'dot com' korean
+xn--mxtq1m  zh # generic .政府 Net-Chinese Co., Ltd.
 xn--ngbc5azd ar # arabic "network"
-xn--p1acf
-xn--p1ai
+xn--ngbe9e0a ar # generic ‏.بيتك‎ Kuwait Finance House
+xn--ngbrx  ar # generic ‏.عرب‎ League of Arab States
+xn--node ka # country-code .გე Information Technologies Development Center (ITDC)
+xn--nqv7f zh # generic .机构 Public Interest Registry
+xn--nqv7fs00ema zh  # generic .组织机构 Public Interest Registry
+xn--nyqy26a zh  # generic .健康 Stable Tone Limited
+xn--o3cw4h th # country-code .ไทย Thai Network Information Center Foundation
+xn--ogbpf8fl ar # country-code ‏.سورية‎ National Agency for Network Services (NANS)
+xn--p1acf ru # 'russian speaking community'
+xn--p1ai ru # 'ru' cctld
+xn--pbt977c zh # generic .珠宝 Richemont DNS Inc.
+xn--pgbs0dh ar # country-code ‏.تونس‎ Agence Tunisienne d'Internet
+xn--pssy2u zh  # generic .大拿 VeriSign Sarl
 xn--q9jyb4c ja # japanese "everyone"
-xn--t60b56a
-xn--tckwe
-xn--vuq861b
-xn--wgbl6a
+xn--qcka1pmc ja # generic .グーグル Charleston Road Registry Inc.
+xn--qxam  el # country-code .ελ ICS-FORTH GR
+xn--rhqv96g zh  # generic .世界 Stable Tone Limited
+xn--rovu88b zh  # generic .書籍 Amazon Registry Services, Inc.
+xn--rvc1e0am3e ml # country-code .ഭാരതം Not assigned
+xn--s9brj9c pa # country-code .ਭਾਰਤ National Internet Exchange of India
+xn--ses554g zh # generic .网址 KNET Co., Ltd
+xn--t60b56a ko # korean
+xn--tckwe ja # japanese dot com
+xn--tiq49xqyj zh # generic .天主教 Pontificium Consilium de Comunicationibus Socialibus (PCCS) (Pontifical Council for Social Communication)
+xn--unup4y zh # generic .游戏 Spring Fields, LLC
+xn--vermgensberater-ctb de # generic .vermögensberater Deutsche Vermögensberatung Aktiengesellschaft DVAG
+xn--vermgensberatung-pwb  de # generic .vermögensberatung Deutsche Vermögensberatung Aktiengesellschaft DVAG
+xn--vhquv zh # generic .企业 Dash McCook, LLC
+xn--vuq861b zh # 'knowledge'
+xn--w4r85el8fhu5dnra zh # generic .嘉里大酒店 Kerry Trading Co. Limited
+xn--w4rs40l zh # generic .嘉里 Kerry Trading Co. Limited
+xn--wgbh1c  ar # country-code ‏.مصر‎ National Telecommunication Regulatory Authority - NTRA
+xn--wgbl6a ar # qatar cctld
+xn--xhq521b  zh # generic .广东 Guangzhou YU Wei Information Technology Co., Ltd.
+xn--xkc2al3hye2a ta # country-code .இலங்கை LK Domain Registry
+xn--xkc2dl3a5ee0h en hi bn te mr ta gu kn ml pa # country-code .இந்தியா National Internet Exchange of India
+xn--y9a3aq hy # country-code .հայ "Internet Society" Non-governmental Organization
+xn--yfro4i67o  zh # country-code .新加坡 Singapore Network Information Centre (SGNIC) Pte Ltd
+xn--ygbi2ammx ar # country-code ‏.فلسطين‎ Ministry of Telecom & Information Technology (MTIT)
+xn--zckzah # test .テスト Internet Assigned Numbers Authority
+xn--zfr164b zh # generic .政务 China Organizational Name Administration Center
+xperia  # generic .xperia Sony Mobile Communications AB
 xxx
 xyz
+yachts  # generic .yachts DERYachts, LLC
 yahoo
+yamaxun  # generic .yamaxun Amazon Registry Services, Inc.
 yandex
-ye
-yokohama  jp # yokohama japan
+ye ar # yemen cctld
+yodobashi  # generic .yodobashi YODOBASHI CAMERA CO.,LTD.
+yoga  # generic .yoga Top Level Domain Holdings Limited
+yokohama  ja # yokohama japan
 you
 youtube
-yt
+yt fr  # mayotte cctld
+yun  # generic .yun QIHOO 360 TECHNOLOGY CO. LTD.
 za en af st zu xh tn  # south africa cctld
+zappos  # generic .zappos Amazon Registry Services, Inc.
+zara  # generic .zara Industria de Diseño Textil, S.A. (INDITEX, S.A.)
+zero  # generic .zero Amazon Registry Services, Inc.
+zip  # generic .zip Charleston Road Registry Inc.
+zippo  # generic .zippo Zadco Company
 zm en ny bem tum loz  # zambia cctld
 zone
 zuerich de # zurich switzerland
