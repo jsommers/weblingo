@@ -5,17 +5,28 @@ import string
 from collections import Counter, defaultdict
 import codecs
 
+from validlang import well_formed_bcp47
 
-def parse_language(s):
+
+def extract_language_subtag(s):
     """
     Return the language subtag (not any other subtags) as a string.
 
+    Do some normalization in order to try to get to a valid subtag:
     Replace _ with - and / with -.
     RFC5646 requires -, but many sites don't comply...  thanks.
     Lower-case it for compatibility with language-subtag-registry.
     """
-    s = s.replace('_', '-').replace('/', '-')
-    return s.split('-')[0].lower()
+    return normalize_language_tag(s).split('-')[0].lower()
+
+
+def normalize_language_tag(s):
+    """Attempt to modify language tag content to get it into the expected form."""
+    return s.replace('_', '-').replace('/', '-')
+
+
+def is_language_tag_well_formed(s):
+    return well_formed_bcp47(s) is not None
 
 
 class SubtagRecordType(enum.IntEnum):
@@ -26,6 +37,7 @@ class SubtagRecordType(enum.IntEnum):
     Variant = 5
     Grandfathered = 6
     Redundant = 7
+    Private = 8
 
 
 class LanguageSubtagRegistry(object):
@@ -40,6 +52,34 @@ class LanguageSubtagRegistry(object):
             if obj is not None:
                 return obj
         return None
+
+    def lookup_language(self, subtag):
+        """
+        Get the record corresponding to a particular language subtag.
+
+        Only check Language record types.
+        Return the record or None if the subtag doesn't exist.
+        """
+        return self._recs[SubtagRecordType.Language].get(subtag, None)
+
+    def lookup_region(self, subtag):
+        """Get the record corresponding to a particular region subtag."""
+        return self._recs[SubtagRecordType.Region].get(subtag, None)
+
+    def lookup_full_tag(self, tag):
+        """Lookup subtag objects for each subtag in a full tag, e.g., zh-Hant-CN"""
+        objs = []
+        private = False
+        for subtag in normalize_language_tag(tag).split('-'):
+            if subtag == 'x':
+                private = True
+                continue
+
+            if private:
+                objs.append(SubtagRegistryRecord({'Type': 'private', 'Subtag': subtag}))
+            else:
+                objs.append(self.lookup(subtag))
+        return objs
 
     def __contains__(self, subtag):
         """Check whether the registry contains the given subtag (could be any type of subtag)"""
@@ -65,7 +105,7 @@ class LanguageSubtagRegistry(object):
                     key = line[:idx].strip()
                     val = line[(idx+1):].strip()
                 except ValueError:
-                    print(f"Failed on line {line}")
+                    print("Failed on line {line}".format(line=line))
                     sys.exit(0)
                 xdict[key] = val
             return xdict
@@ -281,6 +321,11 @@ if __name__ == '__main__':
     print(rec)
     rec = reg.lookup('fa')
     print(rec)
+
+    olist = reg.lookup_full_tag('zh-Hant-CN-x-private1-private2')
+    print([str(o) for o in olist])
+
+    print(is_language_tag_well_formed('zh-Hant-CN-x-private1-private2'))
 
     t = TldMap()
     # t.dump()
