@@ -322,6 +322,9 @@ if __name__ == '__main__':
     rec = reg.lookup('fa')
     print(rec)
 
+    olist = reg.lookup_full_tag('zh-Hant-CN')
+    print([str(o) for o in olist])
+
     olist = reg.lookup_full_tag('zh-Hant-CN-x-private1-private2')
     print([str(o) for o in olist])
 
