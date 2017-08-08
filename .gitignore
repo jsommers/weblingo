@@ -90,3 +90,8 @@ ENV/
 
 sandbox
 language-subtag-registry
+expresslist.txt
+outxmap.txt
+activetlds.txt
+countryinfo.txt
+runconfig.txt

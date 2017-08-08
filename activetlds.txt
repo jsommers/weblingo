@@ -543,10 +543,11 @@
 .gratis:::generic:::Pioneer Tigers, LLC
 .green:::generic:::DotGreen Registry Limited
 .gripe:::generic:::Corn Sunset, LLC
+.grocery:::generic:::Wal-Mart Stores, Inc.
 .group:::generic:::Romeo Town, LLC
 .gs:::country-code:::Government of South Georgia and South Sandwich Islands (GSGSSI)
 .gt:::country-code:::Universidad del Valle de Guatemala
-.gu:::country-code:::University of GuamComputer Center
+.gu:::country-code:::University of Guam
 .guardian:::generic:::The Guardian Life Insurance Company of America
 .gucci:::generic:::Guccio Gucci S.p.a.
 .guge:::generic:::Charleston Road Registry Inc.
@@ -784,6 +785,7 @@
 .man:::generic:::MAN SE
 .management:::generic:::John Goodbye, LLC
 .mango:::generic:::PUNTO FA S.L.
+.map:::generic:::Charleston Road Registry Inc.
 .market:::generic:::United TLD Holdco, Ltd
 .marketing:::generic:::Fern Pass, LLC
 .markets:::generic:::DOTMARKETS REGISTRY LTD
@@ -807,6 +809,7 @@
 .men:::generic:::Exclusive Registry Limited
 .menu:::generic:::Wedding TLD2, LLC
 .meo:::generic:::MEO Serviços de Comunicações e Multimédia, S.A.
+.merckmsd:::generic:::MSD Registry Holdings, Inc.
 .metlife:::generic:::MetLife Services and Solutions, LLC
 .mf:::country-code:::Not assigned
 .mg:::country-code:::NIC-MG (Network Information Center Madagascar)
@@ -963,6 +966,7 @@
 .pg:::country-code:::PNG DNS AdministrationVice Chancellors OfficeThe Papua New Guinea University of Technology
 .ph:::country-code:::PH Domain Foundation
 .pharmacy:::generic:::National Association of Boards of Pharmacy
+.phd:::generic:::Charleston Road Registry Inc.
 .philips:::generic:::Koninklijke Philips N.V.
 .phone:::generic:::Dish DBS Corporation
 .photo:::generic:::Uniregistry, Corp.
@@ -1108,6 +1112,7 @@
 .scot:::generic:::Dot Scot Registry Limited
 .sd:::country-code:::Sudan Internet Society
 .se:::country-code:::The Internet Infrastructure Foundation
+.search:::generic:::Charleston Road Registry Inc.
 .seat:::generic:::SEAT, S.A. (Sociedad Unipersonal)
 .secure:::generic:::Amazon Registry Services, Inc.
 .security:::generic:::XYZ.COM LLC
@@ -1384,16 +1389,16 @@
 .परीक्षा:::test:::Internet Assigned Numbers Authority
 .セール:::generic:::Amazon Registry Services, Inc.
 .佛山:::generic:::Guangzhou YU Wei Information Technology Co., Ltd.
-.ಭಾರತ:::country-code:::Not assigned
+.ಭಾರತ:::country-code:::National Internet eXchange of India
 .慈善:::generic:::Excellent First Limited
 .集团:::generic:::Eagle Horizon Limited
 .在线:::generic:::TLD REGISTRY LIMITED
 .한국:::country-code:::KISA (Korea Internet & Security Agency)
-.ଭାରତ:::country-code:::Not assigned
+.ଭାରତ:::country-code:::National Internet eXchange of India
 .大众汽车:::generic:::Volkswagen (China) Investment Co., Ltd.
 .点看:::generic:::VeriSign Sarl
 .คอม:::generic:::VeriSign Sarl
-.ভাৰত:::country-code:::Not assigned
+.ভাৰত:::country-code:::National Internet eXchange of India
 .ভারত:::country-code:::National Internet Exchange of India
 .八卦:::generic:::Zodiac Gemini Ltd
 ‏.موقع‎:::generic:::Suhub Electronic Establishment
@@ -1451,9 +1456,9 @@
 .クラウド:::generic:::Amazon Registry Services, Inc.
 .ભારત:::country-code:::National Internet Exchange of India
 .通販:::generic:::Amazon Registry Services, Inc.
-.भारतम्:::country-code:::Not assigned
+.भारतम्:::country-code:::National Internet eXchange of India
 .भारत:::country-code:::National Internet Exchange of India
-.भारोत:::country-code:::Not assigned
+.भारोत:::country-code:::National Internet eXchange of India
 ‏.آزمایشی‎:::test:::Internet Assigned Numbers Authority
 .பரிட்சை:::test:::Internet Assigned Numbers Authority
 .网店:::generic:::Zodiac Taurus Ltd.
@@ -1484,12 +1489,12 @@
 ‏.پاکستان‎:::country-code:::National Telecommunication Corporation
 ‏.الاردن‎:::country-code:::National Information Technology Center (NITC)
 ‏.موبايلي‎:::generic:::GreenTech Consultancy Company W.L.L.
-‏.بارت‎:::country-code:::Not assigned
+‏.بارت‎:::country-code:::National Internet eXchange of India
 ‏.بھارت‎:::country-code:::National Internet Exchange of India
 ‏.المغرب‎:::country-code:::Agence Nationale de Réglementation des Télécommunications (ANRT)
 ‏.ابوظبي‎:::generic:::Abu Dhabi Systems and Information Centre
 ‏.السعودية‎:::country-code:::Communications and Information Technology Commission
-‏.ڀارت‎:::country-code:::Not assigned
+‏.ڀارت‎:::country-code:::National Internet eXchange of India
 ‏.كاثوليك‎:::generic:::Pontificium Consilium de Comunicationibus Socialibus (PCCS) (Pontifical Council for Social Communication)
 ‏.سودان‎:::country-code:::Sudan Internet Society
 ‏.همراه‎:::generic:::Asia Green IT System Bilgisayar San. ve Tic. Ltd. Sti.
@@ -1517,7 +1522,7 @@
 .ελ:::country-code:::ICS-FORTH GR
 .世界:::generic:::Stable Tone Limited
 .書籍:::generic:::Amazon Registry Services, Inc.
-.ഭാരതം:::country-code:::Not assigned
+.ഭാരതം:::country-code:::National Internet eXchange of India
 .ਭਾਰਤ:::country-code:::National Internet Exchange of India
 .网址:::generic:::KNET Co., Ltd
 .닷넷:::generic:::VeriSign Sarl
