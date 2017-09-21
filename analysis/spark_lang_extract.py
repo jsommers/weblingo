@@ -4,6 +4,7 @@ from lzma import decompress
 from base64 import b64decode
 import urllib.parse as uparse
 import re
+import os
 
 from bs4 import BeautifulSoup as bs
 import bs4
@@ -481,10 +482,14 @@ def analyze(sc, files_in, file_out, **kwargs):
     """
     outfile = open(file_out, 'w')
     stride = int(kwargs.get('stride', 100))
+    
     for inf in files_in:
         wfile = sc.textFile(inf)
-        records = wfile.flatMap(loads).filter(
-            lambda rec: rec['success']).take(1000)
-        records = sc.parallelize(records).map(_rec_analyze).collect()
+        records = wfile.flatMap(loads)\
+            .filter(lambda rec: rec['success'])\
+            .map(_rec_analyze).collect()
+
         for i in range(0, len(records), stride):
             print(dumps(records[i:(i+stride)]), file=outfile)
+
+    outfile.close()
