@@ -43,7 +43,8 @@ def _in_iframe(el):
 
 def _check_explicit_lang_tag(el):
     lfound = set()
-    if not _in_iframe(el) and hasattr(el, 'attrs'):
+
+    if hasattr(el, 'attrs'):
         if 'lang' in el.attrs:
             ltag = el.attrs['lang'].strip()
             lfound.add(ltag)
