@@ -23,9 +23,11 @@ def _cmp_primary_page_lang(rec):
             if xli[1] > 50 and k != 'un':
                 try:
                     t = langtags.Tag(k)
-                    detlang.add(t.language.tag)
                 except:
                     pass
+                else:
+                    if t.language is not None:
+                        detlang.add(t.language.tag)
 
     intx = primary & detlang
     if intx:
