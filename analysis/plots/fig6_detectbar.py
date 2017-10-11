@@ -37,9 +37,10 @@ def plotit(cc, xli):
 
     # dict, where key is langcode and val is count
     default = sorted(default.items(), key=lambda x: x[1], reverse=True)
-    default = default[:40]
+    default = [t for t in default if t[0] in cdetect]
+    default = default[:30]
 
-    cdetect = [(t[0],cdetect.get(t[0],0)) for t in default]
+    cdetect = [(t[0],cdetect[t[0]]) for t in default]
 
     
     defaultct = [t[1] for t in default]
@@ -48,7 +49,7 @@ def plotit(cc, xli):
 
     data = [(defaultct[i], detectct[i]) for i in range(len(defaultct))]
 
-    fig = plt.figure(figsize=(7,3))
+    fig = plt.figure(figsize=(6,3))
     ax = fig.add_subplot(111)
     
     ax.set_xlabel("language code")
