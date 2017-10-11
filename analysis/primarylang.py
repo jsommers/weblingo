@@ -3,14 +3,18 @@ import langtags
 from collections import defaultdict
 
 def _primary_lang(rec):
-    return [(s,1) for s in rec['primary']]
+    xli = []
+    for s in rec['primary']:
+        for t in s.split(','):
+            xli.append((s.strip(), 1))
+    return xli
 
 def _cmp_primary_page_lang(rec):
     primary = set()
     for sup in rec['primary']:
         for s in sup.split(','):
             try:
-                t = langtags.Tag(s)
+                t = langtags.Tag(s.strip())
                 primary.add(t.language.tag)
             except:
                 pass
@@ -65,8 +69,9 @@ def analyze(sc, files_in, file_out, **kwargs):
             except:
                 invalid[t] += ct
             else:
-                langonly[tag.language.tag] += ct
-                if tag.region:
+                if tag.language is not None:
+                    langonly[tag.language.tag] += ct
+                if tag.region is not None:
                     region[tag.region.tag] += ct
 
     emptycount = allcount - nonemptycount
