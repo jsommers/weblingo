@@ -31,7 +31,7 @@ def plotit(cc, xli):
     # dict, where key is langcode and val is count
     defaultli = sorted(regiondata.items(), key=lambda x: x[1], reverse=True)
 
-    defaultli = defaultli[:40]
+    defaultli = defaultli[:30]
 
     region = [t[0] for t in defaultli]
     count = [t[1] for t in defaultli]
