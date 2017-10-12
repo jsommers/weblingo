@@ -58,7 +58,7 @@ def plotit(cc, xli):
 
     plt.xticks(x + dimw / 2, langcodes, fontsize=8, rotation=60)
 
-    plt.legend(["Default", "Local preference"], loc=1, fontsize=8)
+    plt.legend(["Accept-Language: *", "Accept-Language: th;q=1.0"], loc=1, fontsize=8)
     plt.tight_layout()
     plt.savefig(f"{cc}_primarycmp.pdf", bbox_inches='tight')
     plt.clf()
