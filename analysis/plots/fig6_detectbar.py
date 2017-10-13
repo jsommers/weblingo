@@ -52,7 +52,7 @@ def plotit(cc, xli):
     fig = plt.figure(figsize=(6,3))
     ax = fig.add_subplot(111)
     
-    ax.set_xlabel("language code")
+    ax.set_xlabel("language subtag")
     ax.set_ylabel("observed occurrences")
     ax.set_ylim(1, max(detectct)*1.1)
     # plt.title(f"{cc} primary language")
@@ -71,7 +71,7 @@ def plotit(cc, xli):
     plt.xticks(x + dimw / 2, langcodes, rotation=60) # map(str, x))
     ax.tick_params(axis='x', labelsize=8)
 
-    plt.legend(["Language tag included", "Language detected"], loc=1, fontsize=8)
+    plt.legend(["Language subtag included", "Language detected"], loc=1, fontsize=8)
 
     plt.tight_layout()
     plt.savefig(f"{cc}_cdetect.pdf", bbox_inches='tight')

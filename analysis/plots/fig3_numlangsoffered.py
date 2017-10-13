@@ -26,7 +26,7 @@ def plotit():
 
     fig = plt.figure(figsize=(7,3))
     ax = fig.add_subplot(111)
-    ax.set_xlabel("number of languages offered by a given site")
+    ax.set_xlabel("number of language subtags found on a given site")
     ax.set_ylabel("observed occurrences")
     # plt.title(f"{cc} primary language")
     ax.set_yscale('log')

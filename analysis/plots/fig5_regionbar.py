@@ -40,7 +40,7 @@ def plotit(cc, xli):
     fig = plt.figure(figsize=(7,3))
     ax = fig.add_subplot(111)
     
-    ax.set_xlabel("region code")
+    ax.set_xlabel("region subtag")
     ax.set_ylabel("observed occurrences")
     ax.set_ylim(1, max(count)*1.1)
     plt.yscale('log')

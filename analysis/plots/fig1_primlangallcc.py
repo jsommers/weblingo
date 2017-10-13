@@ -32,12 +32,14 @@ def main(xtype):
 
     usdata = xdata['US']
     xdata['US'] = sorted(usdata.items(), key=lambda t:t[1], reverse=True)
+    print("Num langs for US", len(xdata['US']))
     xdata['US'] = xdata['US'][:40]
 
     langcodes = [t[0] for t in xdata['US']]
 
     for cc in cclist:
         xd = xdata[cc]
+        print(f"Num langs for {cc}: {len(xd)}")
         xdata[cc] = [xd.get(t[0], 0) for t in xdata['US']]
 
     xdata['US'] = [t[1] for t in xdata['US']]
@@ -50,7 +52,7 @@ def main(xtype):
     fig = plt.figure(figsize=(7,3))
     ax = fig.add_subplot(111)
     
-    ax.set_xlabel("language code")
+    ax.set_xlabel("language subtag")
     ax.set_ylabel("observed occurrences")
     ax.set_ylim(1,500000)
     # plt.title(f"{cc} primary language")

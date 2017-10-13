@@ -40,7 +40,7 @@ def plotit(cc, xli):
     fig = plt.figure(figsize=(7,3))
     ax = fig.add_subplot(111)
     
-    ax.set_xlabel("language code")
+    ax.set_xlabel("language subtag")
     ax.set_ylabel("observed occurrences")
     ax.set_yscale('log')
     ax.set_ylim(1, 350000)

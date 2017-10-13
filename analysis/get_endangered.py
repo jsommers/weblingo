@@ -5,6 +5,16 @@ import json
 from collections import defaultdict
 import langtags
 
+"""
+Classification (least to most severe):
+
+Vulnerable
+Definitely endangered
+Severely endangered
+Critically endangered
+Extinct
+"""
+
 
 lcode_remap = {}
 with open('iso-639-3.tab.txt') as infile:
@@ -22,7 +32,7 @@ tree = ET.parse('unesco_atlas_languages_limited_dataset.xml')
 root = tree.getroot()
 
 status = {}
-blacklist = set(['fr', 'hu', 'el', 'sv', 'sk', 'bg', 'sl', 'ca'])
+blacklist = set(['fr', 'hu', 'el', 'sv', 'sk', 'bg', 'sl', 'ca', 'lv', 'et', 'hy', 'lb'])
 
 for child in root:
     # print(child.tag)
@@ -70,6 +80,7 @@ for f in glob("testdata/??_default_alllang.txt"):
     print(f)
     for statustype, dlist in endangerdict.items():
         dlist.sort(key=lambda t: t[1], reverse=True)
-        print(statustype, dlist[:20])
+        xsum = sum([t[1] for t in dlist])
+        print(statustype, len(dlist), xsum, dlist[:20])
 
 
