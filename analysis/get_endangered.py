@@ -22,6 +22,7 @@ tree = ET.parse('unesco_atlas_languages_limited_dataset.xml')
 root = tree.getroot()
 
 status = {}
+blacklist = set(['fr', 'hu', 'el', 'sv', 'sk', 'bg', 'sl', 'ca'])
 
 for child in root:
     # print(child.tag)
@@ -40,6 +41,8 @@ for child in root:
                 remap = lcode_remap.get(c, '')
                 if remap:
                     t = langtags.Tag(remap)
+                    if str(t) in blacklist:
+                        t = None
         elif subchild.tag == 'Name_in_English':
             xname = subchild.text.strip()
 
@@ -63,9 +66,10 @@ for f in glob("testdata/??_default_alllang.txt"):
             stat, name = status[tag]
             endangerdict[stat].append((tag, ct, name))
 
+    print()
     print(f)
     for statustype, dlist in endangerdict.items():
         dlist.sort(key=lambda t: t[1], reverse=True)
-        print(statustype, dlist[:10])
+        print(statustype, dlist[:20])
 
 
