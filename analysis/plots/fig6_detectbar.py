@@ -12,37 +12,14 @@ import numpy as np
 from collections import defaultdict
 
 
-def loadlangdata(cc, xtype):
-    with open(f"../testdata/{cc}_{xtype}_primarylang.txt") as infile:
-        for i in range(4):
-            infile.readline()
-        line = infile.readline()
-        i = line.find('{')
-        j = line.find('}', i+1)
-        return eval(line[i:(j+1)])
-
-
-def loadcdetect(cc, xtype):
-    with open("../contentdetect.txt") as infile:
-        while True:
-            line = infile.readline()
-            if line.startswith(f"# {cc.upper()} {xtype}"):
-                data = infile.readline()
-                return json.loads(data)
-
-
-def plotit(cc, xli):
-    default = loadlangdata(cc, 'default')
-    cdetect = dict(loadcdetect(cc, 'default'))
+def plotit(cc, given, detected):
 
     # dict, where key is langcode and val is count
-    default = sorted(default.items(), key=lambda x: x[1], reverse=True)
-    default = [t for t in default if t[0] in cdetect]
-    default = default[:30]
+    given = sorted(given.items(), key=lambda x: x[1], reverse=True)
+    given = [t for t in given if t[0] in detected]
+    default = given[:40]
+    cdetect = [(t[0],detected[t[0]]) for t in default]
 
-    cdetect = [(t[0],cdetect[t[0]]) for t in default]
-
-    
     defaultct = [t[1] for t in default]
     detectct = [t[1] for t in cdetect]
     langcodes = [t[0] for t in default]
@@ -74,24 +51,25 @@ def plotit(cc, xli):
     plt.legend(["Language subtag included", "Language detected"], loc=1, fontsize=8)
 
     plt.tight_layout()
-    plt.savefig(f"{cc}_cdetect_all.pdf", bbox_inches='tight')
+    plt.savefig(f"{cc}_cdetect.pdf", bbox_inches='tight')
     plt.clf()
 
 
 def main():
-    cchash = defaultdict(list)
+    datahash = {}
 
-    for name in glob("../testdata/??_*_alllang.txt"):
-        base, ext = os.path.splitext(os.path.basename(name))
-        mobj = re.match("(\w{2})_(\w+)_alllang", base)
-        if mobj:
-            cc = mobj.group(1)
-            xtype = mobj.group(2)
-            cchash[cc].append(xtype)
+    with open('../cdetect2.txt') as infile:
+        for line in infile:
+            if line.startswith('#'):
+                fields = line.split()
+                cc = fields[1]
+                xtype = fields[2]
+                given = dict(json.loads(infile.readline()))
+                detected = dict(json.loads(infile.readline()))
+                if xtype == 'default':
+                    datahash[cc] = [given, detected]
 
-    for cc, xli in cchash.items():
-        if len(xli) == 2:
-            plotit(cc, xli)
-
+    for cc, data in datahash.items():
+        plotit(cc, *data)
 
 main()
