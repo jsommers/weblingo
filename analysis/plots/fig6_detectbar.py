@@ -14,6 +14,13 @@ from collections import defaultdict
 
 def plotit(cc, given, detected):
 
+    censorlist = set(['ms', 'br'])
+    for c in censorlist:
+        if c in given:
+            del given[c]
+        if c in detected:
+            del detected[c]
+
     # dict, where key is langcode and val is count
     given = sorted(given.items(), key=lambda x: x[1], reverse=True)
     given = [t for t in given if t[0] in detected]
