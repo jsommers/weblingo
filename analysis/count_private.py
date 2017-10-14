@@ -3,6 +3,7 @@
 from glob import glob
 import langtags
 from collections import Counter
+from json import dumps
 
 def get_line(f, lnum):
     with open(f) as infile:
@@ -19,11 +20,28 @@ def get_all(f):
 for f in glob("testdata/??_*_primarylang.txt"):
     alltags = get_all(f)
     numsub = Counter()
+    script = Counter()
+    private = Counter()
+    grand = Counter()
+
     for rawt,ct in alltags.items():
         try:
             t = langtags.Tag(rawt)
             numsub[len(t)] += ct
+            if t.private:
+                private[t.private.subtag] += ct
+            if t.script:
+                script[t.script.subtag] += ct
+            if t.grandfathered:
+                grand[t.grandfathered.subtag] += ct
         except:
             pass
-    print(numsub)
-    break
+    print(f"# tag lengths {f}")
+    print(dumps(dict(numsub)))
+    print(f"# private {f}")
+    print(dumps(dict(private)))
+    print(f"# script {f}")
+    print(dumps(dict(script)))
+    print(f"# grand {f}")
+    print(dumps(dict(grand)))
+    

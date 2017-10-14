@@ -72,8 +72,8 @@ def _analyze_rec(sayslang, islang, cc, xtype, rec):
             islang[p] += 1
 
 
-EXT = '_10k'
-# EXT = ''
+# EXT = '_10k'
+EXT = ''
 
 def main():
     xdir = "testdata"
