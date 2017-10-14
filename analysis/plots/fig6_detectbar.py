@@ -74,7 +74,7 @@ def plotit(cc, xli):
     plt.legend(["Language subtag included", "Language detected"], loc=1, fontsize=8)
 
     plt.tight_layout()
-    plt.savefig(f"{cc}_cdetect.pdf", bbox_inches='tight')
+    plt.savefig(f"{cc}_cdetect_all.pdf", bbox_inches='tight')
     plt.clf()
 
 
