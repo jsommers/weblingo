@@ -9,6 +9,7 @@ import json
 import matplotlib.pyplot as plt
 import numpy as np
 from collections import defaultdict
+from colorgen import colorgen
 
 
 def loadlangdata(cc, xtype):
@@ -50,15 +51,16 @@ def plotit(cc, xli):
     dim = 2 # two compare bars for each langcode
     w = 0.75
     dimw = w / dim
+    cg = colorgen(len(data[0]))
 
     x = np.arange(len(data))
     for i in range(len(data[0])):
         y = [d[i] for d in data]
-        b = ax.bar(x + i * dimw, y, dimw, bottom=0.001)
+        b = ax.bar(x + i * dimw, y, dimw, bottom=0.001, color=next(cg))
 
-    plt.xticks(x + dimw / 2, langcodes, fontsize=8, rotation=60)
+    plt.xticks(x + dimw / 2, langcodes, fontsize=9, rotation=60)
 
-    plt.legend(["Accept-Language: *", "Accept-Language: th;q=1.0"], loc=1, fontsize=8)
+    plt.legend(["Accept-Language: *", "Accept-Language: th;q=1.0"], loc=1, fontsize=9)
     plt.tight_layout()
     plt.savefig(f"{cc}_primarycmp.pdf", bbox_inches='tight')
     plt.clf()

@@ -10,6 +10,7 @@ import json
 import matplotlib.pyplot as plt
 import numpy as np
 from collections import defaultdict
+from colorgen import colorgen
 
 
 def loadlangdata(cc, xtype):
@@ -45,9 +46,10 @@ def plotit(cc, xli):
     ax.set_ylim(1, max(count)*1.1)
     plt.yscale('log')
 
-    ax.bar(ranks, count)
+    cg = colorgen(2)
+    ax.bar(ranks, count, color=next(cg))
     plt.xticks(ranks, region, rotation=60)
-    ax.tick_params(axis='x', labelsize=6)
+    ax.tick_params(axis='x', labelsize=9)
     plt.tight_layout()
     plt.savefig(f"{cc}_region.pdf", bbox_inches='tight')
     plt.clf()

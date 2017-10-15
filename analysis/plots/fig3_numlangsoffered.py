@@ -6,6 +6,7 @@ import json
 import matplotlib.pyplot as plt
 import numpy as np
 from collections import defaultdict
+from colorgen import colorgen
 
 
 def loadlangdata():
@@ -33,7 +34,8 @@ def plotit():
     ax.set_xlim(-1,105)
     ax.set_ylim(1, 600000)
 
-    ax.bar(ranks, counts)
+    cg = colorgen(2)
+    ax.bar(ranks, counts, color=next(cg))
 
     #for i in range(len(data[0])):
     #    y = [d[i] for d in data]

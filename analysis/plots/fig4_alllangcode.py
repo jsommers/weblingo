@@ -6,6 +6,7 @@ import json
 import matplotlib.pyplot as plt
 import numpy as np
 from collections import defaultdict
+from colorgen import colorgen
 
 
 def loadlangdata():
@@ -38,10 +39,11 @@ def plotit():
     plt.yscale('log')
     plt.ylim(1, 400000)
 
-    ax.bar(ranks, counts)
+    cg = colorgen(2)
+    ax.bar(ranks, counts, color=next(cg))
 
     plt.xticks(ranks, lcode, rotation=60)
-    ax.tick_params(axis='x', labelsize=6)
+    ax.tick_params(axis='x', labelsize=9)
 
     plt.tight_layout()
     plt.savefig("alllang.pdf", bbox_inches='tight')

@@ -10,10 +10,10 @@ import json
 import matplotlib.pyplot as plt
 import numpy as np
 from collections import defaultdict
+from colorgen import colorgen
 
 
 def plotit(cc, given, detected):
-
     censorlist = set(['ms', 'br'])
     for c in censorlist:
         if c in given:
@@ -47,15 +47,16 @@ def plotit(cc, given, detected):
     w = 0.75
     dimw = w / dim
 
+    cg = colorgen(2)
     x = np.arange(len(data))
     for i in range(len(data[0])):
         y = [d[i] for d in data]
-        b = ax.bar(x + i * dimw, y, dimw, bottom=0.001)
+        b = ax.bar(x + i * dimw, y, dimw, bottom=0.001, color=next(cg))
 
     plt.xticks(x + dimw / 2, langcodes, rotation=60) # map(str, x))
-    ax.tick_params(axis='x', labelsize=8)
+    ax.tick_params(axis='x', labelsize=9)
 
-    plt.legend(["Language subtag included", "Language detected"], loc=1, fontsize=8)
+    plt.legend(["Language subtag included", "Language detected"], loc=1, fontsize=9)
 
     plt.tight_layout()
     plt.savefig(f"{cc}_cdetect.pdf", bbox_inches='tight')

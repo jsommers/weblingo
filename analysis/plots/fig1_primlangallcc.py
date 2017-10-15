@@ -9,6 +9,7 @@ import json
 import matplotlib.pyplot as plt
 import numpy as np
 from collections import defaultdict
+from colorgen import colorgen
 
 
 def loadlangdata(cc, xtype):
@@ -20,10 +21,9 @@ def loadlangdata(cc, xtype):
         j = line.find('}', i+1)
         return eval(line[i:(j+1)])
 
-
 def main(xtype):
     # langpref, default
-    cclist = ['AR', 'GB', 'JP', 'TH', 'KE']
+    cclist = sorted(['AR', 'GB', 'JP', 'TH', 'KE'])
     xdata = {}
     xdata['US'] = loadlangdata('US', xtype)
 
@@ -45,7 +45,7 @@ def main(xtype):
     xdata['US'] = [t[1] for t in xdata['US']]
 
     alldata = []
-    cclist.insert(0, 'US')
+    cclist.append('US')
     for i in range(len(xdata['US'])):
         alldata.append(tuple([xdata[cc][i] for cc in cclist]))
 
@@ -62,14 +62,16 @@ def main(xtype):
     w = 0.75
     dimw = w / dim
 
+    cg = colorgen(6)
+
     x = np.arange(len(alldata))
     for i in range(len(alldata[0])):
         y = [d[i] for d in alldata]
-        b = ax.bar(x + i * dimw, y, dimw, bottom=0.001)
+        b = ax.bar(x + i * dimw, y, dimw, bottom=0.001, color=next(cg), label=cclist[i])
 
-    plt.xticks(x + dimw / dim, langcodes, fontsize=8, rotation=60) 
+    plt.xticks(x + dimw / dim, langcodes, fontsize=9, rotation=60) 
 
-    plt.legend(cclist, loc=1, fontsize=8, ncol=2)
+    plt.legend(cclist, loc=1, fontsize=8, ncol=9)
     plt.tight_layout()
     plt.savefig(f"primaryallcc_{xtype}.pdf", bbox_inches='tight')
     plt.clf()
