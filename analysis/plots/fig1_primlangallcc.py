@@ -67,7 +67,7 @@ def main(xtype):
     x = np.arange(len(alldata))
     for i in range(len(alldata[0])):
         y = [d[i] for d in alldata]
-        b = ax.bar(x + i * dimw, y, dimw, bottom=0.001, color=next(cg), label=cclist[i])
+        b = ax.bar(x + i * dimw, y, dimw, bottom=0.001, label=cclist[i])
 
     plt.xticks(x + dimw / dim, langcodes, fontsize=9, rotation=60) 
 

@@ -35,7 +35,7 @@ def plotit():
     ax.set_ylim(1, 600000)
 
     cg = colorgen(2)
-    ax.bar(ranks, counts, color=next(cg))
+    ax.bar(ranks, counts) # , color=next(cg))
 
     #for i in range(len(data[0])):
     #    y = [d[i] for d in data]

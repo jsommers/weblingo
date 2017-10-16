@@ -51,7 +51,7 @@ def plotit(cc, given, detected):
     x = np.arange(len(data))
     for i in range(len(data[0])):
         y = [d[i] for d in data]
-        b = ax.bar(x + i * dimw, y, dimw, bottom=0.001, color=next(cg))
+        b = ax.bar(x + i * dimw, y, dimw, bottom=0.001) # , color=next(cg))
 
     plt.xticks(x + dimw / 2, langcodes, rotation=60) # map(str, x))
     ax.tick_params(axis='x', labelsize=9)

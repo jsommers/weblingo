@@ -47,7 +47,7 @@ def plotit(cc, xli):
     plt.yscale('log')
 
     cg = colorgen(2)
-    ax.bar(ranks, count, color=next(cg))
+    ax.bar(ranks, count) # , color=next(cg))
     plt.xticks(ranks, region, rotation=60)
     ax.tick_params(axis='x', labelsize=9)
     plt.tight_layout()

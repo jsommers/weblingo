@@ -40,7 +40,7 @@ def plotit():
     plt.ylim(1, 400000)
 
     cg = colorgen(2)
-    ax.bar(ranks, counts, color=next(cg))
+    ax.bar(ranks, counts) # , color=next(cg))
 
     plt.xticks(ranks, lcode, rotation=60)
     ax.tick_params(axis='x', labelsize=9)
