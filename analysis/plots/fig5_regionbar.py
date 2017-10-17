@@ -38,7 +38,7 @@ def plotit(cc, xli):
     count = [t[1] for t in defaultli]
     ranks = list(range(len(count)))
 
-    fig = plt.figure(figsize=(7,3))
+    fig = plt.figure(figsize=(7,2.75))
     ax = fig.add_subplot(111)
     
     ax.set_xlabel("region subtag")

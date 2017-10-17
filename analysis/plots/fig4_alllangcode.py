@@ -31,7 +31,7 @@ def plotit():
     counts = counts[:50]
     ranks = list(range(len(lcode)))
 
-    fig = plt.figure(figsize=(7,3))
+    fig = plt.figure(figsize=(7,2.5))
     ax = fig.add_subplot(111)
 
     ax.set_xlabel("language subtag")
@@ -42,7 +42,7 @@ def plotit():
     cg = colorgen(2)
     ax.bar(ranks, counts) # , color=next(cg))
 
-    plt.xticks(ranks, lcode, rotation=60)
+    plt.xticks(ranks, lcode, rotation=80)
     ax.tick_params(axis='x', labelsize=9)
 
     plt.tight_layout()

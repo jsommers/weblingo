@@ -77,8 +77,8 @@ EXT = ''
 
 def main():
     xdir = "testdata"
-    outfile = open('cdetect2.txt', 'w')
-    for f in glob.glob(f"{xdir}/*_default_summary{EXT}.json"):
+    outfile = open('cdetect2_langpref.txt', 'w')
+    for f in glob.glob(f"{xdir}/GB_langpref_summary{EXT}.json"):
         path, ext = os.path.splitext(os.path.basename(f))
         mobj = re.match("^(\w{2})_(\w+)_summary"+EXT, path)
         cc = mobj.group(1)

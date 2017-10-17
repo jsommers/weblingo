@@ -33,7 +33,7 @@ def main(xtype):
     usdata = xdata['US']
     xdata['US'] = sorted(usdata.items(), key=lambda t:t[1], reverse=True)
     print("Num langs for US", len(xdata['US']))
-    xdata['US'] = xdata['US'][:40]
+    xdata['US'] = xdata['US'][:30]
 
     langcodes = [t[0] for t in xdata['US']]
 

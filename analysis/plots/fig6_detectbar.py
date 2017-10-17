@@ -33,7 +33,7 @@ def plotit(cc, given, detected):
 
     data = [(defaultct[i], detectct[i]) for i in range(len(defaultct))]
 
-    fig = plt.figure(figsize=(6,3))
+    fig = plt.figure(figsize=(7,3))
     ax = fig.add_subplot(111)
     
     ax.set_xlabel("language subtag")
@@ -53,7 +53,7 @@ def plotit(cc, given, detected):
         y = [d[i] for d in data]
         b = ax.bar(x + i * dimw, y, dimw, bottom=0.001) # , color=next(cg))
 
-    plt.xticks(x + dimw / 2, langcodes, rotation=60) # map(str, x))
+    plt.xticks(x + dimw / 2, langcodes, rotation=80) # map(str, x))
     ax.tick_params(axis='x', labelsize=9)
 
     plt.legend(["Language subtag included", "Language detected"], loc=1, fontsize=9)
