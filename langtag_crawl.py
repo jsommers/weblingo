@@ -176,6 +176,15 @@ def _print_response(rdict):
         print("{}".format(','.join(rdict['errors'])))
 
 
+def _do_analysis(rlist):
+    from analysis import spark_lang_extract as analyze
+    for rec in rlist:
+        print("Results for {} ({})".format(rec['reqhost'], rec['url']))
+        print("\tAccept-Language: {}".format(rec['request_headers'].get('accept-language', 'No header')))
+        xd = analyze._rec_analyze(rec)
+        print(xd)
+
+
 def _manager(args, hostlist, langpref):
     numworkers = args.workers
     verbose = args.verbose
@@ -233,7 +242,7 @@ def _manager(args, hostlist, langpref):
                 _print_response(rdict)
             resultset.discard(reqid)
             rlist.append(rdict)
-            if len(rlist) >= WRITEBUF:
+            if len(rlist) >= WRITEBUF and not args.analyze:
                 totrec += len(rlist)
                 _write_data(outfile, rlist, totrec, intstart, start)
                 intstart = time.time()
@@ -245,7 +254,8 @@ def _manager(args, hostlist, langpref):
     doneval.value = True
 
     totrec += len(rlist)
-    _write_data(outfile, rlist, totrec, intstart, start)
+    if not args.analyze:
+        _write_data(outfile, rlist, totrec, intstart, start)
     now = time.time()
     print("Total elapsed time {:.2f} sec".format(now-start))
     if outname != 'stdout':
@@ -256,6 +266,9 @@ def _manager(args, hostlist, langpref):
         if rv is None:
             p.terminate()
             p.join()
+
+    if args.analyze:
+        _do_analysis(rlist)
 
 
 if __name__ == '__main__':
@@ -288,6 +301,8 @@ if __name__ == '__main__':
                         default=25, help='Write buffer size.')
     parser.add_argument('-a', '--append', dest='append', action="store_true",
                         default=False, help="Append to output file")
+    parser.add_argument('-A', '--analyze', dest='analyze', action='store_true',
+                        default=False, help="Analyze content, don't write out")
     args = parser.parse_args()
 
     WRITEBUF = args.writebuf
@@ -295,6 +310,9 @@ if __name__ == '__main__':
     print("Making {} requests from {} using langpref '{}' "
           "with {} workers.".format(
             args.maxreq, args.infile, args.langpref, args.workers))
+    if args.analyze:
+        print("Doing analysis after crawl (writing to stdout).")
+        args.outfile = 'stdout'
     langpref = args.langpref
 
     if args.infile is None and args.onehost is None:
