@@ -260,7 +260,7 @@ def _manager(args, hostlist, langpref):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description='The dance of Accept-Language content negotiation.')
+        description='Gather info about a site\'s language tags')
     parser.add_argument('-H', '--host', dest='onehost', type=str,
                         default=None,
                         help='Specific host to test')
