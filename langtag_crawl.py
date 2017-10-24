@@ -13,6 +13,7 @@ import lzma
 import multiprocessing as mp
 import ctypes
 import base64
+import urllib.parse as up
 
 import requests
 requests.packages.urllib3.disable_warnings()  # disable ssl warnings
@@ -89,11 +90,14 @@ def _make_req(hostname, cfg, verbose):
     errors = []
     results['errors'] = errors
 
+    url = hostname
+    if not up.urlparse(hostname).scheme:
+        url = 'http://{}'.format(hostname)
+
     while True:
         response = None
         try:
-            response = requests.get('http://{}'.format(hostname),
-                                    allow_redirects=True, verify=False,
+            response = requests.get(url, allow_redirects=True, verify=False,
                                     headers=reqheaders, timeout=60,
                                     stream=True)
         except Exception as e:
