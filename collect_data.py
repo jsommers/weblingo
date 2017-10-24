@@ -106,7 +106,7 @@ def _run_langnego(cc, langpref, startseq, outname):
     OUTNAME = os.path.join(
         subdir, "{}_{}_{:06d}".format(cc, outname, startseq))
 
-    cmd = [PYEXEC, "langtag_crawl.py",
+    cmd = [PYEXEC, "langtag_gather.py",
            "-s", str(startseq),
            "-m", str(CHUNKSIZE),
            "-w", str(WORKERS),
