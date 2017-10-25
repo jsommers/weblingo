@@ -436,35 +436,7 @@ def _analyze_link(alink, host):
 
 
 def _infer_langselector(soup):
-    def _common_parent(elist1, elist2):
-        for i in range(min(len(elist1), len(elist2))):
-            if elist1[i] != elist2[i]:
-                return elist1[i-1], len(elist1)-i+1, len(elist2)-i+1
-        raise Exception("They must have at least html in common, right?!")
-
-    eltree = []
-    for el in soup.descendants:
-        if el.string is not None:
-            t = _infer_language_from_link_text(el.string)
-            print(t)
-            if t is not None:
-                # print(el, t)
-                path_to_root = el.find_parent('html')
-                path_to_root.append(el)
-                eltree.append(([e for e in path_to_root], t))
-    # print(len(eltree))
-    langs = []
-    for i in range(len(eltree)):
-        for j in range(len(eltree)):
-            if i == j:
-                continue
-            parent, d1, d2 = _common_parent(eltree[i], eltree[j])
-            print("common", parent, d1, d2)
-            if d1 == d2: # distance from parent to each element should be ==
-                langs.append((d1, t))                            
-    # print(langs)
-
-    # for now, don't return anything; the above is still incomplete
+    ''' :-) '''
     return set()
 
 
