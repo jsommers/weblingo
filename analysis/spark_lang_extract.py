@@ -2,6 +2,7 @@ import sys
 from json import loads, dumps
 from lzma import decompress
 from base64 import b64decode
+from collections import defaultdict, Counter
 import urllib.parse as uparse
 import re
 import os
@@ -150,7 +151,7 @@ def _parsetag(langtag):
     return langtag, str(parsed_tag), lt
 
 
-def _infer_language_from_link_text(s):
+def _infer_language_from_link_text(s, wordlimit=True):
     if not isinstance(s, str):
         return None
 
@@ -160,7 +161,7 @@ def _infer_language_from_link_text(s):
         return None
 
     # if > 2 words, assume that this isn't a language link
-    if len(s.split()) > 2:
+    if wordlimit and len(s.split()) > 2:
         return None
 
     # first, try the text as a language tag
@@ -182,6 +183,7 @@ def _infer_language_from_link_text(s):
         # inferred language
         name_match = any(map(lambda lname: s == lname.lower(),
             langcodes.code_to_names('language', lc.language).values()))
+        # print(lc, name_match, s)
         if name_match or len(lc.language) == 2:
             return str(lc)
     except:
@@ -372,6 +374,13 @@ def _analyze_link(alink, host):
                     querycode = langtags.Tag(querysrc)
                 except:
                     pass
+            else:
+                # if a query value is an exact match for language tag
+                for v in vallist:
+                    try:
+                        querycode = langtags.Tag(v)
+                    except:
+                        pass
 
     indicator3 = defaultdict(set)
     if pathcode:
@@ -391,7 +400,7 @@ def _analyze_link(alink, host):
             # print("KV:", k, v)
             if isinstance(v, list):
                 v = ' '.join(v)
-            lc = _infer_language_from_link_text(v)
+            lc = _infer_language_from_link_text(v, wordlimit=False)
             if lc is not None:
                 i4[str(lc)].add(v)
 
@@ -426,6 +435,39 @@ def _analyze_link(alink, host):
     return result
 
 
+def _infer_langselector(soup):
+    def _common_parent(elist1, elist2):
+        for i in range(min(len(elist1), len(elist2))):
+            if elist1[i] != elist2[i]:
+                return elist1[i-1], len(elist1)-i+1, len(elist2)-i+1
+        raise Exception("They must have at least html in common, right?!")
+
+    eltree = []
+    for el in soup.descendants:
+        if el.string is not None:
+            t = _infer_language_from_link_text(el.string)
+            print(t)
+            if t is not None:
+                # print(el, t)
+                path_to_root = el.find_parent('html')
+                path_to_root.append(el)
+                eltree.append(([e for e in path_to_root], t))
+    # print(len(eltree))
+    langs = []
+    for i in range(len(eltree)):
+        for j in range(len(eltree)):
+            if i == j:
+                continue
+            parent, d1, d2 = _common_parent(eltree[i], eltree[j])
+            print("common", parent, d1, d2)
+            if d1 == d2: # distance from parent to each element should be ==
+                langs.append((d1, t))                            
+    # print(langs)
+
+    # for now, don't return anything; the above is still incomplete
+    return set()
+
+
 def _rec_analyze(rec):
     if not rec['success']:
         # print("Error record")
@@ -456,6 +498,7 @@ def _rec_analyze(rec):
 
     inferred_set = set()
     explicit_set = set()
+
     for el in rec['content'].descendants:
         if el.name is None or el.name == 'script':
             continue
@@ -469,6 +512,9 @@ def _rec_analyze(rec):
                 # print("Exception: {}".format(e))
                 xset = set()
             inferred_set |= xset
+
+    other_inferred = _infer_langselector(rec['content'])
+    inferred_set |= other_inferred
 
     xd['explicit'] = list(explicit_set)
     xd['inferred'] = list(inferred_set)
