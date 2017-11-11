@@ -292,6 +292,7 @@ class SiteMap(object):
 
     def _all_lang_compare(self, fname):
         outfile = open(fname, 'w')
+        outfile_sites = open(f"sitesall_{fname}", 'w')
 
         n = 0
         nsame = 0
@@ -318,6 +319,28 @@ class SiteMap(object):
             nsame += int(same)
             nbadtags += int(badtags)
             alllang_counts[len(fset)] += 1
+
+            # FIXME: also dump out primary langtags + content detected
+            # fmt: site: {CC: {primary:X, detect:Y}, ...}
+            print("{}-all: {}".format(site, ','.join(sorted(fset))), file=outfile_sites)
+
+            xprim = defaultdict(set)
+            xdet = defaultdict(set)
+            for xtup, xset in sd.get_prim().items():
+                xprim[xtup[0]].update(xset)
+            for cc, xset in xprim.items():
+                xprim[cc] = sorted(xset)
+            xprim = dumps(xprim)
+            print("{}-prim: {}".format(site, xprim), file=outfile_sites)
+
+            for xtype in ['default', 'langpref']: 
+                for xtup, xset in sd.get_langdetect(xtype).items():            
+                    xdet[xtup[0]].update(xset) 
+            for cc, xset in xdet.items():
+                xdet[cc] = sorted(xset)
+            xdet = dumps(xdet)
+            print("{}-det: {}".format(site, xdet), file=outfile_sites)
+
             alllang_counts_def[len(fsetdef)] += 1
             alllang_counts_pref[len(fsetpref)] += 1
             langs_offered_freq.update(fset)
@@ -467,8 +490,8 @@ def _add_vary_info(sitemap, cc, xtype, rec):
     sitemap.update_vary(rec['reqhost'], cc, xtype, vary_on_lang)
 
 
-EXT = '_10k'
-# EXT = ''
+# EXT = '_10k'
+EXT = ''
 
 def _collect_cc(xdir):
     ccset = defaultdict(dict)
