@@ -187,7 +187,7 @@ def _manager(args, hostlist, langpref):
 
 
     def _blacklisted(host):
-        for h in ['facebook','google','twitter','microsoft','bing','youtube']
+        for h in ['facebook','google','twitter','microsoft','bing','youtube']:
             if h in host:
                 return True
         return False
