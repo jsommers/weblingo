@@ -137,7 +137,9 @@ def _do_analysis(rec, verbose):
     if verbose:
         print(xd)
 
-    if not ('cy' in xd['inferred'] or 'cy' in xd['primary'] or 'cy' in xd['content_detect']['languages'].keys()):
+    if xd is None:
+        return False, None, []
+    elif not ('cy' in xd['inferred'] or 'cy' in xd['primary'] or 'cy' in xd['content_detect']['languages'].keys()):
         return False, None, []
 
     links = set()
