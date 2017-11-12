@@ -258,6 +258,4 @@ if __name__ == '__main__':
         hostlist = [args.onehost]
     else:
         hostlist = _read_input(args.infile)
-        if args.start > 0:
-            hostlist = hostlist[args.start:]
     _manager(args, hostlist, langpref)
