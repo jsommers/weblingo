@@ -185,6 +185,14 @@ def _manager(args, hostlist, langpref):
     already_done = set()
     outfile = open(args.outfile, 'w')
 
+
+    def _blacklisted(host):
+        for h in ['facebook','google','twitter','microsoft','bing','youtube']
+            if h in host:
+                return True
+        return False
+
+
     while hostlist:
         url = hostlist.pop(0)
         print(len(hostlist), url)
@@ -192,6 +200,9 @@ def _manager(args, hostlist, langpref):
         host = _urlhost(url)
         sitecount[host] += 1
         if sitecount[host] > args.maxreq:
+            continue
+
+        if _blacklisted(host):
             continue
 
         if url in already_done:
