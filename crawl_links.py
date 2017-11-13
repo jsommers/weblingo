@@ -129,6 +129,17 @@ def _print_response(rdict, verbose):
 
 
 def _do_analysis(rec, verbose):
+    def _offers_welsh(xd):
+        if 'cy' in xd['inferred'] or 'cy' in xd['primary']:
+            return True
+
+        for lang,xli in xd['content_detect']['languages'].items():
+            if lang == 'cy' and xli[1] >= 50:
+                return True
+
+        return False
+
+
     from analysis import spark_lang_extract as analyze
     if verbose:
         print("Results for {} ({})".format(rec['reqhost'], rec['url']))
@@ -139,7 +150,7 @@ def _do_analysis(rec, verbose):
 
     if xd is None:
         return False, None, []
-    elif not ('cy' in xd['inferred'] or 'cy' in xd['primary'] or 'cy' in xd['content_detect']['languages'].keys()):
+    elif not _offers_welsh(xd):
         return False, None, []
 
     links = set()
@@ -189,8 +200,15 @@ def _manager(args, hostlist, langpref):
 
 
     def _blacklisted(host):
-        for h in ['facebook','google','twitter','microsoft','bing','youtube']:
+        for h in ['facebook','google','twitter','microsoft','bing','youtube','sharepoint']:
             if h in host:
+                return True
+        return False
+
+
+    def _whitelisted(host):
+        for h in ['.uk', '.cymru', '.wales']:
+            if host.endswith(h):
                 return True
         return False
 
@@ -201,8 +219,13 @@ def _manager(args, hostlist, langpref):
 
         host = _urlhost(url)
         sitecount[host] += 1
-        if sitecount[host] > args.maxreq:
+
+        maxreq = args.maxreq
+        if not _whitelisted(host):
+            maxreq = 1
+        if sitecount[host] > maxreq:
             continue
+
 
         if _blacklisted(host):
             continue
@@ -219,7 +242,9 @@ def _manager(args, hostlist, langpref):
             print("#{} {}".format(url, _extract_rec_data(hrec)), file=outfile, flush=True)
             if verbose:
                 print("links:", links)
-            hostlist.extend(links)
+            for link in links:
+                if not _blacklisted(link):
+                    hostlist.append(link)
 
         if args.maxtotal != -1 and len(already_done) >= args.maxtotal:
             break
@@ -237,7 +262,7 @@ if __name__ == '__main__':
                         help='Input file to read with hostnames')
     parser.add_argument('-l', '--langpref', dest='langpref', type=str,
                         default='*', help='Accept-Language header value')
-    parser.add_argument('-m', '--maxreq', dest='maxreq', type=int, default=50,
+    parser.add_argument('-m', '--maxreq', dest='maxreq', type=int, default=20,
                         help='Max number of requests to make to the same domain')
     parser.add_argument('-v', '--verbose', dest='verbose', action='count',
                         default=0, help='Turn on verbose output.')
