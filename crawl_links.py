@@ -12,6 +12,7 @@ import lzma
 import base64
 from collections import Counter
 import pdb
+import random
 
 import requests
 requests.packages.urllib3.disable_warnings()  # disable ssl warnings
@@ -144,7 +145,12 @@ def _do_analysis(rec, verbose):
     if verbose:
         print("Results for {} ({})".format(rec['reqhost'], rec['url']))
         print("\tAccept-Language: {}".format(rec['request_headers'].get('accept-language', 'No header')))
-    xd = analyze._rec_analyze(rec)
+    try:
+        xd = analyze._rec_analyze(rec)
+    except Exception as e:
+        print("Analysis exception: {}".format(str(e)))
+        return False, None, []
+
     if verbose:
         print(xd)
 
@@ -199,7 +205,8 @@ def _manager(args, hostlist, langpref):
     outfile = open(args.outfile, 'w')
 
 
-    def _blacklisted(host):
+    def _blacklisted(url):
+        host = _urlhost(url)
         for h in ['facebook','google','twitter','microsoft','bing','youtube','sharepoint']:
             if h in host:
                 return True
@@ -213,21 +220,29 @@ def _manager(args, hostlist, langpref):
         return False
 
 
+    def _too_many_requests(url):
+        host = _urlhost(url)
+        maxreq = args.maxreq_whitelist
+        if not _whitelisted(host):
+            maxreq = args.maxreq
+        return sitecount[host] > maxreq
+
+
+    def _update_sitecount(url):
+        host = _urlhost(url)
+        sitecount[host] += 1
+
+
     while hostlist:
         url = hostlist.pop(0)
         print(len(hostlist), url)
 
-        host = _urlhost(url)
-        sitecount[host] += 1
+        _update_sitecount(url)
 
-        maxreq = args.maxreq
-        if not _whitelisted(host):
-            maxreq = 1
-        if sitecount[host] > maxreq:
+        if _too_many_requests(url):
             continue
 
-
-        if _blacklisted(host):
+        if _blacklisted(url):
             continue
 
         if url in already_done:
@@ -243,8 +258,9 @@ def _manager(args, hostlist, langpref):
             if verbose:
                 print("links:", links)
             for link in links:
-                if not _blacklisted(link):
+                if not _blacklisted(link) and not _too_many_requests(link):
                     hostlist.append(link)
+            random.shuffle(hostlist)
 
         if args.maxtotal != -1 and len(already_done) >= args.maxtotal:
             break
@@ -262,8 +278,10 @@ if __name__ == '__main__':
                         help='Input file to read with hostnames')
     parser.add_argument('-l', '--langpref', dest='langpref', type=str,
                         default='*', help='Accept-Language header value')
-    parser.add_argument('-m', '--maxreq', dest='maxreq', type=int, default=20,
-                        help='Max number of requests to make to the same domain')
+    parser.add_argument('-w', '--maxreqwl', dest='maxreq_whitelist', type=int, default=50,
+        help='Max number of requests to make to the same domain for whitelisted domains')
+    parser.add_argument('-m', '--maxreq', dest='maxreq', type=int, default=3,
+        help='Max number of requests to make to the same domain for non-whitelisted domains')
     parser.add_argument('-v', '--verbose', dest='verbose', action='count',
                         default=0, help='Turn on verbose output.')
     parser.add_argument('-M', dest='maxtotal', type=int, default=-1,
