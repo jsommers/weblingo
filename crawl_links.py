@@ -13,6 +13,7 @@ import base64
 from collections import Counter
 import pdb
 import random
+import langtags
 
 import requests
 requests.packages.urllib3.disable_warnings()  # disable ssl warnings
@@ -129,6 +130,17 @@ def _print_response(rdict, verbose):
         print("{}".format(','.join(rdict['errors'])))
 
 
+def _check_langset(lset, lt='cy'):
+    for st in lset:
+        try:
+            t = langtags.Tag(st)
+            if t.language.subtag == lt:
+                return True
+        except:
+            pass
+    return False
+
+
 def _do_analysis(rec, verbose):
     def _offers_welsh(xd):
         if 'cy' in xd['inferred'] or 'cy' in xd['primary']:
@@ -149,28 +161,48 @@ def _do_analysis(rec, verbose):
         xd = analyze._rec_analyze(rec)
     except Exception as e:
         print("Analysis exception: {}".format(str(e)))
-        return False, None, []
+        return False, None, [], []
 
     if verbose:
         print(xd)
 
     if xd is None:
-        return False, None, []
+        return False, None, [], []
     elif not _offers_welsh(xd):
-        return False, None, []
+        return False, None, [], []
 
-    links = set()
-    for link in rec['soup'].find_all('a'):
-        if 'href' in link.attrs:
-            href = link.attrs['href']
-            components = up.urlsplit(href)
-            if components.netloc:
-                links.add(components.netloc)
-            elif href.startswith('/'):
-                comp = up.urlsplit(rec['url'])
-                assert(comp.netloc)
-                links.add(comp.netloc + href)
-    return True, xd, list(links)
+
+    cy_links = set()
+    other_links = set()
+
+    for el in rec['soup'].descendants:
+        if el.name is None or el.name == 'script':
+            continue
+
+        if el.name == 'a' or el.name == 'link':
+            xset = analyze._check_explicit_lang_tag(el)
+
+            if not xset:
+                try:
+                    xset = analyze._analyze_link(el, rec['reqhost'])
+                except:
+                    xset = []
+
+            addset = other_links
+            if _check_langset(xset):
+                addset = cy_links
+
+            if 'href' in el.attrs:
+                href = el.attrs['href']
+                components = up.urlsplit(href)
+                if components.netloc:
+                    addset.add(components.netloc)
+                elif href.startswith('/'):
+                    comp = up.urlsplit(rec['url'])
+                    assert(comp.netloc)
+                    addset.add(comp.netloc + href)
+
+    return True, xd, list(cy_links), list(other_links)
 
 
 def _urlhost(xurl):
@@ -203,6 +235,7 @@ def _manager(args, hostlist, langpref):
     sitecount = Counter()
     already_done = set()
     outfile = open(args.outfile, 'w')
+    whitelisted = set()
 
 
     def _blacklisted(url):
@@ -214,6 +247,9 @@ def _manager(args, hostlist, langpref):
 
 
     def _whitelisted(host):
+        if host in whitelisted:
+            return True
+
         for h in ['.uk', '.cymru', '.wales']:
             if host.endswith(h):
                 return True
@@ -251,16 +287,24 @@ def _manager(args, hostlist, langpref):
         already_done.add(url)
         xresp = _make_req(url, langpref, verbose)
         _print_response(xresp, verbose)
-        cont, hrec, links = _do_analysis(xresp, verbose)
+        cont, hrec, cylinks, otherlinks = _do_analysis(xresp, verbose)
         if cont:
+            if cylinks:
+                # dynamically whitelist any hosts that have 'cy' lang tags
+                whitelisted.add(_urlhost(url))
+
             print("{}".format(json.dumps([url, hrec])), file=outfile, flush=True)
             print("#{} {}".format(url, _extract_rec_data(hrec)), file=outfile, flush=True)
             if verbose:
                 print("links:", links)
-            for link in links:
+            for link in otherlinks:
                 if not _blacklisted(link) and not _too_many_requests(link):
                     hostlist.append(link)
             random.shuffle(hostlist)
+
+            hostlist.extend(cylinks) # always add all cylinks
+            hostlist.reverse() # put any cylinks at the front
+
 
         if args.maxtotal != -1 and len(already_done) >= args.maxtotal:
             break
@@ -278,9 +322,9 @@ if __name__ == '__main__':
                         help='Input file to read with hostnames')
     parser.add_argument('-l', '--langpref', dest='langpref', type=str,
                         default='*', help='Accept-Language header value')
-    parser.add_argument('-w', '--maxreqwl', dest='maxreq_whitelist', type=int, default=50,
+    parser.add_argument('-w', '--maxreqwl', dest='maxreq_whitelist', type=int, default=100,
         help='Max number of requests to make to the same domain for whitelisted domains')
-    parser.add_argument('-m', '--maxreq', dest='maxreq', type=int, default=3,
+    parser.add_argument('-m', '--maxreq', dest='maxreq', type=int, default=5,
         help='Max number of requests to make to the same domain for non-whitelisted domains')
     parser.add_argument('-v', '--verbose', dest='verbose', action='count',
                         default=0, help='Turn on verbose output.')
