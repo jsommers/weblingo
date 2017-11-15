@@ -147,7 +147,7 @@ def _do_analysis(rec, verbose):
             return True
 
         for lang,xli in xd['content_detect']['languages'].items():
-            if lang == 'cy' and xli[1] >= 50:
+            if lang == 'cy' and xli[1] >= 40:
                 return True
 
         return False
