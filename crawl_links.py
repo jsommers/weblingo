@@ -297,14 +297,15 @@ def _manager(args, hostlist, langpref):
             print("#{} {}".format(url, _extract_rec_data(hrec)), file=outfile, flush=True)
             if verbose:
                 print("links:", links)
+
+            # put other links on back
             for link in otherlinks:
                 if not _blacklisted(link) and not _too_many_requests(link):
                     hostlist.append(link)
-            random.shuffle(hostlist)
 
-            hostlist.extend(cylinks) # always add all cylinks
-            hostlist.reverse() # put any cylinks at the front
-
+            # put cy links on front
+            for link in cylinks:
+                hostlist.insert(0, link)
 
         if args.maxtotal != -1 and len(already_done) >= args.maxtotal:
             break
