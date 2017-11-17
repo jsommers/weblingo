@@ -94,8 +94,16 @@ def _make_req(hostname, langpref, verbose):
     else:
         results['content'] = ''
 
-    results['soup'] = bs(response.text, PARSER)
-    response.close()
+    if results['success']:
+        try:
+            results['soup'] = bs(response.text, PARSER)
+        except:
+            results['soup'] = bs('', PARSER)
+
+    try:
+        response.close()
+    except:
+        pass
 
     results['end'] = time.time()
     if verbose > 1:
@@ -299,13 +307,14 @@ def _manager(args, hostlist, langpref):
                 print("links:", links)
 
             # put other links on back
-            for link in otherlinks:
+            for link in otherlinks[:args.maxreq_whitelist]:
                 if not _blacklisted(link) and not _too_many_requests(link):
                     hostlist.append(link)
 
             # put cy links on front
-            for link in cylinks:
-                hostlist.insert(0, link)
+            for link in cylinks[:args.maxreq_whitelist]:
+                if not _too_many_requests(link):
+                    hostlist.insert(0, link)
 
         if args.maxtotal != -1 and len(already_done) >= args.maxtotal:
             break
