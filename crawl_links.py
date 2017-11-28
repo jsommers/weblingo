@@ -125,7 +125,9 @@ def _read_input(infile):
     hostlist = []
     with lzma.open(infile, 'rt') as inp:
         for line in inp:
-            rank, name = line.strip().split(',')
+            line = line.strip()
+            firstcomma = line.find(',')
+            name = line[(firstcomma+1):]
             hostlist.append(name)
     return hostlist
 
