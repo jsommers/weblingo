@@ -324,20 +324,20 @@ def _manager(args, hostlist, langpref):
             if verbose:
                 print("links:", links)
 
-            # put other links on back
-            for link in otherlinks[:args.maxreq_whitelist]:
-                if not _blacklisted(link) and not _too_many_requests(link):
-                    hostlist.append(link)
-
             # put SEARCHLANG links on front
             for link in langlinks[:args.maxreq_whitelist]:
                 if not _too_many_requests(link):
                     hostlist.insert(0, link)
 
+            # put other links on back
+            for link in otherlinks[:args.maxreq_whitelist]:
+                if not _blacklisted(link) and not _too_many_requests(link):
+                    hostlist.append(link)
+
         if args.maxtotal != -1 and len(already_done) >= args.maxtotal:
             break
 
-    print(whitelisted)
+    print("# whitelisted {}".format(whitelisted), file=outfile)
     outfile.close()
 
 
@@ -351,9 +351,9 @@ if __name__ == '__main__':
                         help='Input file to read with hostnames')
     parser.add_argument('-l', '--langpref', dest='langpref', type=str,
                         default='*', help='Accept-Language header value (default=*)')
-    parser.add_argument('-w', '--maxreqwl', dest='maxreq_whitelist', type=int, default=100,
+    parser.add_argument('-w', '--maxreqwl', dest='maxreq_whitelist', type=int, default=500,
         help='Max number of requests to make to the same domain for whitelisted domains (default=100)')
-    parser.add_argument('-m', '--maxreq', dest='maxreq', type=int, default=5,
+    parser.add_argument('-m', '--maxreq', dest='maxreq', type=int, default=10,
         help='Max number of requests to make to the same domain for non-whitelisted domains (default=5)')
     parser.add_argument('-v', '--verbose', dest='verbose', action='count',
                         default=0, help='Turn on verbose output (default=0)')
