@@ -224,6 +224,85 @@ def _same_site(linkloc, host):
     return False
 
 
+def _analyze_qs(qs):
+    querysrc = ''
+    querycode = None
+
+    if qs:
+        qd = uparse.parse_qs(qs)
+        for key, vallist in qd.items():
+            if re.match("^lang", key, re.I) and len(vallist) == 1:
+                try:
+                    querysrc = vallist[0]
+                    querycode = langtags.Tag(querysrc)
+                except:
+                    pass
+            else:
+                # if a query value is an exact match for language tag
+                for v in vallist:
+                    try:
+                        querycode = langtags.Tag(v)
+                    except:
+                        pass
+
+    return querysrc, querycode
+
+
+def _analyze_netloc(nloc):
+    netlocsrc = ''
+    netloccode = None
+    if len(nloc) > 0:
+        dlist = nloc.split('.')
+        try:
+            netlocsrc = dlist[0]
+            netloccode = langtags.Tag(netlocsrc)
+        except:
+            pass
+    return netlocsrc, netloccode
+
+
+def _analyze_netpath(npath):
+    pathsrc = ''
+    pathcode = None
+    if len(npath) > 0:
+        pathlist = npath.strip('/').split('/')
+
+        # /countrycode/langcode/rest of path
+        if len(pathlist) > 1:
+            try:
+                pathsrc ="{}-{}".format(pathlist[1], pathlist[0])
+                pathcode = langtags.Tag(pathsrc)
+            except:
+                pass
+
+        # /intl/langcode/rest of path
+        if pathcode is None and len(pathlist) > 1 and pathlist[0].lower() == 'intl':
+            try:
+                pathsrc = pathlist[1]
+                pathcode = langtags.Tag(pathsrc)
+            except:
+                pass
+
+        # /languagecode/rest of path
+        if pathcode is None and len(pathlist) > 0:
+            try:
+                pathsrc = pathlist[0]
+                pathcode = langtags.Tag(pathsrc)
+            except:
+                pass
+
+        # 'lang' or 'language' starting
+        # in one of the class names for the a tag or a nested tag
+        if pathcode is None:
+            try:
+                pathsrc = pathlist[0]
+                pathcode = langcodes.find(pathsrc)
+            except:
+                pass
+
+    return pathsrc, pathcode
+
+
 def _analyze_link(alink, host):
     # check that link goes to same provider
     try:
@@ -315,72 +394,10 @@ def _analyze_link(alink, host):
     except:
         components = uparse.urlsplit('')
 
-    pathsrc = ''
-    pathcode = None
-    netlocsrc = ''
-    netloccode = None
-    if len(components.path) > 0:
-        pathlist = components.path.strip('/').split('/')
 
-        # /countrycode/langcode/rest of path
-        if len(pathlist) > 1:
-            try:
-                pathsrc ="{}-{}".format(pathlist[1], pathlist[0])
-                pathcode = langtags.Tag(pathsrc)
-            except:
-                pass
-
-        # /intl/langcode/rest of path
-        if pathcode is None and len(pathlist) > 1 and pathlist[0].lower() == 'intl':
-            try:
-                pathsrc = pathlist[1]
-                pathcode = langtags.Tag(pathsrc)
-            except:
-                pass
-
-        # /languagecode/rest of path
-        if pathcode is None and len(pathlist) > 0:
-            try:
-                pathsrc = pathlist[0]
-                pathcode = langtags.Tag(pathsrc)
-            except:
-                pass
-
-        # 'lang' or 'language' starting
-        # in one of the class names for the a tag or a nested tag
-        if pathcode is None:
-            try:
-                pathsrc = pathlist[0]
-                pathcode = langcodes.find(pathsrc)
-            except:
-                pass
-
-    if len(components.netloc) > 0:
-        dlist = components.netloc.split('.')
-        try:
-            netlocsrc = dlist[0]
-            netloccode = langtags.Tag(netlocsrc)
-        except:
-            pass
-
-    querysrc = ''
-    querycode = None
-    if components.query:
-        qd = uparse.parse_qs(components.query)
-        for key, vallist in qd.items():
-            if re.match("^lang", key, re.I) and len(vallist) == 1:
-                try:
-                    querysrc = vallist[0]
-                    querycode = langtags.Tag(querysrc)
-                except:
-                    pass
-            else:
-                # if a query value is an exact match for language tag
-                for v in vallist:
-                    try:
-                        querycode = langtags.Tag(v)
-                    except:
-                        pass
+    pathsrc, pathcode = _analyze_netpath(components.path)
+    netlocsrc, netloccode = _analyze_netloc(components.netloc)
+    querysrc, querycode = _analyze_qs(components.query)
 
     indicator3 = defaultdict(set)
     if pathcode:

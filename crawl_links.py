@@ -20,6 +20,7 @@ requests.packages.urllib3.disable_warnings()  # disable ssl warnings
 
 MAX_RETRIES = 3
 PARSER = "lxml"
+SEARCHLANG = 'cy'
 
 def _compressstr(s):
     """
@@ -138,7 +139,7 @@ def _print_response(rdict, verbose):
         print("{}".format(','.join(rdict['errors'])))
 
 
-def _check_langset(lset, lt='cy'):
+def _check_langset(lset, lt=SEARCHLANG):
     for st in lset:
         try:
             t = langtags.Tag(st)
@@ -151,11 +152,11 @@ def _check_langset(lset, lt='cy'):
 
 def _do_analysis(rec, verbose):
     def _offers_welsh(xd):
-        if 'cy' in xd['inferred'] or 'cy' in xd['primary']:
+        if SEARCHLANG in xd['inferred'] or SEARCHLANG in xd['primary']:
             return True
 
         for lang,xli in xd['content_detect']['languages'].items():
-            if lang == 'cy' and xli[1] >= 40:
+            if lang == SEARCHLANG and xli[1] >= 33:
                 return True
 
         return False
@@ -175,13 +176,14 @@ def _do_analysis(rec, verbose):
         print(xd)
 
     if xd is None:
-        return False, None, [], []
+        return False, None, [], [], {}
     elif not _offers_welsh(xd):
-        return False, None, [], []
+        return False, None, [], [], {}
 
 
-    cy_links = set()
+    lang_links = set()
     other_links = set()
+    link_lang_data = {}
 
     for el in rec['soup'].descendants:
         if el.name is None or el.name == 'script':
@@ -198,19 +200,32 @@ def _do_analysis(rec, verbose):
 
             addset = other_links
             if _check_langset(xset):
-                addset = cy_links
+                addset = lang_links
 
             if 'href' in el.attrs:
                 href = el.attrs['href']
                 components = up.urlsplit(href)
+
+                _, querycode = analyze._analyze_qs(components.query)
+                if querycode:
+                    xset.add(str(querycode))
+                _, netloccode = analyze._analyze_netloc(components.netloc)
+                if netloccode:
+                    xset.add(str(netloccode))
+                _, pathcode = analyze._analyze_netpath(components.path)
+                if pathcode:
+                    xset.add(str(pathcode))
+
                 if components.netloc:
                     addset.add(components.netloc)
+                    link_lang_data[components.netloc] = tuple(xset)
                 elif href.startswith('/'):
                     comp = up.urlsplit(rec['url'])
                     assert(comp.netloc)
                     addset.add(comp.netloc + href)
+                    link_lang_data[comp.netloc + href] = tuple(xset)
 
-    return True, xd, list(cy_links), list(other_links)
+    return True, xd, list(lang_links), list(other_links), link_lang_data
 
 
 def _urlhost(xurl):
@@ -295,13 +310,16 @@ def _manager(args, hostlist, langpref):
         already_done.add(url)
         xresp = _make_req(url, langpref, verbose)
         _print_response(xresp, verbose)
-        cont, hrec, cylinks, otherlinks = _do_analysis(xresp, verbose)
+        cont, hrec, langlinks, otherlinks, lldata = _do_analysis(xresp, verbose)
         if cont:
-            if cylinks:
-                # dynamically whitelist any hosts that have 'cy' lang tags
+            if langlinks:
+                # dynamically whitelist any hosts that have SEARCHLANG lang tags
                 whitelisted.add(_urlhost(url))
 
-            print("{}".format(json.dumps([url, hrec])), file=outfile, flush=True)
+            xresp.pop('soup')
+            xresp.pop('content')
+            print("{}".format(json.dumps([url, hrec, xresp])), file=outfile, flush=True)
+            print("{}".format(json.dumps([url, lldata])), file=outfile, flush=True)
             print("#{} {}".format(url, _extract_rec_data(hrec)), file=outfile, flush=True)
             if verbose:
                 print("links:", links)
@@ -311,14 +329,15 @@ def _manager(args, hostlist, langpref):
                 if not _blacklisted(link) and not _too_many_requests(link):
                     hostlist.append(link)
 
-            # put cy links on front
-            for link in cylinks[:args.maxreq_whitelist]:
+            # put SEARCHLANG links on front
+            for link in langlinks[:args.maxreq_whitelist]:
                 if not _too_many_requests(link):
                     hostlist.insert(0, link)
 
         if args.maxtotal != -1 and len(already_done) >= args.maxtotal:
             break
 
+    print(whitelisted)
     outfile.close()
 
 
@@ -331,17 +350,17 @@ if __name__ == '__main__':
     parser.add_argument('-i', '--infile', dest='infile', type=str,
                         help='Input file to read with hostnames')
     parser.add_argument('-l', '--langpref', dest='langpref', type=str,
-                        default='*', help='Accept-Language header value')
+                        default='*', help='Accept-Language header value (default=*)')
     parser.add_argument('-w', '--maxreqwl', dest='maxreq_whitelist', type=int, default=100,
-        help='Max number of requests to make to the same domain for whitelisted domains')
+        help='Max number of requests to make to the same domain for whitelisted domains (default=100)')
     parser.add_argument('-m', '--maxreq', dest='maxreq', type=int, default=5,
-        help='Max number of requests to make to the same domain for non-whitelisted domains')
+        help='Max number of requests to make to the same domain for non-whitelisted domains (default=5)')
     parser.add_argument('-v', '--verbose', dest='verbose', action='count',
-                        default=0, help='Turn on verbose output.')
+                        default=0, help='Turn on verbose output (default=0)')
     parser.add_argument('-M', dest='maxtotal', type=int, default=-1,
-                        help='Max number of total requests to make.')
+                        help='Max number of total requests to make (default=unlimited)')
     parser.add_argument('-o', dest='outfile', type=str, default='crawl_results.json',
-                        help='Name of output file to create.')
+                        help='Name of output file to create (default=crawl_results.json)')
     args = parser.parse_args()
 
     print("Making requests from {} using langpref '{}' ".format(
