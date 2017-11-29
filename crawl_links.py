@@ -321,8 +321,10 @@ def _manager(args, hostlist, langpref):
         xresp = _make_req(url, langpref, verbose)
         _print_response(xresp, verbose)
         cont, hrec, langlinks, otherlinks, lldata = _do_analysis(xresp, verbose)
-        del xresp['soup']
-        del xresp['content']
+        if 'soup' in xresp:
+            del xresp['soup']
+        if 'content' in xresp:
+            del xresp['content']
         if cont:
             if langlinks:
                 # dynamically whitelist any hosts that have SEARCHLANG lang tags
