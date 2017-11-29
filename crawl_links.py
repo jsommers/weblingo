@@ -254,6 +254,14 @@ def _extract_rec_data(hrec):
     return '::'.join([exp,p,inf,det])
 
 
+def _looks_like_text(link):
+    blacklist = ['.jpg','.png','.css','.js']
+    for ext in blacklist:
+        if link.endswith(ext):
+            return False
+    return True
+
+
 def _manager(args, hostlist, langpref):
     verbose = args.verbose
 
@@ -318,8 +326,6 @@ def _manager(args, hostlist, langpref):
                 # dynamically whitelist any hosts that have SEARCHLANG lang tags
                 whitelisted.add(_urlhost(url))
 
-            xresp.pop('soup')
-            xresp.pop('content')
             print("{}".format(json.dumps([url, hrec, xresp])), file=outfile, flush=True)
             print("{}".format(json.dumps([url, lldata])), file=outfile, flush=True)
             print("#{} {}".format(url, _extract_rec_data(hrec)), file=outfile, flush=True)
@@ -328,13 +334,19 @@ def _manager(args, hostlist, langpref):
 
             # put SEARCHLANG links on front
             for link in langlinks[:args.maxreq_whitelist]:
-                if not _too_many_requests(link):
+                if not _too_many_requests(link) and _looks_like_text(link):
                     hostlist.insert(0, link)
 
             # put other links on back
             for link in otherlinks[:args.maxreq_whitelist]:
-                if not _blacklisted(link) and not _too_many_requests(link):
+                if not _blacklisted(link) and not _too_many_requests(link) and _looks_like_text(link):
                     hostlist.append(link)
+
+        # explicitly orphan these structures
+        del xresp['soup']
+        del xresp['content']
+        del xresp
+        del hrec
 
         if args.maxtotal != -1 and len(already_done) >= args.maxtotal:
             break
