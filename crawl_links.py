@@ -14,6 +14,7 @@ from collections import Counter
 import pdb
 import random
 import langtags
+import pickle
 
 import requests
 requests.packages.urllib3.disable_warnings()  # disable ssl warnings
@@ -255,7 +256,7 @@ def _extract_rec_data(hrec):
 
 
 def _looks_like_text(link):
-    blacklist = ['.jpg','.png','.css','.js']
+    blacklist = ['.jpg','.png','.css','.js','.zip','.doc','.docx','.xls','.xlsx','.csv']
     for ext in blacklist:
         if link.endswith(ext):
             return False
@@ -302,6 +303,14 @@ def _manager(args, hostlist, langpref):
         sitecount[host] += 1
 
 
+    def _clean_hostlist(hlist):
+        newlist = []
+        for href in hlist:
+            if not _too_many_requests(href):
+                newlist.append(href)
+        return newlist
+
+
     while hostlist:
         url = hostlist.pop(0)
         print(len(hostlist), url)
@@ -334,7 +343,7 @@ def _manager(args, hostlist, langpref):
             print("{}".format(json.dumps([url, lldata])), file=outfile, flush=True)
             print("#{} {}".format(url, _extract_rec_data(hrec)), file=outfile, flush=True)
             if verbose:
-                print("links:", links)
+                print("links:", langlinks)
 
             # put SEARCHLANG links on front
             for link in langlinks[:args.maxreq_whitelist]:
@@ -352,6 +361,9 @@ def _manager(args, hostlist, langpref):
 
         if args.maxtotal != -1 and len(already_done) >= args.maxtotal:
             break
+
+        hostlist = _clean_hostlist(hostlist)
+
 
     print("# whitelisted {}".format(whitelisted), file=outfile)
     outfile.close()
