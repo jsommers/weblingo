@@ -207,7 +207,10 @@ def _do_analysis(rec, verbose):
 
             if 'href' in el.attrs:
                 href = el.attrs['href']
-                components = up.urlsplit(href)
+                try:
+                    components = up.urlsplit(href)
+                except ValueError:
+                    components = up.urlsplit('')
 
                 _, querycode = analyze._analyze_qs(components.query)
                 if querycode:
