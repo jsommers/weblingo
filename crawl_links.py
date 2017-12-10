@@ -8,22 +8,23 @@ import argparse
 import time
 import json
 import urllib.parse as up
-from bs4 import BeautifulSoup as bs
 import lzma
 import base64
 from collections import Counter
-import pdb
 import random
-import langtags
 import pickle
 import multiprocessing
 
+from bs4 import BeautifulSoup as bs
 import requests
 requests.packages.urllib3.disable_warnings()  # disable ssl warnings
+
+import langtags
 
 MAX_RETRIES = 3
 PARSER = "lxml"
 SEARCHLANG = 'cy'
+
 
 def _compressstr(s):
     """
@@ -257,15 +258,7 @@ def _extract_rec_data(hrec):
     det = ''
     if hrec['content_detect']['reliable']:
         det = ','.join(hrec['content_detect']['languages'].keys())
-    return '::'.join([exp,p,inf,det])
-
-
-def _looks_like_text(link):
-    blacklist = ['.jpg','.png','.css','.js','.zip','.doc','.docx','.xls','.xlsx','.csv']
-    for ext in blacklist:
-        if link.endswith(ext):
-            return False
-    return True
+    return '::'.join([exp, p, inf, det])
 
 
 def _manager(args, hostlist, langpref):
@@ -273,17 +266,40 @@ def _manager(args, hostlist, langpref):
 
     sitecount = Counter()
     already_done = set()
-    outfile = open(args.outfile, 'a')
     whitelisted = set()
+    howmany = 0
 
+    saved_state = _dounpickle(args.picklefile)
+    if saved_state['hostlist']:
+        hostlist += saved_state['hostlist']
+    if saved_state['sitecount']:
+        sitecount.update(saved_state['sitecount'])
+    if saved_state['already_done']:
+        already_done = already_done.union(saved_state['already_done'])
+    if saved_state['whitelisted']:
+        whitelisted = whitelisted.union(saved_state['whitelisted'])
+
+    if not hostlist:
+        print("No host list to crawl after resurrecting old state.")
+        sys.exit()
+
+    outfile = open(args.outfile, 'a')
+
+    def _looks_like_text(link):
+        blacklist = ['.jpg', '.png', '.css', '.js', '.zip',
+                     '.doc', '.docx', '.xls', '.xlsx', '.csv']
+        for ext in blacklist:
+            if link.endswith(ext):
+                return False
+        return True
 
     def _blacklisted(url):
         host = _urlhost(url)
-        for h in ['facebook','google','twitter','microsoft','bing','youtube','sharepoint']:
+        for h in ['facebook', 'google', 'twitter', 'microsoft',
+                  'bing', 'youtube', 'sharepoint']:
             if h in host:
                 return True
         return False
-
 
     def _whitelisted(host):
         if host in whitelisted:
@@ -294,6 +310,16 @@ def _manager(args, hostlist, langpref):
                 return True
         return False
 
+    def _update_sitecount(url):
+        host = _urlhost(url)
+        sitecount[host] += 1
+
+    def _clean_hostlist(hlist):
+        newlist = []
+        for href in hlist:
+            if not _too_many_requests(href):
+                newlist.append(href)
+        return newlist
 
     def _too_many_requests(url):
         host = _urlhost(url)
@@ -302,18 +328,9 @@ def _manager(args, hostlist, langpref):
             maxreq = args.maxreq
         return sitecount[host] > maxreq
 
-
-    def _update_sitecount(url):
-        host = _urlhost(url)
-        sitecount[host] += 1
-
-
-    def _clean_hostlist(hlist):
-        newlist = []
-        for href in hlist:
-            if not _too_many_requests(href):
-                newlist.append(href)
-        return newlist
+    MAX_RUNNING = 1
+    proclist = []
+    resultsqueue = multiprocessing.Queue()
 
     while hostlist:
         url = hostlist.pop(0)
@@ -331,6 +348,7 @@ def _manager(args, hostlist, langpref):
             continue
 
         already_done.add(url)
+        howmany += 1
 
         xresp = _make_req(url, langpref, verbose)
 
@@ -365,31 +383,34 @@ def _manager(args, hostlist, langpref):
         del xresp
         del hrec
 
-        if args.maxtotal != -1 and len(already_done) >= args.maxtotal:
+        if args.maxtotal != -1 and howmany >= args.maxtotal:
             break
 
         hostlist = _clean_hostlist(hostlist)
-        _dopickle(args.picklefile, hostlist)
-
+        _dopickle(args.picklefile, hostlist, sitecount, already_done, whitelisted)
 
     print("# whitelisted {}".format(whitelisted), file=outfile)
     outfile.close()
 
 
-def _dopickle(outfile, hlist):
+def _dopickle(outfile, hostlist, sitecount, already_done, whitelisted):
+    xhash = {'hostlist': hostlist,
+             'sitecount': sitecount,
+             'already_done': already_done,
+             'whitelisted': whitelisted}
     with open(outfile, 'wb') as outbin:
-        pickle.dump(hlist, outbin)
+        pickle.dump(xhash, outbin)
 
 
 def _dounpickle(infile):
-    xlist = []
+    xd = {'hostlist':[], 'sitecount':[], 'already_done': set(), 'whitelisted': set()}
     if not os.path.exists(infile):
         print("No previous state to load from {}.".format(infile), file=sys.stderr)
-        return xlist
+        return xd
 
     with open(infile, 'rb') as inbin:
-        xlist = pickle.load(inbin)
-    return xlist
+        xd = pickle.load(inbin)
+    return xd
 
 
 if __name__ == '__main__':
@@ -421,17 +442,16 @@ if __name__ == '__main__':
             args.infile, args.langpref))
     langpref = args.langpref
 
-    prevhosts = _dounpickle(args.picklefile)
 
-    if args.infile is None and args.onehost is None and not prevhosts:
+    if args.infile is None and args.onehost is None and \
+            not os.path.exists(args.picklefile):
         parser.print_usage()
         sys.exit()
 
     hostlist = []
     if args.onehost is not None:
         hostlist += [args.onehost]
-    else:
+    elif args.infile:
         hostlist += _read_input(args.infile)
-    hostlist += prevhosts
 
     _manager(args, hostlist, langpref)
