@@ -353,7 +353,7 @@ def _manager(args, hostlist, langpref):
             return url
 
 
-    MAX_RUNNING = 10
+    MAX_RUNNING = 2
     proclist = []
     resultsqueue = mp.Queue()
 
