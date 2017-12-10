@@ -3,6 +3,7 @@ Collect site names from starting at a particular site by crawling.  Don't
 crawl more than X levels deep from each host
 """
 import sys
+import os
 import argparse
 import time
 import json
@@ -15,6 +16,7 @@ import pdb
 import random
 import langtags
 import pickle
+import multiprocessing
 
 import requests
 requests.packages.urllib3.disable_warnings()  # disable ssl warnings
@@ -271,7 +273,7 @@ def _manager(args, hostlist, langpref):
 
     sitecount = Counter()
     already_done = set()
-    outfile = open(args.outfile, 'w')
+    outfile = open(args.outfile, 'a')
     whitelisted = set()
 
 
@@ -313,7 +315,6 @@ def _manager(args, hostlist, langpref):
                 newlist.append(href)
         return newlist
 
-
     while hostlist:
         url = hostlist.pop(0)
         print(len(hostlist), url)
@@ -330,7 +331,9 @@ def _manager(args, hostlist, langpref):
             continue
 
         already_done.add(url)
+
         xresp = _make_req(url, langpref, verbose)
+
         _print_response(xresp, verbose)
         cont, hrec, langlinks, otherlinks, lldata = _do_analysis(xresp, verbose)
         if 'soup' in xresp:
@@ -366,10 +369,27 @@ def _manager(args, hostlist, langpref):
             break
 
         hostlist = _clean_hostlist(hostlist)
+        _dopickle(args.picklefile, hostlist)
 
 
     print("# whitelisted {}".format(whitelisted), file=outfile)
     outfile.close()
+
+
+def _dopickle(outfile, hlist):
+    with open(outfile, 'wb') as outbin:
+        pickle.dump(hlist, outbin)
+
+
+def _dounpickle(infile):
+    xlist = []
+    if not os.path.exists(infile):
+        print("No previous state to load from {}.".format(infile), file=sys.stderr)
+        return xlist
+
+    with open(infile, 'rb') as inbin:
+        xlist = pickle.load(inbin)
+    return xlist
 
 
 if __name__ == '__main__':
@@ -381,7 +401,7 @@ if __name__ == '__main__':
     parser.add_argument('-i', '--infile', dest='infile', type=str,
                         help='Input file to read with hostnames')
     parser.add_argument('-l', '--langpref', dest='langpref', type=str,
-                        default='*', help='Accept-Language header value (default=*)')
+                       default='*', help='Accept-Language header value (default=*)')
     parser.add_argument('-w', '--maxreqwl', dest='maxreq_whitelist', type=int, default=500,
         help='Max number of requests to make to the same domain for whitelisted domains (default=100)')
     parser.add_argument('-m', '--maxreq', dest='maxreq', type=int, default=10,
@@ -392,17 +412,26 @@ if __name__ == '__main__':
                         help='Max number of total requests to make (default=unlimited)')
     parser.add_argument('-o', dest='outfile', type=str, default='crawl_results.json',
                         help='Name of output file to create (default=crawl_results.json)')
+    parser.add_argument('-p', dest='picklefile', type=str, default='crawl_state.bin',
+                        help='Name of state file to load on startup')
+
     args = parser.parse_args()
 
     print("Making requests from {} using langpref '{}' ".format(
             args.infile, args.langpref))
     langpref = args.langpref
 
-    if args.infile is None and args.onehost is None:
+    prevhosts = _dounpickle(args.picklefile)
+
+    if args.infile is None and args.onehost is None and not prevhosts:
         parser.print_usage()
         sys.exit()
+
+    hostlist = []
     if args.onehost is not None:
-        hostlist = [args.onehost]
+        hostlist += [args.onehost]
     else:
-        hostlist = _read_input(args.infile)
+        hostlist += _read_input(args.infile)
+    hostlist += prevhosts
+
     _manager(args, hostlist, langpref)
