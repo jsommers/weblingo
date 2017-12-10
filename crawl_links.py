@@ -332,7 +332,7 @@ def _manager(args, hostlist, langpref):
         return sitecount[host] > maxreq
 
     def _get_next():
-        while True:
+        while len(hostlist):
             url = hostlist.pop(0)
             print(len(hostlist), url)
 
@@ -354,7 +354,8 @@ def _manager(args, hostlist, langpref):
     proclist = []
     resultsqueue = mp.Queue()
 
-    while hostlist:
+    while hostlist or proclist:
+        # clean up proclist
         running = []
         for p in proclist:
             if not p.is_alive():
@@ -363,9 +364,12 @@ def _manager(args, hostlist, langpref):
                 running.append(p)
         proclist = running
 
-        # spawn new process(es), if possible
+        # spawn new process(es) to make new requests, if possible
         while len(proclist) < MAX_RUNNING:
             url = _get_next()
+            if url is None:
+                break
+
             already_done.add(url)
             howmany += 1
 
@@ -374,8 +378,8 @@ def _manager(args, hostlist, langpref):
             p.start()
             print("Spawning new process {} running".format(len(proclist)))
 
-        # xresp = _make_req(url, langpref, verbose)
 
+        # get/process any results available
         while True:
             xresp = None
             try:
