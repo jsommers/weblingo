@@ -350,7 +350,7 @@ def _manager(args, hostlist, langpref):
             return url
 
 
-    MAX_RUNNING = 3
+    MAX_RUNNING = 10
     proclist = []
     resultsqueue = mp.Queue()
 
@@ -379,7 +379,6 @@ def _manager(args, hostlist, langpref):
         while True:
             xresp = None
             try:
-                print("Getting results from queue")
                 xresp = resultsqueue.get(block=True, timeout=1)
             except queue.Empty:
                 break
