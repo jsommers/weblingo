@@ -24,7 +24,10 @@ import langtags
 
 MAX_RETRIES = 3
 PARSER = "lxml"
+global SEARCHLANG
 SEARCHLANG = 'cy'
+global WHITELIST
+WHITELIST = ['.uk', '.cymru', '.wales']
 
 
 def _compressstr(s):
@@ -308,7 +311,7 @@ def _manager(args, hostlist, langpref):
         if host in whitelisted:
             return True
 
-        for h in ['.uk', '.cymru', '.wales']:
+        for h in WHITELIST:
             if host.endswith(h):
                 return True
         return False
@@ -471,6 +474,10 @@ if __name__ == '__main__':
                         help='Name of output file to create (default=crawl_results.json)')
     parser.add_argument('-p', dest='picklefile', type=str, default='crawl_state.bin',
                         help='Name of state file to load on startup')
+    parser.add_argument('-s', dest='searchlang', type=str, default='cy',
+                        help='Name of language tag to generally search for')
+    parser.add_argument('-W', dest='whitelist', action='append', 
+                        help='Name of domains to whitelist; can be specified multiple times')
 
     args = parser.parse_args()
 
@@ -478,6 +485,13 @@ if __name__ == '__main__':
             args.infile, args.langpref))
     langpref = args.langpref
 
+    SEARCHLANG = args.searchlang
+
+    if args.whitelist and SEARCHLANG != 'cy':
+        WHITELIST = args.whitelist
+
+    print("Searching the language universe of {}".format(SEARCHLANG))
+    print("Whitelisted TLDs: {}".format(WHITELIST))
 
     if args.infile is None and args.onehost is None and \
             not os.path.exists(args.picklefile):
