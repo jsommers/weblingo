@@ -13,7 +13,8 @@ import base64
 from collections import Counter
 import random
 import pickle
-import multiprocessing
+import multiprocessing as mp
+import queue
 
 from bs4 import BeautifulSoup as bs
 import requests
@@ -47,7 +48,7 @@ def _check_content_type(headers):
                xtype.startswith('application/xhtml')
 
 
-def _make_req(hostname, langpref, verbose):
+def _make_req(hostname, langpref, verbose, rqueue):
     results = {'reqhost': hostname}
     reqheaders = {
       "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) "
@@ -83,7 +84,8 @@ def _make_req(hostname, langpref, verbose):
                 response.close()
             results['success'] = False
             if len(errors) == MAX_RETRIES:
-                return results
+                rqueue.put(results)
+                sys.exit()
         else:
             results['success'] = True
             break
@@ -122,7 +124,8 @@ def _make_req(hostname, langpref, verbose):
     results['status_reason'] = response.reason
     results['history'] = \
         [[xr.status_code, xr.url] for xr in response.history]
-    return results
+    rqueue.put(results)
+    sys.exit()
 
 
 def _read_input(infile):
@@ -328,60 +331,91 @@ def _manager(args, hostlist, langpref):
             maxreq = args.maxreq
         return sitecount[host] > maxreq
 
-    MAX_RUNNING = 1
+    def _get_next():
+        while True:
+            url = hostlist.pop(0)
+            print(len(hostlist), url)
+
+            _update_sitecount(url)
+
+            if _too_many_requests(url):
+                continue
+
+            if _blacklisted(url):
+                continue
+
+            if url in already_done:
+                continue
+
+            return url
+
+
+    MAX_RUNNING = 3
     proclist = []
-    resultsqueue = multiprocessing.Queue()
+    resultsqueue = mp.Queue()
 
     while hostlist:
-        url = hostlist.pop(0)
-        print(len(hostlist), url)
+        running = []
+        for p in proclist:
+            if not p.is_alive():
+                p.join()
+            else:
+                running.append(p)
+        proclist = running
 
-        _update_sitecount(url)
+        # spawn new process(es), if possible
+        while len(proclist) < MAX_RUNNING:
+            url = _get_next()
+            already_done.add(url)
+            howmany += 1
 
-        if _too_many_requests(url):
-            continue
+            p = mp.Process(target=_make_req, args=(url, langpref, verbose, resultsqueue))
+            proclist.append(p)
+            p.start()
+            print("Spawning new process {} running".format(len(proclist)))
 
-        if _blacklisted(url):
-            continue
+        # xresp = _make_req(url, langpref, verbose)
 
-        if url in already_done:
-            continue
+        while True:
+            xresp = None
+            try:
+                print("Getting results from queue")
+                xresp = resultsqueue.get(block=True, timeout=1)
+            except queue.Empty:
+                break
 
-        already_done.add(url)
-        howmany += 1
+            if xresp is not None:
+                _print_response(xresp, verbose)
+                cont, hrec, langlinks, otherlinks, lldata = _do_analysis(xresp, verbose)
+                if 'soup' in xresp:
+                    del xresp['soup']
+                if 'content' in xresp:
+                    del xresp['content']
 
-        xresp = _make_req(url, langpref, verbose)
+                if cont:
+                    if langlinks:
+                        # dynamically whitelist any hosts that have SEARCHLANG lang tags
+                        whitelisted.add(_urlhost(url))
 
-        _print_response(xresp, verbose)
-        cont, hrec, langlinks, otherlinks, lldata = _do_analysis(xresp, verbose)
-        if 'soup' in xresp:
-            del xresp['soup']
-        if 'content' in xresp:
-            del xresp['content']
-        if cont:
-            if langlinks:
-                # dynamically whitelist any hosts that have SEARCHLANG lang tags
-                whitelisted.add(_urlhost(url))
+                    print("{}".format(json.dumps([url, hrec, xresp])), file=outfile, flush=True)
+                    print("{}".format(json.dumps([url, lldata])), file=outfile, flush=True)
+                    print("#{} {}".format(url, _extract_rec_data(hrec)), file=outfile, flush=True)
+                    if verbose:
+                        print("links:", langlinks)
 
-            print("{}".format(json.dumps([url, hrec, xresp])), file=outfile, flush=True)
-            print("{}".format(json.dumps([url, lldata])), file=outfile, flush=True)
-            print("#{} {}".format(url, _extract_rec_data(hrec)), file=outfile, flush=True)
-            if verbose:
-                print("links:", langlinks)
+                    # put SEARCHLANG links on front
+                    for link in langlinks[:args.maxreq_whitelist]:
+                        if not _too_many_requests(link) and _looks_like_text(link):
+                            hostlist.insert(0, link)
 
-            # put SEARCHLANG links on front
-            for link in langlinks[:args.maxreq_whitelist]:
-                if not _too_many_requests(link) and _looks_like_text(link):
-                    hostlist.insert(0, link)
+                    # put other links on back
+                    for link in otherlinks[:args.maxreq_whitelist]:
+                        if not _blacklisted(link) and not _too_many_requests(link) and _looks_like_text(link):
+                            hostlist.append(link)
 
-            # put other links on back
-            for link in otherlinks[:args.maxreq_whitelist]:
-                if not _blacklisted(link) and not _too_many_requests(link) and _looks_like_text(link):
-                    hostlist.append(link)
-
-        # explicitly orphan these structures
-        del xresp
-        del hrec
+                # explicitly orphan these structures
+                del xresp
+                del hrec
 
         if args.maxtotal != -1 and howmany >= args.maxtotal:
             break
@@ -389,7 +423,6 @@ def _manager(args, hostlist, langpref):
         hostlist = _clean_hostlist(hostlist)
         _dopickle(args.picklefile, hostlist, sitecount, already_done, whitelisted)
 
-    print("# whitelisted {}".format(whitelisted), file=outfile)
     outfile.close()
 
 
